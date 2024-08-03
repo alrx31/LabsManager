@@ -19,6 +19,7 @@ namespace LabsManager
         private PersonsBase _person;
         private int ruleLevel;
         private readonly ISubjectsService _subjectsServ;
+        private Subject SelectedSubject;
 
         private List<Subject> subjects = new List<Subject>();
         // 0 - unauthorized
@@ -42,7 +43,7 @@ namespace LabsManager
             ruleLevel = 2;
 
             _subjectsServ = new SubjectsService();
-            
+            panelIndicator.Location = new Point(0, 20);
         }
 
         private void LabsManager_Load(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace LabsManager
 
         private void panelButton1_MouseHover(object sender, EventArgs e)
         {
-            panelButton1.BackColor = Color.FromArgb(100, 100, 250);
+            panelButton1.BackColor = Color.FromArgb(10, 10, 250);
         }
 
         private void panelButton1_MouseLeave(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace LabsManager
 
         private void panel4_MouseEnter(object sender, EventArgs e)
         {
-            panelButton2.BackColor = Color.FromArgb(100, 100, 250);
+            panelButton2.BackColor = Color.FromArgb(10, 10, 250);
 
         }
 
@@ -157,54 +158,116 @@ namespace LabsManager
         {
             profilePanel.Visible = false;
             SubjectsList.Visible = true;
+            panelIndicator.Location = new Point(0, 70);
         }
 
         private void panelButton1_Click(object sender, EventArgs e)
         {
             profilePanel.Visible = true;
             SubjectsList.Visible = false;
+            panelIndicator.Location = new Point(0, 20);
         }
 
 
         private async Task GetSubjects()
         {
             this.subjects = await _subjectsServ.getAllSubjects();
-            flowLayoutPanelListSubjects.Controls.Clear();
-            foreach (Subject subject in this.subjects)
-            {
-                var panel = new Panel();
-                panel.Size = new Size(500, 100);
-                panel.Location = new Point(20, 20);
-                panel.BackColor = Color.White;
-                panel.Cursor = Cursors.Hand;
-                panel.BorderStyle = BorderStyle.None;
-                panel.Click += OpenTheSubjectMenu;
-                flowLayoutPanelListSubjects.Controls.Add(panel);
-                
-                var labelName = new Label();
-                labelName.Dock = DockStyle.Fill;
-                labelName.Text = "Название: " + subject.name + "\nОписание: " + subject.description + "\nНужно часов: " + subject.needHours + "\nАвтор: " + subject.author.name ;
-                labelName.Cursor = Cursors.Hand;
-                labelName.Click += OpenTheSubjectMenu;
-                panel.Controls.Add(labelName);
-            }
+            FillSubjectsList(this.subjects);
         }
 
         private void Createbutton1_Click(object sender, EventArgs e)
         {
             var CreateForm = new CreateSubjectForm();
             CreateForm.ShowDialog();
-        
+
         }
 
         private void OpenTheSubjectMenu(object sender, EventArgs e)
         {
 
-            var sender1 = sender.ToString();
+            var sender1 = sender.ToString().Split("Text: ")[1][0].ToString();
+
+
+            var createForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1)));
+
+
+            createForm.ShowDialog();
 
             this.Close();
         }
 
+        private void SubjectsList_VisibleChanged(object sender, EventArgs e)
+        {
+            if (SubjectsList.Visible)
+            {
+                if (ruleLevel >= 2)
+                {
+                    Createbutton1.Visible = true;
+                }
+                else
+                {
+                    Createbutton1.Visible = false;
+                }
+            }
+        }
+
+
+
+        private void FillSubjectsList(List<Subject> subjects)
+        {
+            flowLayoutPanelListSubjects.Controls.Clear();
+            if (subjects.Count > 0)
+            {
+                foreach (Subject subject in subjects)
+                {
+                    var panel = new Panel();
+                    panel.Size = new Size(500, 150);
+                    panel.Location = new Point(20, 20);
+                    panel.BackColor = Color.White;
+                    panel.Cursor = Cursors.Hand;
+                    panel.BorderStyle = BorderStyle.None;
+                    panel.Click += OpenTheSubjectMenu;
+                    flowLayoutPanelListSubjects.Controls.Add(panel);
+
+                    var labelName = new Label();
+                    labelName.Dock = DockStyle.Fill;
+                    labelName.Text = subject.id + "" + ". Название: " + subject.name + "\nКоличество Лабораторных: " + (subject.labs != null ? subject.labs.Count + "" : 0 + "") + "\nОписание: " + subject.description + "\nНужно часов: " + subject.needHours + "\nАвтор: " + subject.author.name;
+                    labelName.Cursor = Cursors.Hand;
+                    labelName.Click += OpenTheSubjectMenu;
+                    panel.Controls.Add(labelName);
+                }
+            }
+            else
+            {
+                var panel = new Panel();
+                panel.Size = new Size(500, 30);
+                panel.Location = new Point(20, 20);
+                panel.BackColor = Color.White;
+                panel.BorderStyle = BorderStyle.None;
+                panel.Click += OpenTheSubjectMenu;
+                flowLayoutPanelListSubjects.Controls.Add(panel);
+
+                var labelNotFound = new Label();
+                labelNotFound.Dock = DockStyle.Fill;
+                labelNotFound.TextAlign = ContentAlignment.MiddleCenter;
+                labelNotFound.Text = "Предметы не найдены";
+                panel.Controls.Add(labelNotFound);
+            }
+            
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string value = textBoxSearch.Text.Trim().ToLower();
+            var tempCollection  = new List<Subject>();
+            foreach (Subject s in this.subjects) {
+                if (s.name.ToLower().Contains(value))
+                {
+                    tempCollection.Add(s);
+                }    
+            }
+            FillSubjectsList(tempCollection);
+        }
     }
 
 }

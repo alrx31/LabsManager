@@ -1,6 +1,6 @@
 ﻿namespace LabsManager
 {
-    partial class SubjectMenuForm
+    partial class CreateLaboratory
     {
         /// <summary>
         /// Required designer variable.
@@ -36,22 +36,19 @@
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Location = new Point(0, 0);
-            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(58, 23);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
-            // SubjectMenuForm
+            // CreateLaboratory
             // 
-            AutoScaleDimensions = new SizeF(10F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 361);
+            ClientSize = new Size(800, 450);
             Controls.Add(label1);
-            Font = new Font("HP Simplified", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(5);
-            Name = "SubjectMenuForm";
-            Text = "SubjectMenuForm";
+            Name = "CreateLaboratory";
+            Text = "CreateLaboratory";
             ResumeLayout(false);
             PerformLayout();
         }

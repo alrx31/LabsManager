@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panelIndicator = new Panel();
             panelButton2 = new Panel();
             label1 = new Label();
-            panel3 = new Panel();
             panelButton1 = new Panel();
             buttontext1 = new Label();
             FormName = new Label();
@@ -53,7 +53,7 @@
             SubjectsList = new Panel();
             flowLayoutPanelListSubjects = new FlowLayoutPanel();
             ControlPanel = new Panel();
-            textBoxfind1 = new TextBox();
+            textBoxSearch = new TextBox();
             Createbutton1 = new Button();
             panel1.SuspendLayout();
             panelButton2.SuspendLayout();
@@ -67,14 +67,22 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 120, 205);
+            panel1.Controls.Add(panelIndicator);
             panel1.Controls.Add(panelButton2);
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(panelButton1);
             panel1.ForeColor = Color.FromArgb(240, 240, 255);
             panel1.Location = new Point(0, 20);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 580);
+            panel1.Size = new Size(200, 524);
             panel1.TabIndex = 0;
+            // 
+            // panelIndicator
+            // 
+            panelIndicator.BackColor = Color.FromArgb(10, 10, 250);
+            panelIndicator.Location = new Point(12, 519);
+            panelIndicator.Name = "panelIndicator";
+            panelIndicator.Size = new Size(5, 50);
+            panelIndicator.TabIndex = 1;
             // 
             // panelButton2
             // 
@@ -100,14 +108,6 @@
             label1.Text = "Предметы";
             label1.Click += panelButton2_Click;
             label1.MouseEnter += panel4_MouseEnter;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(100, 100, 250);
-            panel3.Location = new Point(0, 20);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(5, 50);
-            panel3.TabIndex = 1;
             // 
             // panelButton1
             // 
@@ -324,6 +324,7 @@
             SubjectsList.Size = new Size(600, 580);
             SubjectsList.TabIndex = 10;
             SubjectsList.Visible = false;
+            SubjectsList.VisibleChanged += SubjectsList_VisibleChanged;
             // 
             // flowLayoutPanelListSubjects
             // 
@@ -338,21 +339,22 @@
             // ControlPanel
             // 
             ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
-            ControlPanel.Controls.Add(textBoxfind1);
+            ControlPanel.Controls.Add(textBoxSearch);
             ControlPanel.Controls.Add(Createbutton1);
             ControlPanel.Location = new Point(0, 530);
             ControlPanel.Name = "ControlPanel";
             ControlPanel.Size = new Size(600, 50);
             ControlPanel.TabIndex = 0;
             // 
-            // textBoxfind1
+            // textBoxSearch
             // 
-            textBoxfind1.Cursor = Cursors.Hand;
-            textBoxfind1.Location = new Point(28, 15);
-            textBoxfind1.Name = "textBoxfind1";
-            textBoxfind1.PlaceholderText = "Поиск...";
-            textBoxfind1.Size = new Size(300, 23);
-            textBoxfind1.TabIndex = 1;
+            textBoxSearch.Cursor = Cursors.Hand;
+            textBoxSearch.Location = new Point(28, 15);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.PlaceholderText = "Поиск...";
+            textBoxSearch.Size = new Size(300, 23);
+            textBoxSearch.TabIndex = 1;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // Createbutton1
             // 
@@ -405,7 +407,7 @@
         private Label maxformbutton;
         private Label FormName;
         private Panel panel2;
-        private Panel panel3;
+        private Panel panelIndicator;
         private Panel panelButton1;
         private Label buttontext1;
         private Panel panelButton2;
@@ -424,7 +426,7 @@
         private Panel SubjectsList;
         private Panel ControlPanel;
         private Button Createbutton1;
-        private TextBox textBoxfind1;
+        private TextBox textBoxSearch;
         private FlowLayoutPanel flowLayoutPanelListSubjects;
     }
 }
