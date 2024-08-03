@@ -188,12 +188,11 @@ namespace LabsManager
             var sender1 = sender.ToString().Split("Text: ")[1][0].ToString();
 
 
-            var createForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1)));
+            var SubjectMenuForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1)-1), _person,ruleLevel);
 
 
-            createForm.ShowDialog();
+            SubjectMenuForm.ShowDialog();
 
-            this.Close();
         }
 
         private void SubjectsList_VisibleChanged(object sender, EventArgs e)
