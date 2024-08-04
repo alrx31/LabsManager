@@ -2,6 +2,7 @@
 using infrastructure.persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace LabsManager.infastructure.repositories
        Task deleteRegistration(Subject subject, int userId);
         List<FollowStudentSubject> getFollowsSubjectList(int userId);
         Task addSubject(Subject sbj);
+        List<Subject> getTeacherSubjects(int teacherId);
     }
 
     public class SubjectsRepository: ISubjectsRepository
@@ -107,14 +109,35 @@ namespace LabsManager.infastructure.repositories
         {
             MessageBox.Show(sbj.ToString());
 
-            try
-            {
                 await _context.subjects.AddAsync(sbj);
                 await _context.SaveChangesAsync();
-            }catch(Exception e)
+            
+        }
+
+        List<Subject> ISubjectsRepository.getTeacherSubjects(int teacherId)
+        {
+            var res = (from subject in _context.subjects
+                       where subject.authorId == teacherId
+                       join teacher in _context.teachers
+                       on subject.authorId equals teacher.id
+                       select new { subject.name, subject.needHours, subject.id, subject.authorId, subject.description, subject.author });
+
+            var res2 = new List<Subject>();
+
+            foreach (var r in res)
             {
-                MessageBox.Show(e.InnerException.Message);
+                res2.Add(new Subject()
+                {
+                    id = r.id,
+                    name = r.name,
+                    authorId = r.authorId,
+                    description = r.description,
+                    author = r.author,
+                    needHours = r.needHours
+                });
             }
+
+            return res2;
         }
     }
 }

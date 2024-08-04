@@ -237,13 +237,20 @@ namespace LabsManager
                 }
                 if (isMine)
                 {
-                    var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
-                    var list = new List<Subject>();
-                    foreach (var subject in subjectsF)
+                    if(ruleLevel == 1)
                     {
-                        list.Add(subject.subject);
+                        var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
+                        var list = new List<Subject>();
+                        foreach (var subject in subjectsF)
+                        {
+                            list.Add(subject.subject);
+                        }
+                        FillSubjectsList(list);
+                    }else if(ruleLevel >= 2)
+                    {
+                        var subjects = _subjectsServ.getTeacherSubjects(_person.id);
+                        FillSubjectsList(subjects);
                     }
-                    FillSubjectsList(list);
                 }
             }
             

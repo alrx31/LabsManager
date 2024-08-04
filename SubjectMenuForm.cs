@@ -55,13 +55,18 @@ namespace LabsManager
                     SubscButton.Text = "Отписаться";
                 }
             }
-            else if (_ruleLevel >= 2)
+            else if (_ruleLevel >= 2 && sbj.authorId == person.id)
             {
+
                 SubscButton.FlatStyle = FlatStyle.Flat;
                 SubscButton.FlatAppearance.BorderSize = 0;
                 SubscButton.Visible = true;
 
                 SubscButton.Text = "Редактировать";
+            }
+            else
+            {
+                SubscButton.Visible = false;
             }
         }
 

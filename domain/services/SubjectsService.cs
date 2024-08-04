@@ -18,6 +18,7 @@ namespace LabsManager.domain.services
         Task canselRegistration(Subject subject,int userId);
         List<FollowStudentSubject> getFollowsSubjectsList(int userId);
         Task AddSubject(Subject sbj);
+        List<Subject> getTeacherSubjects(int teacherId);
     }
 
     public class SubjectsService: ISubjectsService
@@ -74,6 +75,11 @@ namespace LabsManager.domain.services
         async Task ISubjectsService.AddSubject(Subject sbj)
         {
             await _repository.addSubject(sbj);
+        }
+
+        List<Subject> ISubjectsService.getTeacherSubjects(int teacherId)
+        {
+            return _repository.getTeacherSubjects(teacherId);
         }
     }
 }
