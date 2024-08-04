@@ -34,6 +34,8 @@
             label1 = new Label();
             panelButton1 = new Panel();
             buttontext1 = new Label();
+            panelButton3 = new Panel();
+            label2 = new Label();
             FormName = new Label();
             maxformbutton = new Label();
             minformbutton = new Label();
@@ -53,12 +55,13 @@
             SubjectsList = new Panel();
             flowLayoutPanelListSubjects = new FlowLayoutPanel();
             ControlPanel = new Panel();
+            button1 = new Button();
             textBoxSearch = new TextBox();
             Createbutton1 = new Button();
-            button1 = new Button();
             panel1.SuspendLayout();
             panelButton2.SuspendLayout();
             panelButton1.SuspendLayout();
+            panelButton3.SuspendLayout();
             panel2.SuspendLayout();
             profilePanel.SuspendLayout();
             SubjectsList.SuspendLayout();
@@ -71,6 +74,7 @@
             panel1.Controls.Add(panelIndicator);
             panel1.Controls.Add(panelButton2);
             panel1.Controls.Add(panelButton1);
+            panel1.Controls.Add(panelButton3);
             panel1.ForeColor = Color.FromArgb(240, 240, 255);
             panel1.Location = new Point(0, 20);
             panel1.Name = "panel1";
@@ -134,6 +138,31 @@
             buttontext1.Text = "Профиль";
             buttontext1.Click += panelButton1_Click;
             buttontext1.MouseEnter += panelButton1_MouseHover;
+            // 
+            // panelButton3
+            // 
+            panelButton3.BackColor = Color.FromArgb(0, 122, 204);
+            panelButton3.Controls.Add(label2);
+            panelButton3.Cursor = Cursors.Hand;
+            panelButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            panelButton3.Location = new Point(0, 120);
+            panelButton3.Name = "panelButton3";
+            panelButton3.Size = new Size(200, 50);
+            panelButton3.TabIndex = 4;
+            panelButton3.Click += panelButton3_Click;
+            panelButton3.MouseEnter += panelButton3_MouseEnter;
+            panelButton3.MouseLeave += panelButton3_MouseLeave;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(32, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 21);
+            label2.TabIndex = 0;
+            label2.Text = "Мои Предметы";
+            label2.Click += panelButton3_Click;
+            label2.MouseEnter += panelButton3_MouseEnter;
             // 
             // FormName
             // 
@@ -348,6 +377,16 @@
             ControlPanel.Size = new Size(600, 50);
             ControlPanel.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Location = new Point(355, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
+            // 
             // textBoxSearch
             // 
             textBoxSearch.Cursor = Cursors.Hand;
@@ -371,16 +410,6 @@
             Createbutton1.UseVisualStyleBackColor = true;
             Createbutton1.Click += Createbutton1_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(355, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Visible = false;
-            // 
             // LabsManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -401,6 +430,8 @@
             panelButton2.PerformLayout();
             panelButton1.ResumeLayout(false);
             panelButton1.PerformLayout();
+            panelButton3.ResumeLayout(false);
+            panelButton3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             profilePanel.ResumeLayout(false);
@@ -441,5 +472,7 @@
         private TextBox textBoxSearch;
         private FlowLayoutPanel flowLayoutPanelListSubjects;
         private Button button1;
+        private Panel panelButton3;
+        private Label label2;
     }
 }

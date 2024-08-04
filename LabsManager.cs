@@ -20,6 +20,7 @@ namespace LabsManager
         private int ruleLevel;
         private readonly ISubjectsService _subjectsServ;
         private Subject SelectedSubject;
+        private bool isMine = false;
 
         private List<Subject> subjects = new List<Subject>();
         // 0 - unauthorized
@@ -120,6 +121,17 @@ namespace LabsManager
 
         }
 
+        private void panelButton3_MouseEnter(object sender, EventArgs e)
+        {
+            panelButton3.BackColor = Color.FromArgb(10, 10, 250);
+
+        }
+
+        private void panelButton3_MouseLeave(object sender, EventArgs e)
+        {
+            panelButton3.BackColor = Color.Transparent;
+        }
+
         private void panelButton2_MouseLeave(object sender, EventArgs e)
         {
 
@@ -167,6 +179,14 @@ namespace LabsManager
             panelIndicator.Location = new Point(0, 20);
         }
 
+        private void panelButton3_Click(object sender, EventArgs e)
+        {
+            profilePanel.Visible = false;
+            SubjectsList.Visible = true;
+            panelIndicator.Location = new Point(0, 120);
+        }
+
+
 
         private async Task GetSubjects()
         {
@@ -198,7 +218,7 @@ namespace LabsManager
         {
             if (SubjectsList.Visible)
             {
-                if (ruleLevel >= 2)
+                if (ruleLevel >= 2 && !isMine)
                 {
                     Createbutton1.Visible = true;
                 }
@@ -206,6 +226,7 @@ namespace LabsManager
                 {
                     Createbutton1.Visible = false;
                 }
+
             }
         }
 
