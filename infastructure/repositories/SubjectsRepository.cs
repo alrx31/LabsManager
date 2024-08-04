@@ -14,6 +14,9 @@ namespace LabsManager.infastructure.repositories
     public interface ISubjectsRepository
     {
        Task<List<Subject>> getAllSubjects();
+       Task<bool> checkIsFollow(Subject subject,int userId);
+       Task createRegistration(Subject subject, int userId);
+       Task deleteRegistration(Subject subject, int userId);
     }
 
     public class SubjectsRepository: ISubjectsRepository
@@ -50,6 +53,29 @@ namespace LabsManager.infastructure.repositories
             return res2;            
         }
 
+        async Task<bool> ISubjectsRepository.checkIsFollow(Subject subject,int userId)
+        {
+            var res = await _context.follows.FirstOrDefaultAsync(e => e.subjectId == subject.id && e.studentId == userId);
+            return res != null;
+        }
+
+        async Task ISubjectsRepository.createRegistration(Subject subject, int userId)
+        {
+            await _context.follows.AddAsync(new FollowStudentSubject
+            {
+                subjectId = subject.id,
+                studentId = userId ,
+                followDate = DateTime.UtcNow,
+            });
+            await _context.SaveChangesAsync();
+        }
+
+        async Task ISubjectsRepository.deleteRegistration(Subject subject, int userId)
+        {
+            var entity = await _context.follows.FirstOrDefaultAsync(e=>e.subjectId == subject.id && e.studentId == userId);
+            _context.follows.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
 
     }
 }

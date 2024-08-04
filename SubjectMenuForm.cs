@@ -19,24 +19,34 @@ namespace LabsManager
     {
         private readonly string _toParse;
         private readonly ISubjectsService _service;
+        private readonly int _ruleLevel;
+        private readonly Subject sbj;
+        private readonly PersonsBase person;
 
-        public SubjectMenuForm(Subject sbj,PersonsBase person, int ruleLevel)
+        public SubjectMenuForm(Subject sbj, PersonsBase person, int ruleLevel)
         {
+            this.person = person;
+            this.sbj = sbj;
             _service = new SubjectsService();
-
-            InitializeComponent();
-
+            _ruleLevel = ruleLevel;
             _toParse = sbj.author.name;
             _toParse = sbj.id + "" + ". Название: " + sbj.name + "\nКоличество Лабораторных: " + (sbj.labs != null ? sbj.labs.Count + "" : 0 + "") + "\nОписание: " + sbj.description + "\nНужно часов: " + sbj.needHours + "\nАвтор: " + sbj.author.name;
+
+            InitializeComponent();
+            DrawUI();
+        }
+
+        async void DrawUI()
+        {
             label1.Text = _toParse;
-            if(ruleLevel == 1)
+            if (_ruleLevel == 1)
             {
-                var SubscButton = new Button();
                 SubscButton.FlatStyle = FlatStyle.Flat;
                 SubscButton.FlatAppearance.BorderSize = 0;
                 SubscButton.Visible = true;
 
-                if (!checkIsFollow(sbj, person))
+
+                if (!await checkIsFollow(sbj, person))
                 {
                     SubscButton.Text = "Записаться";
                 }
@@ -44,21 +54,41 @@ namespace LabsManager
                 {
                     SubscButton.Text = "Отписаться";
                 }
-            }else if(ruleLevel >= 2)
-            {
-                throw new NotImplementedException();
             }
+            else if (_ruleLevel >= 2)
+            {
+                SubscButton.FlatStyle = FlatStyle.Flat;
+                SubscButton.FlatAppearance.BorderSize = 0;
+                SubscButton.Visible = true;
 
-
+                SubscButton.Text = "Редактировать";
+            }
         }
 
-
-
-        bool checkIsFollow(Subject sbj, PersonsBase person)
+        async Task<bool> checkIsFollow(Subject sbj, PersonsBase person)
         {
-            return true;
+            return await _service.checkFollow(sbj,person.id);
         }
-        
+
+        private void SubscButton_Click(object sender, EventArgs e)
+        {
+            if(_ruleLevel == 1)
+            {
+                if (SubscButton.Text == "Записаться")
+                {
+                    _service.createRegistration(sbj, person.id);
+                    MessageBox.Show("Success");
+                    SubscButton.Text = "Отписаться";
+                }
+                else
+                {
+                    _service.canselRegistration(sbj, person.id);
+                    MessageBox.Show("Success");
+                    SubscButton.Text = "Записаться";
+
+                }
+            }
+        }
     }
 
 

@@ -30,17 +30,16 @@ namespace LabsManager
         public LabsManager()
         {
             InitializeComponent();
-            _person = new Teacher
+            _person = new Student
             {
                 id = 1,
                 name = "Иванов Иван Иванович",
                 login = "ivanov",
                 password = "123",
                 faculty = "ФИТ",
-                cafedra = "12",
-
+                group= 12
             };
-            ruleLevel = 2;
+            ruleLevel = 1;
 
             _subjectsServ = new SubjectsService();
             panelIndicator.Location = new Point(0, 20);

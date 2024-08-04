@@ -55,6 +55,7 @@
             ControlPanel = new Panel();
             textBoxSearch = new TextBox();
             Createbutton1 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             panelButton2.SuspendLayout();
             panelButton1.SuspendLayout();
@@ -339,6 +340,7 @@
             // ControlPanel
             // 
             ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
+            ControlPanel.Controls.Add(button1);
             ControlPanel.Controls.Add(textBoxSearch);
             ControlPanel.Controls.Add(Createbutton1);
             ControlPanel.Location = new Point(0, 530);
@@ -353,7 +355,7 @@
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.PlaceholderText = "Поиск...";
             textBoxSearch.Size = new Size(300, 23);
-            textBoxSearch.TabIndex = 1;
+            textBoxSearch.TabIndex = 2;
             textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // Createbutton1
@@ -364,10 +366,20 @@
             Createbutton1.Location = new Point(488, 8);
             Createbutton1.Name = "Createbutton1";
             Createbutton1.Size = new Size(100, 30);
-            Createbutton1.TabIndex = 0;
+            Createbutton1.TabIndex = 3;
             Createbutton1.Text = "Создать";
             Createbutton1.UseVisualStyleBackColor = true;
             Createbutton1.Click += Createbutton1_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(355, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             // 
             // LabsManager
             // 
@@ -428,5 +440,6 @@
         private Button Createbutton1;
         private TextBox textBoxSearch;
         private FlowLayoutPanel flowLayoutPanelListSubjects;
+        private Button button1;
     }
 }

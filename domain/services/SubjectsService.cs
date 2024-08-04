@@ -12,6 +12,9 @@ namespace LabsManager.domain.services
     public interface ISubjectsService
     {
         Task<List<Subject>> getAllSubjects();
+        Task<bool> checkFollow(Subject subject,int userId);
+        Task createRegistration(Subject subject,int userId);
+        Task canselRegistration(Subject subject,int userId);
     }
 
     public class SubjectsService: ISubjectsService
@@ -26,6 +29,38 @@ namespace LabsManager.domain.services
         async Task<List<Subject>> ISubjectsService.getAllSubjects()
         {
             return await _repository.getAllSubjects();
+        }
+
+        async Task<bool> ISubjectsService.checkFollow(Subject subject,int userId)
+        {
+            return await _repository.checkIsFollow(subject,userId);
+        }
+
+        async Task ISubjectsService.createRegistration(Subject subject, int userId)
+        {
+            if(userId <= 0)
+            {
+                MessageBox.Show("Неверный юзер");
+            }
+            if(subject.id <= 0)
+            {
+                MessageBox.Show("Неверный предмет");
+            }
+            await _repository.createRegistration(subject, userId);
+        }
+
+        async Task ISubjectsService.canselRegistration(Subject subject, int userId)
+        {
+            if (userId <= 0)
+            {
+                MessageBox.Show("Неверный юзер");
+            }
+            if (subject.id <= 0)
+            {
+                MessageBox.Show("Неверный предмет");
+            }
+
+            await _repository.deleteRegistration(subject,userId);  
         }
     }
 }
