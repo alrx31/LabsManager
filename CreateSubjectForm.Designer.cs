@@ -34,13 +34,16 @@
             richTextBoxDesc = new RichTextBox();
             label3 = new Label();
             numericUpDownNeedHours = new NumericUpDown();
+            buttonCreateSubject = new Button();
+            buttonAddLaboratory = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)numericUpDownNeedHours).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(48, 40);
+            label1.Location = new Point(24, 15);
             label1.Name = "label1";
             label1.Size = new Size(59, 15);
             label1.TabIndex = 0;
@@ -49,7 +52,7 @@
             // textBoxName
             // 
             textBoxName.BorderStyle = BorderStyle.FixedSingle;
-            textBoxName.Location = new Point(48, 58);
+            textBoxName.Location = new Point(24, 33);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(262, 23);
             textBoxName.TabIndex = 1;
@@ -57,7 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(48, 105);
+            label2.Location = new Point(24, 75);
             label2.Name = "label2";
             label2.Size = new Size(62, 15);
             label2.TabIndex = 2;
@@ -66,7 +69,7 @@
             // richTextBoxDesc
             // 
             richTextBoxDesc.BorderStyle = BorderStyle.FixedSingle;
-            richTextBoxDesc.Location = new Point(48, 123);
+            richTextBoxDesc.Location = new Point(24, 93);
             richTextBoxDesc.Name = "richTextBoxDesc";
             richTextBoxDesc.Size = new Size(486, 96);
             richTextBoxDesc.TabIndex = 3;
@@ -75,7 +78,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(48, 245);
+            label3.Location = new Point(24, 209);
             label3.Name = "label3";
             label3.Size = new Size(98, 15);
             label3.TabIndex = 4;
@@ -83,16 +86,48 @@
             // 
             // numericUpDownNeedHours
             // 
-            numericUpDownNeedHours.Location = new Point(48, 276);
+            numericUpDownNeedHours.Location = new Point(24, 227);
             numericUpDownNeedHours.Name = "numericUpDownNeedHours";
             numericUpDownNeedHours.Size = new Size(120, 23);
             numericUpDownNeedHours.TabIndex = 5;
+            // 
+            // buttonCreateSubject
+            // 
+            buttonCreateSubject.Font = new Font("Segoe UI", 14F);
+            buttonCreateSubject.Location = new Point(24, 495);
+            buttonCreateSubject.Name = "buttonCreateSubject";
+            buttonCreateSubject.Size = new Size(147, 43);
+            buttonCreateSubject.TabIndex = 6;
+            buttonCreateSubject.Text = " Создать";
+            buttonCreateSubject.UseVisualStyleBackColor = true;
+            buttonCreateSubject.Click += buttonCreateSubject_Click;
+            // 
+            // buttonAddLaboratory
+            // 
+            buttonAddLaboratory.Location = new Point(20, 295);
+            buttonAddLaboratory.Name = "buttonAddLaboratory";
+            buttonAddLaboratory.Size = new Size(124, 121);
+            buttonAddLaboratory.TabIndex = 7;
+            buttonAddLaboratory.Text = "Добавить Лабораторную";
+            buttonAddLaboratory.UseVisualStyleBackColor = true;
+            buttonAddLaboratory.Click += buttonAddLaboratory_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = SystemColors.ButtonFace;
+            flowLayoutPanel1.Location = new Point(203, 295);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(558, 121);
+            flowLayoutPanel1.TabIndex = 8;
             // 
             // CreateSubjectForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(buttonAddLaboratory);
+            Controls.Add(buttonCreateSubject);
             Controls.Add(numericUpDownNeedHours);
             Controls.Add(label3);
             Controls.Add(richTextBoxDesc);
@@ -114,5 +149,8 @@
         private RichTextBox richTextBoxDesc;
         private Label label3;
         private NumericUpDown numericUpDownNeedHours;
+        private Button buttonCreateSubject;
+        private Button buttonAddLaboratory;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

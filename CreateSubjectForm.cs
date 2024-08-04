@@ -1,4 +1,7 @@
-﻿using System;
+﻿using domain.entities;
+using LabsManager.domain.services;
+using LabsManager.infastructure.repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,47 @@ namespace LabsManager
 {
     public partial class CreateSubjectForm : Form
     {
-        public CreateSubjectForm()
+        private readonly ISubjectsService _servise;
+        private readonly int userId;
+
+        public CreateSubjectForm(int userId)
         {
+            _servise = new SubjectsService();
             InitializeComponent();
+            this.userId = userId;
+        }
+
+        private void buttonCreateSubject_Click(object sender, EventArgs e)
+        {
+
+            if (String.IsNullOrEmpty(this.textBoxName.Text) ||
+                String.IsNullOrEmpty(this.richTextBoxDesc.Text) ||
+                this.numericUpDownNeedHours.Value == 0
+                )
+            {
+                MessageBox.Show("Заполните все поля");
+            }
+
+
+            var sbj = new Subject
+            {
+                name = this.textBoxName.Text,
+                description = this.richTextBoxDesc.Text,
+                needHours = (int)this.numericUpDownNeedHours.Value,
+                authorId = this.userId,
+            };
+
+
+            _servise.AddSubject(sbj);
+
+            MessageBox.Show("Done");
+        }
+
+        private void buttonAddLaboratory_Click(object sender, EventArgs e)
+        {
+            var laboratoryForm = new LabCreateForm(userId);
+            
+            laboratoryForm.Show();
         }
     }
 }

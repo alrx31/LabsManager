@@ -18,6 +18,7 @@ namespace LabsManager.infastructure.repositories
        Task createRegistration(Subject subject, int userId);
        Task deleteRegistration(Subject subject, int userId);
         List<FollowStudentSubject> getFollowsSubjectList(int userId);
+        Task addSubject(Subject sbj);
     }
 
     public class SubjectsRepository: ISubjectsRepository
@@ -100,6 +101,20 @@ namespace LabsManager.infastructure.repositories
             }
 
             return res2;
+        }
+
+        async Task ISubjectsRepository.addSubject(Subject sbj)
+        {
+            MessageBox.Show(sbj.ToString());
+
+            try
+            {
+                await _context.subjects.AddAsync(sbj);
+                await _context.SaveChangesAsync();
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.InnerException.Message);
+            }
         }
     }
 }

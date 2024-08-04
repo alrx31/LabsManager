@@ -31,16 +31,16 @@ namespace LabsManager
         public LabsManager()
         {
             InitializeComponent();
-            _person = new Student
+            _person = new Teacher
             {
                 id = 1,
                 name = "Иванов Иван Иванович",
                 login = "ivanov",
                 password = "123",
                 faculty = "ФИТ",
-                group = 12
+                cafedra = "лфывоалф"
             };
-            ruleLevel = 1;
+            ruleLevel = 2;
 
             _subjectsServ = new SubjectsService();
             panelIndicator.Location = new Point(0, 20);
@@ -50,8 +50,8 @@ namespace LabsManager
         {
             /*var Login = new LoginForm();
             var result = Login.Login(ref ruleLevel, ref _person);
-            if (result == 0) { this.Close(); }*/
-
+            if (result == 0) { this.Close(); }
+*/
             GetSubjects();
 
         }
@@ -204,7 +204,7 @@ namespace LabsManager
 
         private void Createbutton1_Click(object sender, EventArgs e)
         {
-            var CreateForm = new CreateSubjectForm();
+            var CreateForm = new CreateSubjectForm(_person.id);
             CreateForm.ShowDialog();
 
         }

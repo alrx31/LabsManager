@@ -358,6 +358,7 @@
             // 
             // flowLayoutPanelListSubjects
             // 
+            flowLayoutPanelListSubjects.AutoScroll = true;
             flowLayoutPanelListSubjects.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanelListSubjects.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             flowLayoutPanelListSubjects.Location = new Point(0, 0);
@@ -365,6 +366,7 @@
             flowLayoutPanelListSubjects.Padding = new Padding(20);
             flowLayoutPanelListSubjects.Size = new Size(600, 532);
             flowLayoutPanelListSubjects.TabIndex = 1;
+            flowLayoutPanelListSubjects.WrapContents = false;
             // 
             // ControlPanel
             // 
