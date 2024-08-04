@@ -17,6 +17,7 @@ namespace LabsManager.infastructure.repositories
        Task<bool> checkIsFollow(Subject subject,int userId);
        Task createRegistration(Subject subject, int userId);
        Task deleteRegistration(Subject subject, int userId);
+        List<FollowStudentSubject> getFollowsSubjectList(int userId);
     }
 
     public class SubjectsRepository: ISubjectsRepository
@@ -77,5 +78,28 @@ namespace LabsManager.infastructure.repositories
             await _context.SaveChangesAsync();
         }
 
+        List<FollowStudentSubject> ISubjectsRepository.getFollowsSubjectList(int userId)
+        {
+            var res = (from follows in _context.follows
+                       where follows.studentId == userId
+                       join subjects in _context.subjects
+                       on follows.subjectId equals subjects.id
+                       select new { follows.id,follows.followDate, follows.subjectId,follows.studentId,follows.student,subjects}).ToList();
+            var res2 = new List<FollowStudentSubject>();
+
+            foreach (var r in res)
+            {
+                res2.Add(new FollowStudentSubject()
+                {
+                    id = r.id,
+                    subjectId = r.subjectId,
+                    studentId = r.studentId,
+                    followDate = r.followDate,
+                    subject = r.subjects
+                }) ;
+            }
+
+            return res2;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using domain.entities;
+﻿using Accessibility;
+using domain.entities;
 using LabsManager.infastructure.repositories;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace LabsManager.domain.services
         Task<bool> checkFollow(Subject subject,int userId);
         Task createRegistration(Subject subject,int userId);
         Task canselRegistration(Subject subject,int userId);
+        List<FollowStudentSubject> getFollowsSubjectsList(int userId);
     }
 
     public class SubjectsService: ISubjectsService
@@ -61,6 +63,11 @@ namespace LabsManager.domain.services
             }
 
             await _repository.deleteRegistration(subject,userId);  
+        }
+
+        List<FollowStudentSubject> ISubjectsService.getFollowsSubjectsList(int userId)
+        {
+            return _repository.getFollowsSubjectList(userId);
         }
     }
 }

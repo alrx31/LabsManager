@@ -38,7 +38,7 @@ namespace LabsManager
                 login = "ivanov",
                 password = "123",
                 faculty = "ФИТ",
-                group= 12
+                group = 12
             };
             ruleLevel = 1;
 
@@ -167,8 +167,12 @@ namespace LabsManager
 
         private void panelButton2_Click(object sender, EventArgs e)
         {
+            isMine = false;
             profilePanel.Visible = false;
+            
+            SubjectsList.Visible = false;
             SubjectsList.Visible = true;
+            
             panelIndicator.Location = new Point(0, 70);
         }
 
@@ -181,8 +185,12 @@ namespace LabsManager
 
         private void panelButton3_Click(object sender, EventArgs e)
         {
+            isMine = true;
             profilePanel.Visible = false;
+            // need to redraw component
+            SubjectsList.Visible = false;
             SubjectsList.Visible = true;
+            
             panelIndicator.Location = new Point(0, 120);
         }
 
@@ -207,7 +215,7 @@ namespace LabsManager
             var sender1 = sender.ToString().Split("Text: ")[1][0].ToString();
 
 
-            var SubjectMenuForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1)-1), _person,ruleLevel);
+            var SubjectMenuForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1) - 1), _person, ruleLevel);
 
 
             SubjectMenuForm.ShowDialog();
@@ -218,6 +226,7 @@ namespace LabsManager
         {
             if (SubjectsList.Visible)
             {
+                FillSubjectsList(subjects);
                 if (ruleLevel >= 2 && !isMine)
                 {
                     Createbutton1.Visible = true;
@@ -226,8 +235,18 @@ namespace LabsManager
                 {
                     Createbutton1.Visible = false;
                 }
-
+                if (isMine)
+                {
+                    var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
+                    var list = new List<Subject>();
+                    foreach (var subject in subjectsF)
+                    {
+                        list.Add(subject.subject);
+                    }
+                    FillSubjectsList(list);
+                }
             }
+            
         }
 
 
@@ -272,21 +291,24 @@ namespace LabsManager
                 labelNotFound.Text = "Предметы не найдены";
                 panel.Controls.Add(labelNotFound);
             }
-            
+
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string value = textBoxSearch.Text.Trim().ToLower();
-            var tempCollection  = new List<Subject>();
-            foreach (Subject s in this.subjects) {
+            var tempCollection = new List<Subject>();
+            foreach (Subject s in this.subjects)
+            {
                 if (s.name.ToLower().Contains(value))
                 {
                     tempCollection.Add(s);
-                }    
+                }
             }
             FillSubjectsList(tempCollection);
         }
+
+        
     }
 
 }
