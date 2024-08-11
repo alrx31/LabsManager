@@ -13,7 +13,7 @@ namespace infrastructure.persistence
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=localhost;Database=LabsManager;Username=postgres;Password=M3g6Ar23");
+                optionsBuilder.UseNpgsql("Host=localhost;Database=LabsManager;Username=alex;Password=postgres123");
             }
         }
 

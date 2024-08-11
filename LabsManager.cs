@@ -48,10 +48,10 @@ namespace LabsManager
 
         private void LabsManager_Load(object sender, EventArgs e)
         {
-            /*var Login = new LoginForm();
+            var Login = new LoginForm();
             var result = Login.Login(ref ruleLevel, ref _person);
             if (result == 0) { this.Close(); }
-*/
+
             GetSubjects();
 
         }

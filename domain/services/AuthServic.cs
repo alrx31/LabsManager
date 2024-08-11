@@ -37,6 +37,7 @@ namespace domain.services
             {
                 return null;
             }
+            password = getHash(password);
             var result = _repository.Login(login,password);
 
 
@@ -53,6 +54,8 @@ namespace domain.services
             {
                 return 0;
             }
+            model.password = getHash(model.password);
+
             return _repository.RegisterStudent(model);
         }
 
@@ -66,7 +69,20 @@ namespace domain.services
             {
                 return 0;
             }
+            model.password = getHash(model.password);
             return _repository.RegisterTeacher(model);
+        }
+
+        private string getHash(string password)
+        {
+            var key = "LASifj2po-123LSKJF#INO2";
+            var data = Encoding.UTF8.GetBytes(password + key);
+            using (var sha = System.Security.Cryptography.SHA256.Create())
+            {
+                var hash = sha.ComputeHash(data);
+                return Convert.ToBase64String(hash);
+            }
+
         }
     }
 }
