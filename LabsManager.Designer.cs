@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panelButton4 = new Panel();
+            label3 = new Label();
             panelIndicator = new Panel();
             panelButton2 = new Panel();
             label1 = new Label();
@@ -59,6 +61,7 @@
             textBoxSearch = new TextBox();
             Createbutton1 = new Button();
             panel1.SuspendLayout();
+            panelButton4.SuspendLayout();
             panelButton2.SuspendLayout();
             panelButton1.SuspendLayout();
             panelButton3.SuspendLayout();
@@ -75,11 +78,37 @@
             panel1.Controls.Add(panelButton2);
             panel1.Controls.Add(panelButton1);
             panel1.Controls.Add(panelButton3);
+            panel1.Controls.Add(panelButton4);
             panel1.ForeColor = Color.FromArgb(240, 240, 255);
             panel1.Location = new Point(0, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 524);
             panel1.TabIndex = 0;
+            // 
+            // panelButton4
+            // 
+            panelButton4.BackColor = Color.FromArgb(0, 122, 204);
+            panelButton4.Controls.Add(label3);
+            panelButton4.Cursor = Cursors.Hand;
+            panelButton4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            panelButton4.Location = new Point(0, 170);
+            panelButton4.Name = "panelButton4";
+            panelButton4.Size = new Size(200, 50);
+            panelButton4.TabIndex = 5;
+            panelButton4.Click += panelButton4_Click;
+            panelButton4.MouseEnter += panelButton4_MouseEnter;
+            panelButton4.MouseLeave += panelButton4_MouseLeave;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(55, 15);
+            label3.Name = "label3";
+            label3.Size = new Size(54, 21);
+            label3.TabIndex = 0;
+            label3.Text = "Лабы";
+            label3.Click += panelButton4_Click;
+            label3.MouseEnter += panelButton4_MouseEnter;
             // 
             // panelIndicator
             // 
@@ -428,6 +457,8 @@
             Text = "LabsManager";
             Load += LabsManager_Load;
             panel1.ResumeLayout(false);
+            panelButton4.ResumeLayout(false);
+            panelButton4.PerformLayout();
             panelButton2.ResumeLayout(false);
             panelButton2.PerformLayout();
             panelButton1.ResumeLayout(false);
@@ -476,5 +507,7 @@
         private Button button1;
         private Panel panelButton3;
         private Label label2;
+        private Panel panelButton4;
+        private Label label3;
     }
 }

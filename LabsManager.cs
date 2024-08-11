@@ -126,6 +126,10 @@ namespace LabsManager
             panelButton3.BackColor = Color.FromArgb(10, 10, 250);
 
         }
+        private void panelButton4_MouseEnter(object sender, EventArgs e)
+        {
+            panelButton4.BackColor = Color.FromArgb(10, 10, 250);
+        }
 
         private void panelButton3_MouseLeave(object sender, EventArgs e)
         {
@@ -136,6 +140,11 @@ namespace LabsManager
         {
 
             panelButton2.BackColor = Color.Transparent;
+        }
+        private void panelButton4_MouseLeave(object sender, EventArgs e)
+        {
+
+            panelButton4.BackColor = Color.Transparent;
         }
 
         private void profilePanel_VisibleChanged(object sender, EventArgs e)
@@ -169,10 +178,10 @@ namespace LabsManager
         {
             isMine = false;
             profilePanel.Visible = false;
-            
+
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
-            
+
             panelIndicator.Location = new Point(0, 70);
         }
 
@@ -190,8 +199,17 @@ namespace LabsManager
             // need to redraw component
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
-            
+
             panelIndicator.Location = new Point(0, 120);
+        }
+        private void panelButton4_Click(object sender, EventArgs e)
+        {
+            isMine = true;
+            profilePanel.Visible = false;
+
+            // need Component
+
+            panelIndicator.Location = new Point(0, 170);
         }
 
 
@@ -237,7 +255,7 @@ namespace LabsManager
                 }
                 if (isMine)
                 {
-                    if(ruleLevel == 1)
+                    if (ruleLevel == 1)
                     {
                         var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
                         var list = new List<Subject>();
@@ -246,14 +264,15 @@ namespace LabsManager
                             list.Add(subject.subject);
                         }
                         FillSubjectsList(list);
-                    }else if(ruleLevel >= 2)
+                    }
+                    else if (ruleLevel >= 2)
                     {
                         var subjects = _subjectsServ.getTeacherSubjects(_person.id);
                         FillSubjectsList(subjects);
                     }
                 }
             }
-            
+
         }
 
 
@@ -315,7 +334,7 @@ namespace LabsManager
             FillSubjectsList(tempCollection);
         }
 
-        
+       
     }
 
 }
