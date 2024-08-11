@@ -59,6 +59,7 @@ namespace LabsManager
             _servise.AddSubject(sbj);
 
             MessageBox.Show("Done");
+            this.Close();
         }
 
         private void buttonAddLaboratory_Click(object sender, EventArgs e)

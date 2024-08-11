@@ -39,12 +39,8 @@ namespace LabsManager
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-
-                // Читаем файл в массив байтов
                 fileData = File.ReadAllBytes(filePath);
-
-                // Сохраняем файл в базу данных
-                MessageBox.Show($"Файл успешно загружен:{fileData}");
+                MessageBox.Show("Файл успешно загружен");
             }
         }
 

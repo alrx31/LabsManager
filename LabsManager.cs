@@ -225,7 +225,6 @@ namespace LabsManager
 
         private void Createbutton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(sender.ToString());
             var CreateForm = new CreateSubjectForm(_person.id);
             CreateForm.ShowDialog();
 
