@@ -71,6 +71,25 @@ namespace LabsManager
                 var res = laboratoryForm.laboratory;
                 labs.Add(res);
                 MessageBox.Show("Лабораторная работа добавлена");
+                updateLabsList();
+            }
+        }
+
+        private void updateLabsList()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var lab in labs)
+            {
+                Panel panel = new Panel();
+                panel.Size = new Size(100,100);
+                panel.BackColor = Color.White;
+                Label label = new Label();
+                label.Text = lab.name;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+
+                panel.Controls.Add(label);
+
+                flowLayoutPanel1.Controls.Add(panel);
             }
         }
 

@@ -98,7 +98,6 @@
             label4.Size = new Size(76, 15);
             label4.TabIndex = 6;
             label4.Text = "Упражнения";
-            label4.Click += label4_Click;
             // 
             // openFileDialogGetFile
             // 
