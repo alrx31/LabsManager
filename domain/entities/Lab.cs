@@ -12,6 +12,10 @@ namespace domain.entities
         public string name { get; set; }
         public string description { get; set; }
         public string materials { get; set; }
+
+        public int subjectId { get; set; }
+        public Subject subject { get; set; }
+        
         public byte[] exercises { get; set; }
         
     }

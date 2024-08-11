@@ -21,6 +21,7 @@ namespace LabsManager.infastructure.repositories
         List<FollowStudentSubject> getFollowsSubjectList(int userId);
         Task addSubject(Subject sbj);
         List<Subject> getTeacherSubjects(int teacherId);
+        Task addLaboratory(Lab lab);
     }
 
     public class SubjectsRepository: ISubjectsRepository
@@ -37,7 +38,7 @@ namespace LabsManager.infastructure.repositories
             var res = (from subject in _context.subjects
                        join teacher in _context.teachers
                        on subject.authorId equals teacher.id
-                       select new { subject.name,subject.needHours, subject.id, subject.authorId, subject.description, subject.author });
+                       select new { subject.name,subject.needHours, subject.id, subject.authorId, subject.description, subject.author,subject.labs });
             
             var res2 = new List<Subject>();
 
@@ -50,7 +51,8 @@ namespace LabsManager.infastructure.repositories
                     authorId = r.authorId,
                     description = r.description,
                     author = r.author,
-                    needHours = r.needHours
+                    needHours = r.needHours,
+                    labs = r.labs
                 });
             }
 
@@ -120,7 +122,7 @@ namespace LabsManager.infastructure.repositories
                        where subject.authorId == teacherId
                        join teacher in _context.teachers
                        on subject.authorId equals teacher.id
-                       select new { subject.name, subject.needHours, subject.id, subject.authorId, subject.description, subject.author });
+                       select new { subject.name, subject.needHours, subject.id, subject.authorId, subject.description, subject.author,subject.labs });
 
             var res2 = new List<Subject>();
 
@@ -133,11 +135,18 @@ namespace LabsManager.infastructure.repositories
                     authorId = r.authorId,
                     description = r.description,
                     author = r.author,
-                    needHours = r.needHours
+                    needHours = r.needHours,
+                    labs = r.labs
                 });
             }
 
             return res2;
+        }
+
+        public async Task addLaboratory(Lab lab)
+        {
+            await _context.AddAsync(lab);
+            await _context.SaveChangesAsync();
         }
     }
 }

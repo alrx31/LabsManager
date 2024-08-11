@@ -37,6 +37,7 @@
             label4 = new Label();
             openFileDialogGetFile = new OpenFileDialog();
             button1 = new Button();
+            buttonCreate2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -113,11 +114,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // buttonCreate2
+            // 
+            buttonCreate2.Location = new Point(538, 368);
+            buttonCreate2.Name = "buttonCreate2";
+            buttonCreate2.Size = new Size(157, 47);
+            buttonCreate2.TabIndex = 8;
+            buttonCreate2.Text = "Создать";
+            buttonCreate2.UseVisualStyleBackColor = true;
+            buttonCreate2.Click += buttonCreate2_Click;
+            // 
             // LabCreateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonCreate2);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(richTextBoxMaterials);
@@ -143,5 +155,6 @@
         private Label label4;
         private OpenFileDialog openFileDialogGetFile;
         private Button button1;
+        private Button buttonCreate2;
     }
 }

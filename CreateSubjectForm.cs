@@ -18,6 +18,8 @@ namespace LabsManager
         private readonly ISubjectsService _servise;
         private readonly int userId;
 
+        private List<Lab> labs = new List<Lab>();  
+
         public CreateSubjectForm(int userId)
         {
             _servise = new SubjectsService();
@@ -37,15 +39,23 @@ namespace LabsManager
             }
 
 
+
+
             var sbj = new Subject
             {
                 name = this.textBoxName.Text,
                 description = this.richTextBoxDesc.Text,
                 needHours = (int)this.numericUpDownNeedHours.Value,
                 authorId = this.userId,
+                labs = labs
             };
 
 
+            foreach(var lab in labs)
+            {
+                _servise.addLaboratory(lab);
+            }
+            
             _servise.AddSubject(sbj);
 
             MessageBox.Show("Done");
@@ -55,7 +65,13 @@ namespace LabsManager
         {
             var laboratoryForm = new LabCreateForm(userId);
             
-            laboratoryForm.Show();
+            if(laboratoryForm.ShowDialog() == DialogResult.OK)
+            {
+                var res = laboratoryForm.laboratory;
+                labs.Add(res);
+                MessageBox.Show("Лабораторная работа добавлена");
+            }
         }
+
     }
 }

@@ -44,14 +44,17 @@ namespace LabsManager
 
             _subjectsServ = new SubjectsService();
             panelIndicator.Location = new Point(0, 20);
+
+
         }
 
         private void LabsManager_Load(object sender, EventArgs e)
         {
+            /*
             var Login = new LoginForm();
             var result = Login.Login(ref ruleLevel, ref _person);
             if (result == 0) { this.Close(); }
-
+            */
             GetSubjects();
 
         }
@@ -206,7 +209,7 @@ namespace LabsManager
         {
             isMine = true;
             profilePanel.Visible = false;
-
+            SubjectsList.Visible = false;
             // need Component
 
             panelIndicator.Location = new Point(0, 170);
@@ -222,6 +225,7 @@ namespace LabsManager
 
         private void Createbutton1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(sender.ToString());
             var CreateForm = new CreateSubjectForm(_person.id);
             CreateForm.ShowDialog();
 

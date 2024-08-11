@@ -19,6 +19,7 @@ namespace LabsManager.domain.services
         List<FollowStudentSubject> getFollowsSubjectsList(int userId);
         Task AddSubject(Subject sbj);
         List<Subject> getTeacherSubjects(int teacherId);
+        Task addLaboratory(Lab lab);
     }
 
     public class SubjectsService: ISubjectsService
@@ -80,6 +81,23 @@ namespace LabsManager.domain.services
         List<Subject> ISubjectsService.getTeacherSubjects(int teacherId)
         {
             return _repository.getTeacherSubjects(teacherId);
+        }
+
+        async Task ISubjectsService.addLaboratory(Lab lab)
+        {
+            if (lab == null)
+            {
+                MessageBox.Show("Неверная лаба");
+            }
+            if (string.IsNullOrEmpty(lab.name)) 
+            {
+                MessageBox.Show("Неверный предмет");
+            }
+            if(lab.materials == null)
+            {
+                MessageBox.Show("Нет материалов");
+            }
+            await _repository.addLaboratory(lab);
         }
     }
 }
