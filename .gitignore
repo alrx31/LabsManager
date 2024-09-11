@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/Server/LabsManager/obj
+/Server/LabsManager/.vs/LabsManager
+/Server/LabsManager/domain/obj
+/Server/LabsManager/infastructure/bin/Debug/net8.0
+/Server/LabsManager/infastructure/obj
