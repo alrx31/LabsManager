@@ -1,6 +1,11 @@
 ﻿namespace LabsManager.Infrastructure.Repository
 {
-    public class PassRepository
+    public interface IPassRepository
+    {
+
+    }
+
+    public class PassRepository: IPassRepository
     {
     }
 }

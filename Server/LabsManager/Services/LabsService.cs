@@ -1,6 +1,11 @@
 ﻿namespace LabsManager.Services
 {
-    public class LabsService
+    public interface ILabsService
+    {
+
+    }
+
+    public class LabsService: ILabsService
     {
     }
 }

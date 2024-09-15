@@ -1,6 +1,11 @@
 ﻿namespace LabsManager.Services
 {
-    public class PassService
+    public interface IPassService
+    {
+
+    }
+
+    public class PassService: IPassService
     {
     }
 }

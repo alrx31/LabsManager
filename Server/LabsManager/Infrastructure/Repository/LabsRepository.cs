@@ -1,6 +1,12 @@
 ﻿namespace LabsManager.Infrastructure.Repository
 {
-    public class LabsRepository
+    public interface ILabsRepository
+    {
+
+    }
+
+
+    public class LabsRepository: ILabsRepository
     {
     }
 }
