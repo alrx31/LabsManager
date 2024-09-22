@@ -18,5 +18,27 @@ namespace LabsManager.Controllers
         {
             return Ok(await _personService.LoginStudent(model));
         }
+
+        [HttpPost("teacher-login")]
+        public async Task<IActionResult> LoginTeacher([FromBody] LoginDTO model)
+        {
+            return Ok(await _personService.LoginTeacher(model));
+        }
+
+        [HttpPut("student-register")]
+        public async Task<IActionResult> RegisterStudent([FromBody] RegisterStudentDTO model)
+        {
+            await _personService.RegisterStudent(model);
+            
+            return Ok();
+        }
+
+        [HttpPut("teacher-register")]
+        public async Task<IActionResult> RegisterTeacher([FromBody] RegisterTeacherDTO model)
+        {
+            await _personService.RegisterTeacher(model);
+
+            return Ok();
+        }
     }
 }

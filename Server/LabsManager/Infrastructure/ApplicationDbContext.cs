@@ -19,6 +19,9 @@ namespace LabsManager.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Student>().HasKey(t => t.Id);
+            modelBuilder.Entity<Teacher>().HasKey(t => t.Id);
+
             modelBuilder.Entity<Teacher>()
                 .HasMany(t => t.Labs)
                 .WithOne(l => l.Teacher)

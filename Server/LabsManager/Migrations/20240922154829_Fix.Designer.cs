@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LabsManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240915201342_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240922154829_Fix")]
+    partial class Fix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,10 +100,6 @@ namespace LabsManager.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Faculty")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("Group")
                         .IsRequired()
                         .HasColumnType("text");
@@ -117,10 +113,6 @@ namespace LabsManager.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Speciality")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -138,10 +130,6 @@ namespace LabsManager.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Cafedra")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Faculty")
                         .IsRequired()
                         .HasColumnType("text");
 
