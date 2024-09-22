@@ -1,5 +1,8 @@
 using domain.entities;
 using domain.services;
+using LabsManager.domain.DTO;
+using System.Text;
+using System.Text.Json;
 
 namespace LabsManager
 {
@@ -27,31 +30,76 @@ namespace LabsManager
             return 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            Loadlabel.Visible = true;
-            PersonsBase? loginResult = _authServic.Login(login: logintextBox1.Text, password: logintextBox2.Text);
-            var res = checkAuth(loginResult);
-            Loadlabel.Visible = false;
-            if (res == 0)
+            string role = cbRole.Checked ? "Teacher" : "Student";
+            string loginUrl = role == "Student"
+                ? "http://localhost:5000/api/person/student-login"
+                : "http://localhost:5000/api/person/teacher-login";
+
+            var loginDTO = new
             {
-                MessageBox.Show("Invalid login or password");
-                return;
+                login = txtLogin.Text,
+                password = txtPassword.Text
+            };
+
+            using (HttpClient client = new HttpClient())
+            {
+                var json = JsonSerializer.Serialize(loginDTO);
+                
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+                
+                var response = await client.PostAsync(loginUrl, data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    //todo
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    
+                    if(role == "Student")
+                    {
+                        var Tdata = JsonSerializer.Deserialize<LoginStResponse>(responseContent);
+                        if (!Tdata.isLoggedIn)
+                        {
+                            MessageBox.Show("Неверный логин или пароль.");
+                            return;
+                        }
+                        _person = Tdata.student;
+                        ruleLevel = 1;
+                    }
+                    else
+                    {
+                        var Tdata = JsonSerializer.Deserialize<LoginTeResponse>(responseContent);
+                        if(!Tdata.isLoggedIn)
+                        {
+                            MessageBox.Show("Неверный логин или пароль.");
+                            return;
+                        }
+                        _person = Tdata.teacher;
+                        if (((Teacher)_person).isAdmin)
+                        {
+                            ruleLevel = 3;
+                        }
+                        else
+                        {
+                            ruleLevel = 2;
+                        }
+                    }
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль.");
+                }
             }
-            
-            _person = loginResult;
-            
-
-
-
-            this.Close();
-
         }
+
 
         private void DisaibleLoginForm()
         {
-            logintextBox1.Visible = false;
-            logintextBox2.Visible = false;
+            txtLogin.Visible = false;
+            txtPassword.Visible = false;
             loginbutton1.Visible = false;
             loginlabel1.Visible = false;
             loginlabel2.Visible = false;
@@ -59,37 +107,12 @@ namespace LabsManager
         }
         private void EnableLoginForm()
         {
-            logintextBox1.Visible = true;
-            logintextBox2.Visible = true;
+            txtLogin.Visible = true;
+            txtPassword.Visible = true;
             loginbutton1.Visible = true;
             loginlabel1.Visible = true;
             loginlabel2.Visible = true;
             loginlinkLabel1.Visible = true;
-        }
-
-
-        
-
-        private int checkAuth(PersonsBase person)
-        {
-            if (person is Student)
-            {
-                this.ruleLevel = 1;
-                return 1;
-
-
-            }
-            if (person is Teacher)
-            {
-                if (((Teacher)person).isAdmin)
-                {
-                    this.ruleLevel = 3;
-                    return 1;
-                }
-                this.ruleLevel = 2;
-                return 1;
-            }
-            return 0;
         }
 
         private void loginlinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            logintextBox1 = new TextBox();
-            logintextBox2 = new TextBox();
+            txtLogin = new TextBox();
+            txtPassword = new TextBox();
             loginlabel1 = new Label();
             loginlabel2 = new Label();
             loginbutton1 = new Button();
             loginlinkLabel1 = new LinkLabel();
             Loadlabel = new Label();
+            cbRole = new CheckBox();
             SuspendLayout();
             // 
-            // logintextBox1
+            // txtLogin
             // 
-            logintextBox1.BorderStyle = BorderStyle.None;
-            logintextBox1.Location = new Point(209, 164);
-            logintextBox1.Margin = new Padding(4);
-            logintextBox1.Name = "logintextBox1";
-            logintextBox1.Size = new Size(385, 22);
-            logintextBox1.TabIndex = 0;
+            txtLogin.BorderStyle = BorderStyle.None;
+            txtLogin.Location = new Point(209, 164);
+            txtLogin.Margin = new Padding(4);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(385, 22);
+            txtLogin.TabIndex = 0;
             // 
-            // logintextBox2
+            // txtPassword
             // 
-            logintextBox2.Location = new Point(209, 255);
-            logintextBox2.Margin = new Padding(4);
-            logintextBox2.Name = "logintextBox2";
-            logintextBox2.Size = new Size(385, 29);
-            logintextBox2.TabIndex = 1;
-            logintextBox2.UseSystemPasswordChar = true;
+            txtPassword.Location = new Point(209, 255);
+            txtPassword.Margin = new Padding(4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(385, 29);
+            txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // loginlabel1
             // 
@@ -79,19 +80,19 @@
             // 
             loginbutton1.BackColor = SystemColors.ScrollBar;
             loginbutton1.FlatStyle = FlatStyle.Flat;
-            loginbutton1.Location = new Point(235, 340);
+            loginbutton1.Location = new Point(231, 389);
             loginbutton1.Margin = new Padding(4);
             loginbutton1.Name = "loginbutton1";
             loginbutton1.Size = new Size(129, 56);
             loginbutton1.TabIndex = 5;
             loginbutton1.Text = "Войти";
             loginbutton1.UseVisualStyleBackColor = false;
-            loginbutton1.Click += button1_Click;
+            loginbutton1.Click += btnLogin_Click;
             // 
             // loginlinkLabel1
             // 
             loginlinkLabel1.AutoSize = true;
-            loginlinkLabel1.Location = new Point(445, 359);
+            loginlinkLabel1.Location = new Point(440, 407);
             loginlinkLabel1.Margin = new Padding(4, 0, 4, 0);
             loginlinkLabel1.Name = "loginlinkLabel1";
             loginlinkLabel1.Size = new Size(113, 21);
@@ -111,19 +112,30 @@
             Loadlabel.Text = "Загрузка...";
             Loadlabel.Visible = false;
             // 
+            // cbRole
+            // 
+            cbRole.AutoSize = true;
+            cbRole.Location = new Point(225, 320);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(114, 25);
+            cbRole.TabIndex = 8;
+            cbRole.Text = "Ты Препод?";
+            cbRole.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(190, 190, 200);
             ClientSize = new Size(784, 561);
+            Controls.Add(cbRole);
             Controls.Add(Loadlabel);
             Controls.Add(loginlinkLabel1);
             Controls.Add(loginbutton1);
             Controls.Add(loginlabel2);
             Controls.Add(loginlabel1);
-            Controls.Add(logintextBox2);
-            Controls.Add(logintextBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtLogin);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "LoginForm";
@@ -134,12 +146,13 @@
 
         #endregion
 
-        private TextBox logintextBox1;
-        private TextBox logintextBox2;
+        private TextBox txtLogin;
+        private TextBox txtPassword;
         private Label loginlabel1;
         private Label loginlabel2;
         private Button loginbutton1;
         private LinkLabel loginlinkLabel1;
         private Label Loadlabel;
+        private CheckBox cbRole;
     }
 }

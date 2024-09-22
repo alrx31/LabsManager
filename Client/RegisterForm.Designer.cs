@@ -34,8 +34,6 @@
             registertextBox1 = new TextBox();
             registerlabel3 = new Label();
             registertextBox3 = new TextBox();
-            registercomboBox1 = new ComboBox();
-            registerlabel4 = new Label();
             registercheckBox2 = new CheckBox();
             registertextBox4 = new TextBox();
             registerlabel5 = new Label();
@@ -101,31 +99,10 @@
             registertextBox3.TabIndex = 13;
             registertextBox3.UseSystemPasswordChar = true;
             // 
-            // registercomboBox1
-            // 
-            registercomboBox1.FormattingEnabled = true;
-            registercomboBox1.ItemHeight = 21;
-            registercomboBox1.Items.AddRange(new object[] { "ФКП", "ИЭФ", "ФИТУ", "ФКСИС", "ФРЭ", "ВФ", "ФИБ" });
-            registercomboBox1.Location = new Point(226, 271);
-            registercomboBox1.Margin = new Padding(4);
-            registercomboBox1.Name = "registercomboBox1";
-            registercomboBox1.Size = new Size(384, 29);
-            registercomboBox1.TabIndex = 16;
-            // 
-            // registerlabel4
-            // 
-            registerlabel4.AutoSize = true;
-            registerlabel4.Location = new Point(226, 246);
-            registerlabel4.Margin = new Padding(4, 0, 4, 0);
-            registerlabel4.Name = "registerlabel4";
-            registerlabel4.Size = new Size(84, 21);
-            registerlabel4.TabIndex = 17;
-            registerlabel4.Text = "Факультет";
-            // 
             // registercheckBox2
             // 
             registercheckBox2.AutoSize = true;
-            registercheckBox2.Location = new Point(433, 341);
+            registercheckBox2.Location = new Point(434, 255);
             registercheckBox2.Margin = new Padding(4);
             registercheckBox2.Name = "registercheckBox2";
             registercheckBox2.Size = new Size(138, 25);
@@ -136,7 +113,7 @@
             // 
             // registertextBox4
             // 
-            registertextBox4.Location = new Point(226, 390);
+            registertextBox4.Location = new Point(226, 319);
             registertextBox4.Margin = new Padding(4);
             registertextBox4.Name = "registertextBox4";
             registertextBox4.Size = new Size(368, 29);
@@ -146,16 +123,16 @@
             // registerlabel5
             // 
             registerlabel5.AutoSize = true;
-            registerlabel5.Location = new Point(226, 365);
+            registerlabel5.Location = new Point(230, 294);
             registerlabel5.Margin = new Padding(4, 0, 4, 0);
             registerlabel5.Name = "registerlabel5";
-            registerlabel5.Size = new Size(117, 21);
+            registerlabel5.Size = new Size(59, 21);
             registerlabel5.TabIndex = 21;
-            registerlabel5.Text = "специальность";
+            registerlabel5.Text = "группа";
             // 
             // registertextBox5
             // 
-            registertextBox5.Location = new Point(226, 390);
+            registertextBox5.Location = new Point(226, 319);
             registertextBox5.Margin = new Padding(4);
             registertextBox5.Name = "registertextBox5";
             registertextBox5.Size = new Size(368, 29);
@@ -165,7 +142,7 @@
             // registerlabel6
             // 
             registerlabel6.AutoSize = true;
-            registerlabel6.Location = new Point(226, 365);
+            registerlabel6.Location = new Point(226, 294);
             registerlabel6.Margin = new Padding(4, 0, 4, 0);
             registerlabel6.Name = "registerlabel6";
             registerlabel6.Size = new Size(71, 21);
@@ -175,14 +152,14 @@
             // 
             // registerbutton1
             // 
-            registerbutton1.Location = new Point(323, 457);
+            registerbutton1.Location = new Point(312, 447);
             registerbutton1.Margin = new Padding(4);
             registerbutton1.Name = "registerbutton1";
             registerbutton1.Size = new Size(184, 56);
             registerbutton1.TabIndex = 24;
             registerbutton1.Text = "Зарегистрироваться";
             registerbutton1.UseVisualStyleBackColor = true;
-            registerbutton1.Click += registerbutton1_Click_1;
+            registerbutton1.Click += registerbutton1_ClickAsync;
             // 
             // Loadlabel1
             // 
@@ -206,8 +183,6 @@
             Controls.Add(registerlabel6);
             Controls.Add(registerlabel5);
             Controls.Add(registercheckBox2);
-            Controls.Add(registerlabel4);
-            Controls.Add(registercomboBox1);
             Controls.Add(registerlabel3);
             Controls.Add(registertextBox3);
             Controls.Add(registerlabel2);
@@ -233,8 +208,6 @@
         private TextBox registertextBox1;
         private Label registerlabel3;
         private TextBox registertextBox3;
-        private ComboBox registercomboBox1;
-        private Label registerlabel4;
         private CheckBox registercheckBox2;
         private TextBox registertextBox4;
         private Label registerlabel5;

@@ -37,7 +37,6 @@ namespace LabsManager
                 name = "Иванов Иван Иванович",
                 login = "ivanov",
                 password = "123",
-                faculty = "ФИТ",
                 cafedra = "лфывоалф"
             };
             ruleLevel = 2;
@@ -158,7 +157,6 @@ namespace LabsManager
             {
                 ProfileLabelName.Text = _person.name;
                 ProfilelabelLogin.Text = _person.login;
-                ProfilelabelFaculty.Text = _person.faculty;
 
                 if (ruleLevel == 1)
                 {
