@@ -45,7 +45,7 @@ namespace LabsManager.Services
                 return response;
             }
 
-            if (model.Password == student.Password)
+            if (model.Password == student.password)
             {
                 response.IsLoggedIn = true;
                 response.Student = student;
@@ -78,7 +78,7 @@ namespace LabsManager.Services
                 return response;
             }
 
-            if (model.Password == teacher.Password)
+            if (model.Password == teacher.password)
             {
                 response.IsLoggedIn = true;
                 response.Teacher = teacher;
@@ -98,10 +98,10 @@ namespace LabsManager.Services
 
             var st = new Student
             {
-                Name = model.Name,
-                Login = model.Login,
-                Password = this.getHash(model.Password),
-                Group = model.Group,
+                name = model.Name,
+                login = model.Login,
+                password = this.getHash(model.Password),
+                group = model.Group,
             };
 
             await _personRepository.AddStudent(st);
@@ -118,12 +118,12 @@ namespace LabsManager.Services
 
             var t = new Teacher
             {
-                Name = model.Name,
-                Login = model.Login,
-                Password = this.getHash(model.Password),
+                name = model.Name,
+                login = model.Login,
+                password = this.getHash(model.Password),
 
-                IsAdmin = model.Login == "admin",
-                Cafedra = model.Cafedra
+                isAdmin = model.Login == "admin",
+                cafedra = model.Cafedra
             };
 
             await _personRepository.AddTeacher(t);
@@ -132,6 +132,7 @@ namespace LabsManager.Services
         private string getHash(string pass)
         {
             var data = System.Text.Encoding.ASCII.GetBytes(pass);
+
             data = System.Security.Cryptography.SHA256.HashData(data);
 
             return Encoding.ASCII.GetString(data);

@@ -1,28 +1,15 @@
 ﻿using domain.entities;
-using LabsManager.domain.services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text.Json;
 
 namespace LabsManager
 {
     public partial class LabsManager : Form
     {
-        private PersonsBase _person;
-        private int ruleLevel;
-        private readonly ISubjectsService _subjectsServ;
-        private Subject SelectedSubject;
-        private bool isMine = false;
 
-        private List<Subject> subjects = new List<Subject>();
+        private int ruleLevel;
+        private PersonsBase _person;
+        private bool isMine = false;
+        private List<Lab> labs = new List<Lab>();
         // 0 - unauthorized
         // 1 - student
         // 2 - teacher
@@ -41,7 +28,6 @@ namespace LabsManager
             };
             ruleLevel = 2;
 
-            _subjectsServ = new SubjectsService();
             panelIndicator.Location = new Point(0, 20);
 
 
@@ -49,12 +35,12 @@ namespace LabsManager
 
         private void LabsManager_Load(object sender, EventArgs e)
         {
-            
+
             var Login = new LoginForm();
             var result = Login.Login(ref ruleLevel, ref _person);
             if (result == 0) { this.Close(); }
-            
-            GetSubjects();
+
+            GetLabs();
 
         }
 
@@ -215,37 +201,23 @@ namespace LabsManager
 
 
 
-        private async Task GetSubjects()
-        {
-            this.subjects = await _subjectsServ.getAllSubjects();
-            FillSubjectsList(this.subjects);
-        }
+
 
         private void Createbutton1_Click(object sender, EventArgs e)
         {
-            var CreateForm = new CreateSubjectForm(_person.id);
-            CreateForm.ShowDialog();
-
+            var createLabFrom = new CreateLabForm(_person.id);
+            createLabFrom.ShowDialog();
+            GetLabs();
+            FillLabs(labs);
         }
 
-        private void OpenTheSubjectMenu(object sender, EventArgs e)
-        {
-
-            var sender1 = sender.ToString().Split("Text: ")[1][0].ToString();
-
-
-            var SubjectMenuForm = new SubjectMenuForm(subjects.ElementAt(int.Parse(sender1) - 1), _person, ruleLevel);
-
-
-            SubjectMenuForm.ShowDialog();
-
-        }
 
         private void SubjectsList_VisibleChanged(object sender, EventArgs e)
         {
             if (SubjectsList.Visible)
             {
-                FillSubjectsList(subjects);
+                //FillSubjectsList(subjects);
+                FillLabs(labs);
                 if (ruleLevel >= 2 && !isMine)
                 {
                     Createbutton1.Visible = true;
@@ -258,18 +230,18 @@ namespace LabsManager
                 {
                     if (ruleLevel == 1)
                     {
-                        var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
+                        /*var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
                         var list = new List<Subject>();
                         foreach (var subject in subjectsF)
                         {
                             list.Add(subject.subject);
                         }
-                        FillSubjectsList(list);
+                        FillSubjectsList(list);*/
                     }
                     else if (ruleLevel >= 2)
                     {
-                        var subjects = _subjectsServ.getTeacherSubjects(_person.id);
-                        FillSubjectsList(subjects);
+                        //var subjects = _subjectsServ.getTeacherSubjects(_person.id);
+                        //FillSubjectsList(subjects);
                     }
                 }
             }
@@ -277,29 +249,50 @@ namespace LabsManager
         }
 
 
-
-        private void FillSubjectsList(List<Subject> subjects)
+        private void FillLabs(List<Lab> labs)
         {
             flowLayoutPanelListSubjects.Controls.Clear();
-            if (subjects.Count > 0)
+
+            if (labs.Count > 0)
             {
-                foreach (Subject subject in subjects)
+                foreach (Lab lab in labs)
                 {
                     var panel = new Panel();
-                    panel.Size = new Size(500, 150);
+                    panel.Size = new Size(500, 100);
                     panel.Location = new Point(20, 20);
                     panel.BackColor = Color.White;
                     panel.Cursor = Cursors.Hand;
                     panel.BorderStyle = BorderStyle.None;
-                    panel.Click += OpenTheSubjectMenu;
-                    flowLayoutPanelListSubjects.Controls.Add(panel);
 
-                    var labelName = new Label();
-                    labelName.Dock = DockStyle.Fill;
-                    labelName.Text = subject.id + "" + ". Название: " + subject.name + "\nКоличество Лабораторных: " + (subject.labs != null ? subject.labs.Count + "" : 0 + "") + "\nОписание: " + subject.description + "\nНужно часов: " + subject.needHours + "\nАвтор: " + subject.author.name;
-                    labelName.Cursor = Cursors.Hand;
-                    labelName.Click += OpenTheSubjectMenu;
-                    panel.Controls.Add(labelName);
+                    var label = new Label();
+                    label.Text = lab.name;
+                    label.Location = new Point(10, 10);
+                    label.AutoSize = true;
+                    label.Font = new Font("Arial", 24, FontStyle.Bold);
+                    panel.Controls.Add(label);
+
+                    var label1 = new Label();
+                    label1.Text = "Срок: " + lab.lastTimeToPass.ToString("d");
+                    label1.Location = new Point(10, 50);
+                    label1.AutoSize = true;
+                    label1.Font = new Font("Arial", 16, FontStyle.Bold);
+                    panel.Controls.Add(label1);
+
+
+
+                    panel.Click += (sender, e) =>
+                    {
+                        var labForm = new LabForm(_person.id, lab );
+                        labForm.ShowDialog();
+                    };
+
+                    label.Click += (sender, e) =>
+                    {
+                        var labForm = new LabForm(_person.id, lab);
+                        labForm.ShowDialog();
+                    };
+
+                    flowLayoutPanelListSubjects.Controls.Add(panel);
                 }
             }
             else
@@ -309,33 +302,33 @@ namespace LabsManager
                 panel.Location = new Point(20, 20);
                 panel.BackColor = Color.White;
                 panel.BorderStyle = BorderStyle.None;
-                panel.Click += OpenTheSubjectMenu;
                 flowLayoutPanelListSubjects.Controls.Add(panel);
 
                 var labelNotFound = new Label();
                 labelNotFound.Dock = DockStyle.Fill;
                 labelNotFound.TextAlign = ContentAlignment.MiddleCenter;
-                labelNotFound.Text = "Предметы не найдены";
+                labelNotFound.Text = "Лабораторные не найдены";
                 panel.Controls.Add(labelNotFound);
             }
-
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+
+
+        private void GetLabs()
         {
-            string value = textBoxSearch.Text.Trim().ToLower();
-            var tempCollection = new List<Subject>();
-            foreach (Subject s in this.subjects)
+            // get all labs by get method
+            var url = "http://localhost:5000/api/labs";
+            var client = new HttpClient();
+            var response = client.GetAsync(url).Result;
+            if (response.IsSuccessStatusCode)
             {
-                if (s.name.ToLower().Contains(value))
-                {
-                    tempCollection.Add(s);
-                }
+                var content = response.Content.ReadAsStringAsync().Result;
+                labs = JsonSerializer.Deserialize<List<Lab>>(content);
             }
-            FillSubjectsList(tempCollection);
+            else
+            {
+                return;
+            }
         }
-
-       
     }
-
 }

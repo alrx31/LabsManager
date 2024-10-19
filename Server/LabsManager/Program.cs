@@ -14,7 +14,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add services to the container.
 
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPassRepository,PassRepository>();
 builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<ILabsRepository, LabsRepository>();
+builder.Services.AddScoped<ILabsService, LabsService>();
+builder.Services.AddScoped<IPassService, PassService>();
 
 
 

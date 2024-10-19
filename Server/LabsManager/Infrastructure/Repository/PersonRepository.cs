@@ -36,12 +36,12 @@ namespace LabsManager.Infrastructure.Repository
 
         public async Task<Student?> GetStudentByLogin(string login)
         {
-            return await _context.Students.FirstOrDefaultAsync(st => st.Login == login);
+            return await _context.Students.FirstOrDefaultAsync(st => st.login == login);
         }
 
         public async Task<Teacher?> GetTeacherByLogin(string login)
         {
-            return await _context.Teachers.FirstOrDefaultAsync(st => st.Login == login);
+            return await _context.Teachers.FirstOrDefaultAsync(st => st.login == login);
         }
     }
 }

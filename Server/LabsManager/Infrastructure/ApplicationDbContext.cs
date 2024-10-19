@@ -1,7 +1,5 @@
 ﻿using LabsManager.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using Npgsql;
 
 namespace LabsManager.Infrastructure
 {
@@ -19,28 +17,28 @@ namespace LabsManager.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Student>().HasKey(t => t.Id);
-            modelBuilder.Entity<Teacher>().HasKey(t => t.Id);
+            modelBuilder.Entity<Student>().HasKey(t => t.id);
+            modelBuilder.Entity<Teacher>().HasKey(t => t.id);
 
             modelBuilder.Entity<Teacher>()
-                .HasMany(t => t.Labs)
-                .WithOne(l => l.Teacher)
-                .HasForeignKey(l => l.TeacherId);
+                .HasMany(t => t.labs)
+                .WithOne(l => l.teacher)
+                .HasForeignKey(l => l.teacherId);
 
             modelBuilder.Entity<Teacher>()
                 .HasMany(t => t.passModels)
-                .WithOne(p => p.Teacher)
-                .HasForeignKey(p => p.TeacherId);
+                .WithOne(p => p.teacher)
+                .HasForeignKey(p => p.teacherId);
 
             modelBuilder.Entity<Student>()
                 .HasMany(s => s.passModels)
-                .WithOne(p => p.Student)
-                .HasForeignKey(p => p.StudentId);
+                .WithOne(p => p.student)
+                .HasForeignKey(p => p.studentId);
 
             modelBuilder.Entity<Laba>()
-                .HasMany(l => l.passModels)
-                .WithOne(p => p.Laba)
-                .HasForeignKey(p => p.LabaId);
+                .HasMany(l => l.passLabs)
+                .WithOne(p => p.lab)
+                .HasForeignKey(p => p.labId);
 
             base.OnModelCreating(modelBuilder);
         }

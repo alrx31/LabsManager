@@ -1,30 +1,15 @@
-﻿using domain.entities;
-using domain.services;
-using LabsManager.domain.DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
+﻿using LabsManager.domain.DTO;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace LabsManager
 {
     public partial class RegisterForm : Form
     {
-        private readonly IAuthService _authService;
 
 
         public RegisterForm()
         {
-            _authService = new AuthService();
             InitializeComponent();
         }
 

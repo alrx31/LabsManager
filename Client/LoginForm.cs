@@ -1,5 +1,4 @@
 using domain.entities;
-using domain.services;
 using LabsManager.domain.DTO;
 using System.Text;
 using System.Text.Json;
@@ -8,14 +7,12 @@ namespace LabsManager
 {
     public partial class LoginForm : Form
     {
-        private readonly IAuthService _authServic;
         private PersonsBase _person;
         private int ruleLevel;
 
         public LoginForm()
         {
             InitializeComponent();
-            _authServic = new AuthService();
         }
 
         public int Login(ref int RuleLevel, ref PersonsBase person)

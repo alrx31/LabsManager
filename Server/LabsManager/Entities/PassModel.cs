@@ -2,20 +2,25 @@
 {
     public class PassModel
     {
-        public int Id { get; set; }
-        
-        public int LabaId { get; set; }
-        public Laba Laba { get; set; }
+        public int id { get; set; }
 
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        
-        public int? TeacherId { get; set; }
-        public Teacher? Teacher { get; set; }
+        public int labId { get; set; }
+        public Laba lab { get; set; }
 
-        public float? Mark { get; set; }
-        public bool IsChecked { get; set; } = false;
+        public int studentId { get; set; }
+        public Student student { get; set; }
 
-        public bool IsPassed { get; set; } = false;
+        public int teacherId { get; set; }
+        public Teacher teacher { get; set; }
+
+
+        public string comment { get; set; }
+        public bool isChecked { get; set; } = false;
+        public bool isPassed { get; set; } = false;
+
+        public float mark { get; set; }
+
+
+        public byte[] report { get; set; }
     }
 }

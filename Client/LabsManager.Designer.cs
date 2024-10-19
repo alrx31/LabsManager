@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            panelButton4 = new Panel();
-            label3 = new Label();
             panelIndicator = new Panel();
             panelButton2 = new Panel();
             label1 = new Label();
@@ -38,6 +36,8 @@
             buttontext1 = new Label();
             panelButton3 = new Panel();
             label2 = new Label();
+            panelButton4 = new Panel();
+            label3 = new Label();
             FormName = new Label();
             maxformbutton = new Label();
             minformbutton = new Label();
@@ -57,14 +57,12 @@
             SubjectsList = new Panel();
             flowLayoutPanelListSubjects = new FlowLayoutPanel();
             ControlPanel = new Panel();
-            button1 = new Button();
-            textBoxSearch = new TextBox();
             Createbutton1 = new Button();
             panel1.SuspendLayout();
-            panelButton4.SuspendLayout();
             panelButton2.SuspendLayout();
             panelButton1.SuspendLayout();
             panelButton3.SuspendLayout();
+            panelButton4.SuspendLayout();
             panel2.SuspendLayout();
             profilePanel.SuspendLayout();
             SubjectsList.SuspendLayout();
@@ -84,31 +82,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 524);
             panel1.TabIndex = 0;
-            // 
-            // panelButton4
-            // 
-            panelButton4.BackColor = Color.FromArgb(0, 122, 204);
-            panelButton4.Controls.Add(label3);
-            panelButton4.Cursor = Cursors.Hand;
-            panelButton4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panelButton4.Location = new Point(0, 170);
-            panelButton4.Name = "panelButton4";
-            panelButton4.Size = new Size(200, 50);
-            panelButton4.TabIndex = 5;
-            panelButton4.Click += panelButton4_Click;
-            panelButton4.MouseEnter += panelButton4_MouseEnter;
-            panelButton4.MouseLeave += panelButton4_MouseLeave;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(55, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(54, 21);
-            label3.TabIndex = 0;
-            label3.Text = "Лабы";
-            label3.Click += panelButton4_Click;
-            label3.MouseEnter += panelButton4_MouseEnter;
             // 
             // panelIndicator
             // 
@@ -137,9 +110,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(50, 16);
             label1.Name = "label1";
-            label1.Size = new Size(92, 21);
+            label1.Size = new Size(83, 21);
             label1.TabIndex = 0;
-            label1.Text = "Предметы";
+            label1.Text = "Все лабы";
             label1.Click += panelButton2_Click;
             label1.MouseEnter += panel4_MouseEnter;
             // 
@@ -187,11 +160,36 @@
             label2.AutoSize = true;
             label2.Location = new Point(32, 15);
             label2.Name = "label2";
-            label2.Size = new Size(131, 21);
+            label2.Size = new Size(111, 21);
             label2.TabIndex = 0;
-            label2.Text = "Мои Предметы";
+            label2.Text = "На проверке";
             label2.Click += panelButton3_Click;
             label2.MouseEnter += panelButton3_MouseEnter;
+            // 
+            // panelButton4
+            // 
+            panelButton4.BackColor = Color.FromArgb(0, 122, 204);
+            panelButton4.Controls.Add(label3);
+            panelButton4.Cursor = Cursors.Hand;
+            panelButton4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            panelButton4.Location = new Point(0, 170);
+            panelButton4.Name = "panelButton4";
+            panelButton4.Size = new Size(200, 50);
+            panelButton4.TabIndex = 5;
+            panelButton4.Click += panelButton4_Click;
+            panelButton4.MouseEnter += panelButton4_MouseEnter;
+            panelButton4.MouseLeave += panelButton4_MouseLeave;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(41, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 21);
+            label3.TabIndex = 0;
+            label3.Text = "Проверены";
+            label3.Click += panelButton4_Click;
+            label3.MouseEnter += panelButton4_MouseEnter;
             // 
             // FormName
             // 
@@ -400,33 +398,11 @@
             // ControlPanel
             // 
             ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
-            ControlPanel.Controls.Add(button1);
-            ControlPanel.Controls.Add(textBoxSearch);
             ControlPanel.Controls.Add(Createbutton1);
             ControlPanel.Location = new Point(0, 530);
             ControlPanel.Name = "ControlPanel";
             ControlPanel.Size = new Size(600, 50);
             ControlPanel.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(355, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Visible = false;
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.Cursor = Cursors.Hand;
-            textBoxSearch.Location = new Point(28, 15);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.PlaceholderText = "Поиск...";
-            textBoxSearch.Size = new Size(300, 23);
-            textBoxSearch.TabIndex = 2;
-            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // Createbutton1
             // 
@@ -437,7 +413,7 @@
             Createbutton1.Name = "Createbutton1";
             Createbutton1.Size = new Size(100, 30);
             Createbutton1.TabIndex = 3;
-            Createbutton1.Text = "Создать";
+            Createbutton1.Text = "Создать лабу";
             Createbutton1.UseVisualStyleBackColor = true;
             Createbutton1.Click += Createbutton1_Click;
             // 
@@ -457,21 +433,20 @@
             Text = "LabsManager";
             Load += LabsManager_Load;
             panel1.ResumeLayout(false);
-            panelButton4.ResumeLayout(false);
-            panelButton4.PerformLayout();
             panelButton2.ResumeLayout(false);
             panelButton2.PerformLayout();
             panelButton1.ResumeLayout(false);
             panelButton1.PerformLayout();
             panelButton3.ResumeLayout(false);
             panelButton3.PerformLayout();
+            panelButton4.ResumeLayout(false);
+            panelButton4.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             profilePanel.ResumeLayout(false);
             profilePanel.PerformLayout();
             SubjectsList.ResumeLayout(false);
             ControlPanel.ResumeLayout(false);
-            ControlPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -501,13 +476,11 @@
         private Label ProfilelabelLabsManager;
         private Panel SubjectsList;
         private Panel ControlPanel;
-        private Button Createbutton1;
-        private TextBox textBoxSearch;
         private FlowLayoutPanel flowLayoutPanelListSubjects;
-        private Button button1;
         private Panel panelButton3;
         private Label label2;
         private Panel panelButton4;
         private Label label3;
+        private Button Createbutton1;
     }
 }
