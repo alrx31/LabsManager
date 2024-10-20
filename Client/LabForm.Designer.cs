@@ -30,12 +30,12 @@
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             label1 = new Label();
+            label6 = new Label();
             label4 = new Label();
             label2 = new Label();
             label5 = new Label();
             label3 = new Label();
             button1 = new Button();
-            label6 = new Label();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,6 +69,17 @@
             label1.Size = new Size(105, 45);
             label1.TabIndex = 0;
             label1.Text = "label1";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 16F);
+            label6.Location = new Point(23, 85);
+            label6.Margin = new Padding(3, 10, 3, 10);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 30);
+            label6.TabIndex = 6;
+            label6.Text = "Описание";
             // 
             // label4
             // 
@@ -125,17 +136,6 @@
             button1.Text = "Скачать";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 16F);
-            label6.Location = new Point(23, 85);
-            label6.Margin = new Padding(3, 10, 3, 10);
-            label6.Name = "label6";
-            label6.Size = new Size(115, 30);
-            label6.TabIndex = 6;
-            label6.Text = "Описание";
             // 
             // LabForm
             // 

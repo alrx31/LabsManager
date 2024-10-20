@@ -7,6 +7,7 @@ namespace LabsManager.Services
 {
     public interface IPersonService
     {
+        Task<Student> GetStudentById(int id);
         Task<LoginStudentResponse> LoginStudent(LoginDTO model);
         Task<LoginTeacherResponse?> LoginTeacher(LoginDTO model);
         Task RegisterStudent(RegisterStudentDTO model);
@@ -20,6 +21,11 @@ namespace LabsManager.Services
     {
 
         private readonly IPersonRepository _personRepository = personRepository;
+
+        public async Task<Student> GetStudentById(int id)
+        {
+            return await _personRepository.getStudentById(id);
+        }
 
         public async Task<LoginStudentResponse> LoginStudent(LoginDTO model)
         {

@@ -40,5 +40,11 @@ namespace LabsManager.Controllers
 
             return Ok();
         }
+
+        [HttpGet("student/{id}")]
+        public async Task<IActionResult> GetStudentById(int id)
+        {
+            return Ok(await _personService.GetStudentById(id));
+        }
     }
 }

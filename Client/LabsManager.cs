@@ -10,6 +10,8 @@ namespace LabsManager
         private PersonsBase _person;
         private bool isMine = false;
         private List<Lab> labs = new List<Lab>();
+        private List<PassLabModel> labsPassModels = new List<PassLabModel>();
+        private bool isPassModelsInList = true;
         // 0 - unauthorized
         // 1 - student
         // 2 - teacher
@@ -41,6 +43,7 @@ namespace LabsManager
             if (result == 0) { this.Close(); }
 
             GetLabs();
+            GetPassModels();
 
         }
 
@@ -217,35 +220,112 @@ namespace LabsManager
             if (SubjectsList.Visible)
             {
                 //FillSubjectsList(subjects);
-                FillLabs(labs);
-                if (ruleLevel >= 2 && !isMine)
+                if (!isPassModelsInList)
                 {
-                    Createbutton1.Visible = true;
+                    FillLabs(labs);
+
+                    if (ruleLevel >= 2 && !isMine)
+                    {
+                        Createbutton1.Visible = true;
+                    }
+                    else
+                    {
+                        Createbutton1.Visible = false;
+                    }
+                    if (isMine)
+                    {
+                        if (ruleLevel == 1)
+                        {
+                            /*var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
+                            var list = new List<Subject>();
+                            foreach (var subject in subjectsF)
+                            {
+                                list.Add(subject.subject);
+                            }
+                            FillSubjectsList(list);*/
+                        }
+                        else if (ruleLevel >= 2)
+                        {
+                            //var subjects = _subjectsServ.getTeacherSubjects(_person.id);
+                            //FillSubjectsList(subjects);
+                        }
+                    }
                 }
                 else
                 {
-                    Createbutton1.Visible = false;
-                }
-                if (isMine)
-                {
-                    if (ruleLevel == 1)
-                    {
-                        /*var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
-                        var list = new List<Subject>();
-                        foreach (var subject in subjectsF)
-                        {
-                            list.Add(subject.subject);
-                        }
-                        FillSubjectsList(list);*/
-                    }
-                    else if (ruleLevel >= 2)
-                    {
-                        //var subjects = _subjectsServ.getTeacherSubjects(_person.id);
-                        //FillSubjectsList(subjects);
-                    }
+                    FillLabsPassModels(labsPassModels);
                 }
             }
 
+        }
+
+        private void FillLabsPassModels(List<PassLabModel> labsPassModeles)
+        {
+            flowLayoutPanelListSubjects.Controls.Clear();
+
+            if (labs.Count > 0)
+            {
+                foreach (PassLabModel lab in labsPassModeles)
+                {
+                    var panel = new Panel();
+                    panel.Size = new Size(1200, 100);
+                    panel.Location = new Point(20, 20);
+                    panel.BackColor = Color.White;
+                    panel.Cursor = Cursors.Hand;
+                    panel.BorderStyle = BorderStyle.None;
+
+                    var label = new Label();
+                    label.Text = lab.lab?.name;
+                    label.Location = new Point(10, 10);
+                    label.AutoSize = true;
+                    label.Font = new Font("Arial", 24, FontStyle.Bold);
+                    panel.Controls.Add(label);
+
+                    var label1 = new Label();
+                    label1.Text = "Студент: " + lab.student?.name;
+                    label1.Location = new Point(10, 50);
+                    label1.AutoSize = true;
+                    label1.Font = new Font("Arial", 16, FontStyle.Bold);
+                    panel.Controls.Add(label1);
+
+
+
+                    panel.Click += (sender, e) =>
+                    {
+                        var labForm = new PassLabShowForm(_person.id, lab);
+                        labForm.ShowDialog();
+                    };
+
+                    label.Click += (sender, e) =>
+                    {
+                        var labForm = new PassLabShowForm(_person.id, lab);
+                        labForm.ShowDialog();
+                    };
+
+                    label1.Click += (sender, e) =>
+                    {
+                        var labForm = new PassLabShowForm(_person.id, lab);
+                        labForm.ShowDialog();
+                    };
+
+                    flowLayoutPanelListSubjects.Controls.Add(panel);
+                }
+            }
+            else
+            {
+                var panel = new Panel();
+                panel.Size = new Size(500, 30);
+                panel.Location = new Point(20, 20);
+                panel.BackColor = Color.White;
+                panel.BorderStyle = BorderStyle.None;
+                flowLayoutPanelListSubjects.Controls.Add(panel);
+
+                var labelNotFound = new Label();
+                labelNotFound.Dock = DockStyle.Fill;
+                labelNotFound.TextAlign = ContentAlignment.MiddleCenter;
+                labelNotFound.Text = "Никто еще не сдал отчеты";
+                panel.Controls.Add(labelNotFound);
+            }
         }
 
 
@@ -282,7 +362,7 @@ namespace LabsManager
 
                     panel.Click += (sender, e) =>
                     {
-                        var labForm = new LabForm(_person.id, lab );
+                        var labForm = new LabForm(_person.id, lab);
                         labForm.ShowDialog();
                     };
 
@@ -330,6 +410,22 @@ namespace LabsManager
             {
                 var content = response.Content.ReadAsStringAsync().Result;
                 labs = JsonSerializer.Deserialize<List<Lab>>(content);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void GetPassModels()
+        {
+            var url = "http://localhost:5000/api/pass";
+            var client = new HttpClient();
+            var response = client.GetAsync(url).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var content = response.Content.ReadAsStringAsync().Result;
+                labsPassModels = JsonSerializer.Deserialize<List<PassLabModel>>(content);
             }
             else
             {

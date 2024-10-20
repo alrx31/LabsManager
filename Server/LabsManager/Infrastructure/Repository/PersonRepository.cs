@@ -9,6 +9,7 @@ namespace LabsManager.Infrastructure.Repository
     {
         Task AddStudent(Student model);
         Task AddTeacher(Teacher model);
+        Task<Student> getStudentById(int id);
         Task<Student?> GetStudentByLogin(string login);
         Task<Teacher?> GetTeacherByLogin(string login);
     }
@@ -42,6 +43,11 @@ namespace LabsManager.Infrastructure.Repository
         public async Task<Teacher?> GetTeacherByLogin(string login)
         {
             return await _context.Teachers.FirstOrDefaultAsync(st => st.login == login);
+        }
+
+        public async Task<Student> getStudentById(int id)
+        {
+            return await _context.Students.FirstOrDefaultAsync(st => st.id == id);
         }
     }
 }
