@@ -258,7 +258,7 @@ namespace LabsManager
                 foreach (Lab lab in labs)
                 {
                     var panel = new Panel();
-                    panel.Size = new Size(500, 100);
+                    panel.Size = new Size(1200, 100);
                     panel.Location = new Point(20, 20);
                     panel.BackColor = Color.White;
                     panel.Cursor = Cursors.Hand;
@@ -287,6 +287,12 @@ namespace LabsManager
                     };
 
                     label.Click += (sender, e) =>
+                    {
+                        var labForm = new LabForm(_person.id, lab);
+                        labForm.ShowDialog();
+                    };
+
+                    label1.Click += (sender, e) =>
                     {
                         var labForm = new LabForm(_person.id, lab);
                         labForm.ShowDialog();

@@ -55,9 +55,9 @@
             ProfileLabelName = new Label();
             Profilelabel1 = new Label();
             SubjectsList = new Panel();
-            flowLayoutPanelListSubjects = new FlowLayoutPanel();
             ControlPanel = new Panel();
             Createbutton1 = new Button();
+            flowLayoutPanelListSubjects = new FlowLayoutPanel();
             panel1.SuspendLayout();
             panelButton2.SuspendLayout();
             panelButton1.SuspendLayout();
@@ -80,13 +80,13 @@
             panel1.ForeColor = Color.FromArgb(240, 240, 255);
             panel1.Location = new Point(0, 20);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 524);
+            panel1.Size = new Size(200, 833);
             panel1.TabIndex = 0;
             // 
             // panelIndicator
             // 
             panelIndicator.BackColor = Color.FromArgb(10, 10, 250);
-            panelIndicator.Location = new Point(12, 519);
+            panelIndicator.Location = new Point(41, 296);
             panelIndicator.Name = "panelIndicator";
             panelIndicator.Size = new Size(5, 50);
             panelIndicator.TabIndex = 1;
@@ -208,7 +208,7 @@
             maxformbutton.Cursor = Cursors.Hand;
             maxformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             maxformbutton.ForeColor = SystemColors.WindowFrame;
-            maxformbutton.Location = new Point(745, -1);
+            maxformbutton.Location = new Point(1442, 0);
             maxformbutton.Name = "maxformbutton";
             maxformbutton.Size = new Size(27, 21);
             maxformbutton.TabIndex = 2;
@@ -222,7 +222,7 @@
             minformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             minformbutton.ForeColor = SystemColors.WindowFrame;
             minformbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            minformbutton.Location = new Point(714, -2);
+            minformbutton.Location = new Point(1411, -1);
             minformbutton.Name = "minformbutton";
             minformbutton.Size = new Size(25, 21);
             minformbutton.TabIndex = 1;
@@ -235,7 +235,7 @@
             closeformbutton.Cursor = Cursors.Hand;
             closeformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             closeformbutton.ForeColor = SystemColors.WindowFrame;
-            closeformbutton.Location = new Point(778, 1);
+            closeformbutton.Location = new Point(1475, 0);
             closeformbutton.Name = "closeformbutton";
             closeformbutton.Size = new Size(22, 21);
             closeformbutton.TabIndex = 0;
@@ -252,7 +252,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 20);
+            panel2.Size = new Size(1500, 20);
             panel2.TabIndex = 2;
             panel2.MouseDown += Form1_MouseDown;
             panel2.MouseMove += Form1_MouseMove;
@@ -274,7 +274,7 @@
             profilePanel.Font = new Font("RomanD", 14F, FontStyle.Bold);
             profilePanel.Location = new Point(200, 20);
             profilePanel.Name = "profilePanel";
-            profilePanel.Size = new Size(600, 580);
+            profilePanel.Size = new Size(1300, 880);
             profilePanel.TabIndex = 3;
             profilePanel.VisibleChanged += profilePanel_VisibleChanged;
             // 
@@ -283,7 +283,7 @@
             ProfilelabelLabsManager.AutoSize = true;
             ProfilelabelLabsManager.Font = new Font("SansSerif", 24F, FontStyle.Bold);
             ProfilelabelLabsManager.ForeColor = SystemColors.WindowFrame;
-            ProfilelabelLabsManager.Location = new Point(6, 511);
+            ProfilelabelLabsManager.Location = new Point(15, 829);
             ProfilelabelLabsManager.Name = "ProfilelabelLabsManager";
             ProfilelabelLabsManager.Size = new Size(226, 37);
             ProfilelabelLabsManager.TabIndex = 9;
@@ -374,14 +374,36 @@
             // SubjectsList
             // 
             SubjectsList.BackColor = Color.FromArgb(240, 240, 255);
-            SubjectsList.Controls.Add(flowLayoutPanelListSubjects);
             SubjectsList.Controls.Add(ControlPanel);
+            SubjectsList.Controls.Add(flowLayoutPanelListSubjects);
             SubjectsList.Location = new Point(200, 20);
             SubjectsList.Name = "SubjectsList";
-            SubjectsList.Size = new Size(600, 580);
+            SubjectsList.Size = new Size(1300, 880);
             SubjectsList.TabIndex = 10;
             SubjectsList.Visible = false;
             SubjectsList.VisibleChanged += SubjectsList_VisibleChanged;
+            // 
+            // ControlPanel
+            // 
+            ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
+            ControlPanel.Controls.Add(Createbutton1);
+            ControlPanel.Location = new Point(0, 830);
+            ControlPanel.Name = "ControlPanel";
+            ControlPanel.Size = new Size(1300, 50);
+            ControlPanel.TabIndex = 0;
+            // 
+            // Createbutton1
+            // 
+            Createbutton1.Cursor = Cursors.Hand;
+            Createbutton1.FlatStyle = FlatStyle.Flat;
+            Createbutton1.ForeColor = Color.White;
+            Createbutton1.Location = new Point(1169, 9);
+            Createbutton1.Name = "Createbutton1";
+            Createbutton1.Size = new Size(100, 30);
+            Createbutton1.TabIndex = 3;
+            Createbutton1.Text = "Создать лабу";
+            Createbutton1.UseVisualStyleBackColor = true;
+            Createbutton1.Click += Createbutton1_Click;
             // 
             // flowLayoutPanelListSubjects
             // 
@@ -391,38 +413,16 @@
             flowLayoutPanelListSubjects.Location = new Point(0, 0);
             flowLayoutPanelListSubjects.Name = "flowLayoutPanelListSubjects";
             flowLayoutPanelListSubjects.Padding = new Padding(20);
-            flowLayoutPanelListSubjects.Size = new Size(600, 532);
+            flowLayoutPanelListSubjects.Size = new Size(1300, 833);
             flowLayoutPanelListSubjects.TabIndex = 1;
             flowLayoutPanelListSubjects.WrapContents = false;
-            // 
-            // ControlPanel
-            // 
-            ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
-            ControlPanel.Controls.Add(Createbutton1);
-            ControlPanel.Location = new Point(0, 530);
-            ControlPanel.Name = "ControlPanel";
-            ControlPanel.Size = new Size(600, 50);
-            ControlPanel.TabIndex = 0;
-            // 
-            // Createbutton1
-            // 
-            Createbutton1.Cursor = Cursors.Hand;
-            Createbutton1.FlatStyle = FlatStyle.Flat;
-            Createbutton1.ForeColor = Color.White;
-            Createbutton1.Location = new Point(488, 8);
-            Createbutton1.Name = "Createbutton1";
-            Createbutton1.Size = new Size(100, 30);
-            Createbutton1.TabIndex = 3;
-            Createbutton1.Text = "Создать лабу";
-            Createbutton1.UseVisualStyleBackColor = true;
-            Createbutton1.Click += Createbutton1_Click;
             // 
             // LabsManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(190, 190, 200);
-            ClientSize = new Size(800, 600);
+            ClientSize = new Size(1500, 900);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(SubjectsList);
