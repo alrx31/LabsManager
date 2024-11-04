@@ -28,5 +28,12 @@ namespace LabsManager.Controllers
 
             return Ok();
         }
+
+        [HttpPost("{pasLabId}/{Mark}")]
+        public async Task<IActionResult> setMarkToLab(int pasLabId, int Mark)
+        {
+            await _passService.PutMarkToLaboratory(pasLabId, Mark);
+            return Ok();
+        }
     }
 }

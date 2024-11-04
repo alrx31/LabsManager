@@ -16,11 +16,13 @@ namespace LabsManager.Services
 
     public class PersonService
         (
-            IPersonRepository personRepository
+            IPersonRepository personRepository,
+            IPassRepository passRepository
         ) : IPersonService
     {
 
         private readonly IPersonRepository _personRepository = personRepository;
+        private readonly IPassRepository _passRepository = passRepository;
 
         public async Task<Student> GetStudentById(int id)
         {
@@ -56,6 +58,10 @@ namespace LabsManager.Services
                 response.IsLoggedIn = true;
                 response.Student = student;
             }
+
+            var models = (await _passRepository.getAllPassModels()).Where(m => m.studentId == student.id);
+            response.Student.passModels = models.ToList();
+
 
             return response;
         }

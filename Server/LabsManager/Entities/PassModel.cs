@@ -22,5 +22,6 @@
 
 
         public byte[] report { get; set; }
+        public string fileExtension { get; set; }
     }
 }

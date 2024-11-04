@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="14.70" multi-file="no" uid="simpebadd92330744bb99b93144bcfca761b" creation-date="10/27/2024 18:55:52">
+  <meta>
+    <name>ClassDiagram</name>
+    <authors>Alex Usov</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>12</value>
+      </counter>
+      <counter>
+        <item-type type-id="collaboration" type="Collaboration" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>13</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>78</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="Universal Connector" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="Association" />
+        <value>9</value>
+      </counter>
+      <counter>
+        <item-type type-id="template-parameter" type="Template Parameter" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="Generalization" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="collaboration" type="Collaboration" />
+        <value>2</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>2</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>2</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.RuleField</type>
+        <value>2</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-66d477b9632442c8844469de09aa0b8b" name="" task-id-sequence="0">
+    <working-schedule uid="ws-8dadc2b2de634b458721026642f14445" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+    <persons>
+      <person id="">
+        <first-name>Alex</first-name>
+        <last-name>Usov</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-f590c738d6534eacbcadd8f01b2309e7" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Alex</first-name>
+        <last-name>Usov</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-c005f901343a4099a3b337d739258712" name="" order-index="-1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types>
+        <type id="Class:89d84b1046c842e58458486d16d5879c" name="Student" class-ref="89d84b1046c842e58458486d16d5879c" />
+        <type id="Class:8e9830d0f5cc4f14a3b591336ecd24f4" name="PassModel" class-ref="8e9830d0f5cc4f14a3b591336ecd24f4" />
+        <type id="Class:c34eb44317bc4454816dcca77687c04f" name="Film" class-ref="c34eb44317bc4454816dcca77687c04f" />
+        <type id="Class:b788ae57019a4b18b195c920434d3400" name="Laba" class-ref="b788ae57019a4b18b195c920434d3400" />
+        <type id="Class:789b9901a06e473aaba8f8e5d9d941d8" name="ServeModel" class-ref="789b9901a06e473aaba8f8e5d9d941d8" />
+        <type id="Class:311c9cec90f74e47a34feb0b3549de65" name="EarnFilm" class-ref="311c9cec90f74e47a34feb0b3549de65" />
+        <type id="Class:769dbea98b66441a997374601edfadca" name="Teacher" class-ref="769dbea98b66441a997374601edfadca" />
+        <type id="Class:b33113f6e5774b00a32c7e7fe9b04ec0" name="Person" class-ref="b33113f6e5774b00a32c7e7fe9b04ec0" />
+      </types>
+    </custom-types>
+  </types>
+  <items>
+    <item id="d3fa3fdb199549649cf899d0e3c442d3" cid="PROP004" type="property" name="IsAdmin" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:58:13" visibility="private" />
+    <item id="e96f0391c43046a896b5dea5ec89d4e7" cid="PROP002" type="property" name="Name" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:57:56" visibility="private" />
+    <item id="b33113f6e5774b00a32c7e7fe9b04ec0" cid="C001" type="class" name="Person" creator="" creation-date="10/27/2024 18:57:21" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="a69ea049a52214e24b48e4521c558a31617" cid="PROP001" name="Id" creation-date="10/27/2024 18:57:34" property-ref="07086fe59ef44b89b7d3df6f54a09394" />
+        <attribute id="a1a4eec40b06142a398e2981ac081b8b8368" cid="PROP002" name="Name" creation-date="10/27/2024 18:57:56" property-ref="e96f0391c43046a896b5dea5ec89d4e7" />
+        <attribute id="ac2609a018d374a38b21ba5e209289d4b948" cid="PROP003" name="Surname" creation-date="10/27/2024 18:58:06" property-ref="aa5162ffdfa14f129962a25a574574fd" />
+        <attribute id="a5a4f53f7fdcc4c6f9edea08e93164634661" cid="PROP004" name="IsAdmin" creation-date="10/27/2024 18:58:13" property-ref="d3fa3fdb199549649cf899d0e3c442d3" />
+        <attribute id="a19b3e2bc6b5f49a7ab7bcc7411c9a783224" cid="PROP005" name="Login" creation-date="10/27/2024 18:58:19" property-ref="00eb19047174492c86ac3a987f29703c" />
+        <attribute id="a812473893c02489484c6ebe6a806bde8484" cid="PROP006" name="Password" creation-date="10/27/2024 18:58:20" property-ref="e1398e2586734061aac6d0a17735d240" />
+      </attributes>
+    </item>
+    <item id="c34eb44317bc4454816dcca77687c04f" cid="C002" type="class" name="Film" creator="" creation-date="10/27/2024 18:58:26" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="aa79c7b1618b64501bc04db28fc8e1581144" cid="PROP007" name="Name" creation-date="10/27/2024 18:58:33" property-ref="6df3baffde9e40dca64084b79fbb49ad" />
+        <attribute id="a13e27272d7ad4aeb8aac3bb913600c73307" cid="PROP008" name="Description" creation-date="10/27/2024 18:58:41" property-ref="1329c7fa43e34f098929f48061955e3e" />
+        <attribute id="a75f2d9ba8bb641f381ff965116ed7632731" cid="PROP009" name="Genre" creation-date="10/27/2024 18:58:49" property-ref="c69785bcb6ca4a4c80911d0e9be2e6ca" />
+        <attribute id="a8f61735f67f741ee9d35700eb52d1dea505" cid="PROP010" name="Director" creation-date="10/27/2024 18:58:52" property-ref="8c3d1d381343470a977e91d5350ce606" />
+        <attribute id="a7cef7df2cc084d7d9b3f861c679cd2b117" cid="PROP011" name="Country" creation-date="10/27/2024 18:58:57" property-ref="5b082c4f28da409a8499454a66161587" />
+        <attribute id="ac4ff17f81acc4aaf8d2c3205d2c9bd43167" cid="PROP012" name="Year" creation-date="10/27/2024 18:59:01" property-ref="8a8512124d5c4f58bbdd5aa5aeb4e838" />
+        <attribute id="a7771368e162b44349d16abf1c0d5a093389" cid="PROP013" name="Price" creation-date="10/27/2024 18:59:07" property-ref="16f3ee1df07244f5a66fe9b786edf7f5" />
+        <attribute id="aa9c7ac293bf349e084e5a3eb554f6fd8208" cid="PROP014" name="Rating" creation-date="10/27/2024 18:59:10" property-ref="45bc426ee27a4cf4862c59ac11a48c4e" />
+        <attribute id="a74e530420b1d4aa5b94ac3f7f02e256d54" cid="PROP015" name="MinAge" creation-date="10/27/2024 18:59:19" property-ref="549a83a2493244cfb6a13c2b81c8c123" />
+        <attribute id="a6a4ba1a649af4e99b78026b3191330b7745" cid="PROP016" name="ShowDate" creation-date="10/27/2024 18:59:27" property-ref="943e1c9c52614e13a22a09a80d6a9b60" />
+        <attribute id="a589b67a134c6417d9c369c016d3932e8708" cid="PROP017" name="Servos" creation-date="10/27/2024 18:59:31" property-ref="bf0008476453422e97707d729b089413" />
+      </attributes>
+    </item>
+    <item id="1b5f6c609425411aac98acd3289fb0c7" cid="PROP029" type="property" name="DataFolder" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:35" visibility="private" />
+    <item id="0e17faf609e84ea3b4fc7f1c8db69132" cid="PROP033" type="property" name="WhoWrited" owner="789b9901a06e473aaba8f8e5d9d941d8" creator="" creation-date="10/27/2024 19:04:41" visibility="private" />
+    <item id="6df3baffde9e40dca64084b79fbb49ad" cid="PROP007" type="property" name="Name" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:58:33" visibility="private" />
+    <item id="0064acb07a8446faa28b8dec9fa92f12" cid="PROP073" type="property" owner="7342820583914d43b66606565717c017" creator="" creation-date="10/27/2024 19:14:27" visibility="private">
+      <structural-feature type="Student" type-id="Class:89d84b1046c842e58458486d16d5879c" />
+    </item>
+    <item id="b17365c85efc48e9b6c3690c75ce091f" cid="PROP030" type="property" name="NewAttribute5" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:40" visibility="private" />
+    <item id="07086fe59ef44b89b7d3df6f54a09394" cid="PROP001" type="property" name="Id" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:57:34" visibility="private" />
+    <item id="7ca971c718e14f1a89cb7df09074f1d7" cid="PROP026" type="property" name="CinimaName" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:27" visibility="private" />
+    <item id="aa5162ffdfa14f129962a25a574574fd" cid="PROP003" type="property" name="Surname" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:58:06" visibility="private" />
+    <item id="1cd418b743e447cebd9705bfb7918f79" cid="PROP077" type="property" owner="9fc7a54ecd344d16bde2061296a32a6b" creator="" creation-date="10/27/2024 19:14:34" visibility="private">
+      <structural-feature type="Laba" type-id="Class:b788ae57019a4b18b195c920434d3400" />
+    </item>
+    <item id="e1398e2586734061aac6d0a17735d240" cid="PROP006" type="property" name="Password" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:58:20" visibility="private" />
+    <item id="87f713d927fc4ada823ad61b6b0b3493" cid="PROP056" type="property" owner="f48a6b997d354211855faf021135d24c" creator="" creation-date="10/27/2024 19:13:18" visibility="private">
+      <structural-feature type="Laba" type-id="Class:b788ae57019a4b18b195c920434d3400" />
+    </item>
+    <item id="789b9901a06e473aaba8f8e5d9d941d8" cid="C003" type="class" name="ServeModel" creator="" creation-date="10/27/2024 19:00:07" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="a7db9d77dfea5428faca8c5744669f864186" cid="PROP018" name="Name" creation-date="10/27/2024 19:00:19" property-ref="fe9aee5bedae444b9a60ad6b65c10757" />
+        <attribute id="aed26a8a98e7340cdba6cb9d3555251b4333" cid="PROP019" name="SeatNumber" creation-date="10/27/2024 19:00:20" property-ref="cd79a7df1e8c4af0bfc9d4c3165758c3" />
+        <attribute id="ac82952530fed4bea8f45789d632a8c00394" cid="PROP020" name="Film" creation-date="10/27/2024 19:00:44" property-ref="bdaf6d51e804451ba95df6bcc6fed1d1" />
+        <attribute id="a007597cc668a4b0c9e1eec050df32127967" cid="PROP033" name="WhoWrited" creation-date="10/27/2024 19:04:41" property-ref="0e17faf609e84ea3b4fc7f1c8db69132" />
+      </attributes>
+    </item>
+    <item id="3b4f87e430b14474a130e9b4035c4333" cid="PROP076" type="property" owner="9fc7a54ecd344d16bde2061296a32a6b" creator="" creation-date="10/27/2024 19:14:34" visibility="private">
+      <structural-feature type="PassModel" type-id="Class:8e9830d0f5cc4f14a3b591336ecd24f4" />
+    </item>
+    <item id="8c3d1d381343470a977e91d5350ce606" cid="PROP010" type="property" name="Director" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:58:52" visibility="private" />
+    <item id="6aeca229006a4698a51cab187cbe75fa" cid="PROP031" type="property" name="AdminLogin" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:42" visibility="private" />
+    <item id="fd3c5b1606c740f48b9b16a2441412b5" cid="PROP027" type="property" name="CountSeatsInCinema" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:30" visibility="private" />
+    <item id="567be4d1d0cf45dc8dc76855927eb851" cid="PROP035" type="property" owner="a75acf9f15fd4062aa704944d19db2b5" creator="" creation-date="10/27/2024 19:04:50" visibility="private">
+      <structural-feature type="Person" type-id="Class:b33113f6e5774b00a32c7e7fe9b04ec0" />
+    </item>
+    <item id="311c9cec90f74e47a34feb0b3549de65" cid="C004" type="class" name="EarnFilm" creator="" creation-date="10/27/2024 19:01:13" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="aba6e7834abe84c3e8292aa6709f7c616252" cid="PROP021" name="FilmName" creation-date="10/27/2024 19:01:23" property-ref="078b934a74b14ed698ff3b6fd015eba1" />
+        <attribute id="a40a570c063a04e5293b35512f87b697f323" cid="PROP022" name="EarnMoney" creation-date="10/27/2024 19:01:27" property-ref="b0ed14a4e48645569dd9b40f5963f198" />
+      </attributes>
+    </item>
+    <item id="45bc426ee27a4cf4862c59ac11a48c4e" cid="PROP014" type="property" name="Rating" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:10" visibility="private" />
+    <item id="16f3ee1df07244f5a66fe9b786edf7f5" cid="PROP013" type="property" name="Price" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:07" visibility="private" />
+    <item id="212ab953ccbe489e9dc14f4860f03370" cid="PROP028" type="property" name="FilmPrice" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:33" visibility="private" />
+    <item id="fe9aee5bedae444b9a60ad6b65c10757" cid="PROP018" type="property" name="Name" owner="789b9901a06e473aaba8f8e5d9d941d8" creator="" creation-date="10/27/2024 19:00:19" visibility="private" />
+    <item id="77688773641b4e0b8696ea7ce2aacab4" cid="PROP024" type="property" owner="85737140b45741e58fd885142c4af224" creator="" creation-date="10/27/2024 19:01:46" visibility="private">
+      <structural-feature type="Film" type-id="Class:c34eb44317bc4454816dcca77687c04f" />
+    </item>
+    <item id="1329c7fa43e34f098929f48061955e3e" cid="PROP008" type="property" name="Description" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:58:41" visibility="private" />
+    <item id="86dc32da81384a6cacbaa1e2fec1bef8" cid="PROP057" type="property" owner="f48a6b997d354211855faf021135d24c" creator="" creation-date="10/27/2024 19:13:18" visibility="private">
+      <structural-feature type="Teacher" type-id="Class:769dbea98b66441a997374601edfadca" />
+    </item>
+    <item id="bf0008476453422e97707d729b089413" cid="PROP017" type="property" name="Servos" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:31" visibility="private" />
+    <item id="b0ed14a4e48645569dd9b40f5963f198" cid="PROP022" type="property" name="EarnMoney" owner="311c9cec90f74e47a34feb0b3549de65" creator="" creation-date="10/27/2024 19:01:27" visibility="private" />
+    <item id="6060f1006f21413dbaa3fe60a8338ef2" cid="PROP072" type="property" owner="7342820583914d43b66606565717c017" creator="" creation-date="10/27/2024 19:14:27" visibility="private">
+      <structural-feature type="PassModel" type-id="Class:8e9830d0f5cc4f14a3b591336ecd24f4" />
+    </item>
+    <item id="05ef3bf097c640fcb03460aa318dd1c0" cid="PROP032" type="property" name="AdminPassword" owner="35079a46405d4db18d106ff7433797b8" creator="" creation-date="10/27/2024 19:02:46" visibility="private" />
+    <item id="078b934a74b14ed698ff3b6fd015eba1" cid="PROP021" type="property" name="FilmName" owner="311c9cec90f74e47a34feb0b3549de65" creator="" creation-date="10/27/2024 19:01:23" visibility="private" />
+    <item id="00eb19047174492c86ac3a987f29703c" cid="PROP005" type="property" name="Login" owner="b33113f6e5774b00a32c7e7fe9b04ec0" creator="" creation-date="10/27/2024 18:58:19" visibility="private" />
+    <item id="2bbe612df471430fa3d8da0d5267d28a" cid="PROP074" type="property" owner="5828a66cd9b94b6d877cddf16e9b06b7" creator="" creation-date="10/27/2024 19:14:32" visibility="private">
+      <structural-feature type="PassModel" type-id="Class:8e9830d0f5cc4f14a3b591336ecd24f4" />
+    </item>
+    <item id="c69785bcb6ca4a4c80911d0e9be2e6ca" cid="PROP009" type="property" name="Genre" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:58:49" visibility="private" />
+    <item id="943e1c9c52614e13a22a09a80d6a9b60" cid="PROP016" type="property" name="ShowDate" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:27" visibility="private" />
+    <item id="5b082c4f28da409a8499454a66161587" cid="PROP011" type="property" name="Country" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:58:57" visibility="private" />
+    <item id="ff69fddc2c174194b8cfde2a4faccaf1" cid="PROP075" type="property" owner="5828a66cd9b94b6d877cddf16e9b06b7" creator="" creation-date="10/27/2024 19:14:32" visibility="private">
+      <structural-feature type="Teacher" type-id="Class:769dbea98b66441a997374601edfadca" />
+    </item>
+    <item id="bdaf6d51e804451ba95df6bcc6fed1d1" cid="PROP020" type="property" name="Film" owner="789b9901a06e473aaba8f8e5d9d941d8" creator="" creation-date="10/27/2024 19:00:44" visibility="private" />
+    <item id="26a174515d2444d48a156e03413aa086" cid="PROP023" type="property" owner="85737140b45741e58fd885142c4af224" creator="" creation-date="10/27/2024 19:01:46" visibility="private">
+      <structural-feature type="EarnFilm" type-id="Class:311c9cec90f74e47a34feb0b3549de65" />
+    </item>
+    <item id="e612c7181ee740b8b5d33d2b9545c1eb" cid="PROP034" type="property" owner="a75acf9f15fd4062aa704944d19db2b5" creator="" creation-date="10/27/2024 19:04:50" visibility="private">
+      <structural-feature type="ServeModel" type-id="Class:789b9901a06e473aaba8f8e5d9d941d8" />
+    </item>
+    <item id="549a83a2493244cfb6a13c2b81c8c123" cid="PROP015" type="property" name="MinAge" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:19" visibility="private" />
+    <item id="8a8512124d5c4f58bbdd5aa5aeb4e838" cid="PROP012" type="property" name="Year" owner="c34eb44317bc4454816dcca77687c04f" creator="" creation-date="10/27/2024 18:59:01" visibility="private" />
+    <item id="cd79a7df1e8c4af0bfc9d4c3165758c3" cid="PROP019" type="property" name="SeatNumber" owner="789b9901a06e473aaba8f8e5d9d941d8" creator="" creation-date="10/27/2024 19:00:20" visibility="private" />
+  </items>
+  <models>
+    <model id="p06a02ba729d14b87a3d1fe184d6d89f5_681842449" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>10/27/2024 18:55:53</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="pb9ff7af73dd04fc39618fa28f38b6d01_748790772" name="Диаграмма классов" order-index="2" overview-order-index="0" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-16,67" zoom="0.8">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>10/27/2024 19:09:07</creation-date>
+          <change-date>10/27/2024 19:15:12</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="a1df24271e0b479d81177b06edddcc4e" cid="PROP051" type="property" name="file" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:46" visibility="private" />
+          <item id="a4abb2e99e8c4d3ea44c8e92d7fc07ab" cid="PROP063" type="property" name="teacherId" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:47" visibility="private" />
+          <item id="709690fdce174333881018538dfef338" cid="PROP042" type="property" name="cafedra" owner="769dbea98b66441a997374601edfadca" creator="" creation-date="10/27/2024 19:11:48" visibility="private" />
+          <item id="0220783a4a68471eb5792774dfae1829" cid="PROP061" type="property" name="studentId" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:40" visibility="private" />
+          <item id="b788ae57019a4b18b195c920434d3400" cid="C010" type="class" name="Laba" creator="" creation-date="10/27/2024 19:12:24" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a0c9e69901e53471fadfc745fdf67adcc281" cid="PROP046" name="id" creation-date="10/27/2024 19:12:27" property-ref="040e03ad86cd4ce1ad09d0c3fb4a5357" />
+              <attribute id="ac7baaa4d954f4964936a9d73fa64d5c3814" cid="PROP047" name="name" creation-date="10/27/2024 19:12:28" property-ref="d3614ad101d244da9e06050890940f7d" />
+              <attribute id="a33d61b6d449c454c831c586b0ed35b1b131" cid="PROP048" name="description" creation-date="10/27/2024 19:12:30" property-ref="b5762a8d7a014674b8acee53d3d8cb55" />
+              <attribute id="affc1f5cf478e40b1914d4b28f76fbeac314" cid="PROP049" name="materials" creation-date="10/27/2024 19:12:39" property-ref="8428abc8bee240a99a889b3212e7e2b4" />
+              <attribute id="a013da90aa541409bbba2735409b96116543" cid="PROP050" name="FileName" creation-date="10/27/2024 19:12:44" property-ref="1eac62b3607b4e7fb9fd9117aaad17af" />
+              <attribute id="a7844eb5f47044767b064d05182739df5465" cid="PROP051" name="file" creation-date="10/27/2024 19:12:46" property-ref="a1df24271e0b479d81177b06edddcc4e" />
+              <attribute id="a60fc4d4f57e54170a1ebb2ed28ab8b3f429" cid="PROP052" name="teacherId" creation-date="10/27/2024 19:12:48" property-ref="e79a07b81a004109b6e095fe6e74fefc" />
+              <attribute id="ab2de9ee3fda54d35bf14b70a41d06e5a121" cid="PROP053" name="teacher" creation-date="10/27/2024 19:12:54" property-ref="4960213adf75437c9faddcd21fd8ea9d" />
+              <attribute id="a377737645b7545a48fa49d0d4e63b466421" cid="PROP054" name="LastTimeToPass" creation-date="10/27/2024 19:12:58" property-ref="81496dd81c3c449d8cfffbad1b104018" />
+              <attribute id="ac6d9511ffc214eaa8e692f682d4bc5ab326" cid="PROP055" name="passLabs" creation-date="10/27/2024 19:13:08" property-ref="3c7cacf795644f2783411fa931d68a05" />
+            </attributes>
+          </item>
+          <item id="1eac62b3607b4e7fb9fd9117aaad17af" cid="PROP050" type="property" name="FileName" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:44" visibility="private" />
+          <item id="9ae02c9084f1423ea6da811c77afed2c" cid="PROP066" type="property" name="isChecked" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:54" visibility="private" />
+          <item id="1c9f857296d9456480bf1c506f94d521" cid="PROP041" type="property" name="PassModels" owner="89d84b1046c842e58458486d16d5879c" creator="" creation-date="10/27/2024 19:11:23" visibility="private" />
+          <item id="3666bbdc634140ad879b8db5100c6ce8" cid="PROP043" type="property" name="isAdmin" owner="769dbea98b66441a997374601edfadca" creator="" creation-date="10/27/2024 19:11:52" visibility="private" />
+          <item id="6339f5f7ba0243e78f146220ae892226" cid="C007" type="class" name="PersonBase" creator="" creation-date="10/27/2024 19:10:16" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a969aacf25eda4db1b52eed2e944dc47e154" cid="PROP036" name="id" creation-date="10/27/2024 19:10:25" property-ref="617d1e1115f84affb22c4fd89ab57298" />
+              <attribute id="a0d33ec62999f4d65ab8cd95139f51a0069" cid="PROP037" name="name" creation-date="10/27/2024 19:10:29" property-ref="2b1431e787774544a86495d99d71f9a6" />
+              <attribute id="ac78121e54e1543bdb95eee17acb01096845" cid="PROP038" name="login" creation-date="10/27/2024 19:10:29" property-ref="50f111f5dcf5454394d93d8f700b45b8" />
+              <attribute id="ad4039c1df6a74b7cba7e08056ed456c1756" cid="PROP039" name="password" creation-date="10/27/2024 19:10:32" property-ref="52010bbc263c4c65b2b2eb29dd75998f" />
+            </attributes>
+          </item>
+          <item id="392af2f73d904b86b4aca8357b915cdc" cid="PROP059" type="property" name="labId" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:29" visibility="private" />
+          <item id="076ca8c107204f21bcf2b5097180bea7" cid="PROP062" type="property" name="student" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:44" visibility="private" />
+          <item id="e12f0bad3cb74c2e975442c91ea6cbec" cid="PROP067" type="property" name="isPassed" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:14:00" visibility="private" />
+          <item id="95880a1c3d7245099b0eae11affc67e5" cid="GNR003" type="generalization" creator="" creation-date="10/27/2024 19:12:13" from="769dbea98b66441a997374601edfadca" to="6339f5f7ba0243e78f146220ae892226" visibility="package" />
+          <item id="9a3f6816fe8c41ea9f14f75cc72b9d1c" cid="GNR002" type="generalization" creator="" creation-date="10/27/2024 19:11:05" from="89d84b1046c842e58458486d16d5879c" to="6339f5f7ba0243e78f146220ae892226" visibility="package" />
+          <item id="8428abc8bee240a99a889b3212e7e2b4" cid="PROP049" type="property" name="materials" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:39" visibility="private" />
+          <item id="9fc7a54ecd344d16bde2061296a32a6b" cid="REL008" type="relationship" creator="" creation-date="10/27/2024 19:14:34" from="8e9830d0f5cc4f14a3b591336ecd24f4" to="b788ae57019a4b18b195c920434d3400" visibility="package">
+            <owned-items />
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" to="b788ae57019a4b18b195c920434d3400" derived="false">
+              <start-role id="umlar-832a05bb-b4b7-4b03-8788-ea165365ee1e" name="" navigability="" association-type="association" visibility="private" property-ref="3b4f87e430b14474a130e9b4035c4333" />
+              <end-role id="umlar-6a495883-e602-48c9-b249-a982683cbf4e" name="" navigability="" association-type="association" visibility="private" property-ref="1cd418b743e447cebd9705bfb7918f79" />
+            </relation>
+          </item>
+          <item id="81496dd81c3c449d8cfffbad1b104018" cid="PROP054" type="property" name="LastTimeToPass" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:58" visibility="private" />
+          <item id="50f111f5dcf5454394d93d8f700b45b8" cid="PROP038" type="property" name="login" owner="6339f5f7ba0243e78f146220ae892226" creator="" creation-date="10/27/2024 19:10:29" visibility="private" />
+          <item id="89d84b1046c842e58458486d16d5879c" cid="C008" type="class" name="Student" creator="" creation-date="10/27/2024 19:10:42" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a8295028883af49769036b22ba2093dbc242" cid="PROP040" name="group" creation-date="10/27/2024 19:11:16" property-ref="f6448c3a4025417aafc160f734bcfa9f" />
+              <attribute id="a5109359fc7bd470da52a46515f3bdd52521" cid="PROP041" name="PassModels" creation-date="10/27/2024 19:11:23" property-ref="1c9f857296d9456480bf1c506f94d521" />
+            </attributes>
+          </item>
+          <item id="0e7c2f0f56024fbdb4c7f8647fc16774" cid="C012" type="class" name="Class12" creator="" creation-date="10/27/2024 19:15:12" visibility="undefined" />
+          <item id="77a77d1ebd2c407db59aff3f3029de6d" cid="PROP060" type="property" name="lab" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:36" visibility="private" />
+          <item id="040e03ad86cd4ce1ad09d0c3fb4a5357" cid="PROP046" type="property" name="id" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:27" visibility="private" />
+          <item id="3c7cacf795644f2783411fa931d68a05" cid="PROP055" type="property" name="passLabs" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:13:08" visibility="private" />
+          <item id="d3614ad101d244da9e06050890940f7d" cid="PROP047" type="property" name="name" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:28" visibility="private" />
+          <item id="412ee605894941639ad305c8f3c2043e" cid="PROP044" type="property" name="labs" owner="769dbea98b66441a997374601edfadca" creator="" creation-date="10/27/2024 19:11:58" visibility="private" />
+          <item id="c63c11e302534443afc7613a777755ee" cid="PROP064" type="property" name="teacher" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:49" visibility="private" />
+          <item id="7342820583914d43b66606565717c017" cid="REL006" type="relationship" creator="" creation-date="10/27/2024 19:14:27" from="8e9830d0f5cc4f14a3b591336ecd24f4" to="89d84b1046c842e58458486d16d5879c" visibility="package">
+            <owned-items />
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" to="89d84b1046c842e58458486d16d5879c" derived="false">
+              <start-role id="umlar-25c205ba-68f3-4f04-b86a-7cb58338d92b" name="" navigability="" association-type="association" visibility="private" property-ref="6060f1006f21413dbaa3fe60a8338ef2" />
+              <end-role id="umlar-85ab688f-ae8c-4e7f-8156-d717632df270" name="" navigability="" association-type="association" visibility="private" property-ref="0064acb07a8446faa28b8dec9fa92f12" />
+            </relation>
+          </item>
+          <item id="769dbea98b66441a997374601edfadca" cid="C009" type="class" name="Teacher" creator="" creation-date="10/27/2024 19:11:38" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a8e8899e06c934dfba7839a71c701c7d7364" cid="PROP042" name="cafedra" creation-date="10/27/2024 19:11:48" property-ref="709690fdce174333881018538dfef338" />
+              <attribute id="aeeef1f85aa494c89a238f41163eea019442" cid="PROP043" name="isAdmin" creation-date="10/27/2024 19:11:52" property-ref="3666bbdc634140ad879b8db5100c6ce8" />
+              <attribute id="aa687178d8e684bb4815517af377bdc59339" cid="PROP044" name="labs" creation-date="10/27/2024 19:11:58" property-ref="412ee605894941639ad305c8f3c2043e" />
+              <attribute id="a680c8be55bdf435e8dec6258011e2ae7320" cid="PROP045" name="passModels" creation-date="10/27/2024 19:12:03" property-ref="44863f67f11d441ebc628b005595c3a7" />
+            </attributes>
+          </item>
+          <item id="2b1431e787774544a86495d99d71f9a6" cid="PROP037" type="property" name="name" owner="6339f5f7ba0243e78f146220ae892226" creator="" creation-date="10/27/2024 19:10:29" visibility="private" />
+          <item id="5828a66cd9b94b6d877cddf16e9b06b7" cid="REL007" type="relationship" creator="" creation-date="10/27/2024 19:14:32" from="8e9830d0f5cc4f14a3b591336ecd24f4" to="769dbea98b66441a997374601edfadca" visibility="package">
+            <owned-items />
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" to="769dbea98b66441a997374601edfadca" derived="false">
+              <start-role id="umlar-45d4da71-82d9-4239-9cd1-b0e0d6029899" name="" navigability="" association-type="association" visibility="private" property-ref="2bbe612df471430fa3d8da0d5267d28a" />
+              <end-role id="umlar-9e3bf868-964c-4ecc-b5bf-7cf39ca95d01" name="" navigability="" association-type="association" visibility="private" property-ref="ff69fddc2c174194b8cfde2a4faccaf1" />
+            </relation>
+          </item>
+          <item id="8e9830d0f5cc4f14a3b591336ecd24f4" cid="C011" type="class" name="PassModel" creator="" creation-date="10/27/2024 19:13:24" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a0a9fcdd4b9884d05bbc6ed53be69d88b646" cid="PROP058" name="id" creation-date="10/27/2024 19:13:28" property-ref="20803a6daf3d4a84968c409ea55486bf" />
+              <attribute id="a95a00a77be4e4c22b52e03da48b4ddb6739" cid="PROP059" name="labId" creation-date="10/27/2024 19:13:29" property-ref="392af2f73d904b86b4aca8357b915cdc" />
+              <attribute id="a8ce4e52c76044de48e5faba404c73678885" cid="PROP060" name="lab" creation-date="10/27/2024 19:13:36" property-ref="77a77d1ebd2c407db59aff3f3029de6d" />
+              <attribute id="a6dc2563aca2a41db9b506f8623a01729377" cid="PROP061" name="studentId" creation-date="10/27/2024 19:13:40" property-ref="0220783a4a68471eb5792774dfae1829" />
+              <attribute id="aec7d7cfddfe74ad7bb0a30d1ae492597898" cid="PROP062" name="student" creation-date="10/27/2024 19:13:44" property-ref="076ca8c107204f21bcf2b5097180bea7" />
+              <attribute id="a61804a431426489d8abf8e91f65aa311263" cid="PROP063" name="teacherId" creation-date="10/27/2024 19:13:47" property-ref="a4abb2e99e8c4d3ea44c8e92d7fc07ab" />
+              <attribute id="a2e28496eacaa4816ab1bbbecab9cb2d6881" cid="PROP064" name="teacher" creation-date="10/27/2024 19:13:49" property-ref="c63c11e302534443afc7613a777755ee" />
+              <attribute id="a23495b61f6e340ef986c4c508fe14390166" cid="PROP065" name="comment" creation-date="10/27/2024 19:13:52" property-ref="5c1d7c56e35444fdb1ef62bc08c43f4b" />
+              <attribute id="a1e3199e6a4b04a929d5431ec37dc9901945" cid="PROP066" name="isChecked" creation-date="10/27/2024 19:13:54" property-ref="9ae02c9084f1423ea6da811c77afed2c" />
+              <attribute id="a0e0f0da1e6d94bbda7e43d33846e4212495" cid="PROP067" name="isPassed" creation-date="10/27/2024 19:14:00" property-ref="e12f0bad3cb74c2e975442c91ea6cbec" />
+              <attribute id="aed4018e8c0e94896b37a9f0176de1b37742" cid="PROP068" name="mark" creation-date="10/27/2024 19:14:04" property-ref="2084fd2197044a18b1db576e873da6d3" />
+              <attribute id="aff240ff8ce9a4794a1adb6871d5168aa837" cid="PROP069" name="report" creation-date="10/27/2024 19:14:06" property-ref="a2091cea66be46a486ee9fa983e84644" />
+            </attributes>
+          </item>
+          <item id="f6448c3a4025417aafc160f734bcfa9f" cid="PROP040" type="property" name="group" owner="89d84b1046c842e58458486d16d5879c" creator="" creation-date="10/27/2024 19:11:16" visibility="private" />
+          <item id="44863f67f11d441ebc628b005595c3a7" cid="PROP045" type="property" name="passModels" owner="769dbea98b66441a997374601edfadca" creator="" creation-date="10/27/2024 19:12:03" visibility="private" />
+          <item id="20803a6daf3d4a84968c409ea55486bf" cid="PROP058" type="property" name="id" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:28" visibility="private" />
+          <item id="a2091cea66be46a486ee9fa983e84644" cid="PROP069" type="property" name="report" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:14:06" visibility="private" />
+          <item id="5c1d7c56e35444fdb1ef62bc08c43f4b" cid="PROP065" type="property" name="comment" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:13:52" visibility="private" />
+          <item id="b5762a8d7a014674b8acee53d3d8cb55" cid="PROP048" type="property" name="description" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:30" visibility="private" />
+          <item id="2084fd2197044a18b1db576e873da6d3" cid="PROP068" type="property" name="mark" owner="8e9830d0f5cc4f14a3b591336ecd24f4" creator="" creation-date="10/27/2024 19:14:04" visibility="private" />
+          <item id="f48a6b997d354211855faf021135d24c" cid="REL004" type="relationship" creator="" creation-date="10/27/2024 19:13:18" from="b788ae57019a4b18b195c920434d3400" to="769dbea98b66441a997374601edfadca" visibility="package">
+            <owned-items />
+            <relation from="b788ae57019a4b18b195c920434d3400" to="769dbea98b66441a997374601edfadca" derived="false">
+              <start-role id="umlar-5d39a017-8e80-481c-93f3-fb82486f2972" name="" navigability="" association-type="association" visibility="private" property-ref="87f713d927fc4ada823ad61b6b0b3493" />
+              <end-role id="umlar-8135fc72-3bff-42d2-ba87-b708e0a496c1" name="" navigability="" association-type="association" visibility="private" property-ref="86dc32da81384a6cacbaa1e2fec1bef8" />
+            </relation>
+          </item>
+          <item id="4960213adf75437c9faddcd21fd8ea9d" cid="PROP053" type="property" name="teacher" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:54" visibility="private" />
+          <item id="617d1e1115f84affb22c4fd89ab57298" cid="PROP036" type="property" name="id" owner="6339f5f7ba0243e78f146220ae892226" creator="" creation-date="10/27/2024 19:10:25" visibility="private" />
+          <item id="52010bbc263c4c65b2b2eb29dd75998f" cid="PROP039" type="property" name="password" owner="6339f5f7ba0243e78f146220ae892226" creator="" creation-date="10/27/2024 19:10:32" visibility="private" />
+          <item id="e79a07b81a004109b6e095fe6e74fefc" cid="PROP052" type="property" name="teacherId" owner="b788ae57019a4b18b195c920434d3400" creator="" creation-date="10/27/2024 19:12:48" visibility="private" />
+        </abstract-items>
+        <layer id="fd33d9d7ef154f8b81185e872f44d133" name="Default" visible="true" enabled="true" locked="false">
+          <item id="6339f5f7ba0243e78f146220ae892226" iid="016ca7a116b04988964e7c5cc54d6685" show-fields="true" creation-date="10/27/2024 19:10:16" order-index="0" type="entity">
+            <layout ax="288" ay="196" awidth="140" aheight="160" x="288" y="196" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="89d84b1046c842e58458486d16d5879c" iid="c0a266a903bf43d59abe900e3dc2f6c2" show-fields="true" creation-date="10/27/2024 19:10:42" order-index="1" type="entity">
+            <layout ax="288" ay="582" awidth="140" aheight="160" x="288" y="582" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="9a3f6816fe8c41ea9f14f75cc72b9d1c" iid="1bb558bb4c0d4c4e8aa9498c82d5becf" creation-date="10/27/2024 19:11:05" order-index="2" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-to-fields="false" auto-path="" x1="358" y1="582" x2="358" y2="356" start-border-pos="0.125" end-border-pos="0.625" name-position="0,20">
+              <points>
+                <point x="358" y="582" />
+                <point x="358" y="356" />
+              </points>
+            </layout>
+            <relation from="89d84b1046c842e58458486d16d5879c" from-iid="c0a266a903bf43d59abe900e3dc2f6c2" to="6339f5f7ba0243e78f146220ae892226" to-iid="016ca7a116b04988964e7c5cc54d6685" />
+          </item>
+          <item id="769dbea98b66441a997374601edfadca" iid="d216bf8499c84faaa3600f3be4216b37" show-fields="true" creation-date="10/27/2024 19:11:38" order-index="3" type="entity">
+            <layout ax="571" ay="366.5" awidth="140" aheight="160" x="571" y="366.5" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="95880a1c3d7245099b0eae11affc67e5" iid="d66bd94030c6400ba21d24a09d749fb8" creation-date="10/27/2024 19:12:13" order-index="4" type="relation">
+            <layout line-style="oblique" lock-to-fields="false" auto-path="" x1="571" y1="404" x2="428" y2="318" start-border-pos="0.9414835453033448" end-border-pos="0.4407022953033447" name-position="0,20">
+              <points>
+                <point x="571" y="404" />
+                <point x="428" y="318" />
+              </points>
+            </layout>
+            <relation from="769dbea98b66441a997374601edfadca" from-iid="d216bf8499c84faaa3600f3be4216b37" to="6339f5f7ba0243e78f146220ae892226" to-iid="016ca7a116b04988964e7c5cc54d6685" />
+          </item>
+          <item id="b788ae57019a4b18b195c920434d3400" iid="2231e5b18b5c475dba95a3e0ad6b5b67" show-fields="true" creation-date="10/27/2024 19:12:24" order-index="5" type="entity">
+            <layout ax="874" ay="332" awidth="140" aheight="229" x="874" y="332" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="f48a6b997d354211855faf021135d24c" iid="c1e62e4bc7d84cb3ae3ee974142a815a" creation-date="10/27/2024 19:13:18" order-index="6" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-to-fields="false" auto-path="" x1="874" y1="446" x2="711" y2="446" start-border-pos="0.8755458515283843" end-border-pos="0.37421875" name-position="0,20">
+              <points>
+                <point x="874" y="446" />
+                <point x="711" y="446" />
+              </points>
+            </layout>
+            <relation from="b788ae57019a4b18b195c920434d3400" from-iid="2231e5b18b5c475dba95a3e0ad6b5b67" to="769dbea98b66441a997374601edfadca" to-iid="d216bf8499c84faaa3600f3be4216b37" />
+          </item>
+          <item id="8e9830d0f5cc4f14a3b591336ecd24f4" iid="e3607e29f6e54a71a6a897946a586346" show-fields="true" creation-date="10/27/2024 19:13:24" order-index="7" type="entity">
+            <layout ax="571" ay="631" awidth="140" aheight="267" x="571" y="631" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="7342820583914d43b66606565717c017" iid="fae8e8fa62594272a564e7c0aaf8f075" creation-date="10/27/2024 19:14:27" order-index="8" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-to-fields="false" auto-path="" x1="571" y1="739" x2="428" y2="687" start-border-pos="0.8990914562668246" end-border-pos="0.41442136764526366" name-position="0,20">
+              <points>
+                <point x="571" y="739" />
+                <point x="428" y="687" />
+              </points>
+            </layout>
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" from-iid="e3607e29f6e54a71a6a897946a586346" to="89d84b1046c842e58458486d16d5879c" to-iid="c0a266a903bf43d59abe900e3dc2f6c2" />
+          </item>
+          <item id="5828a66cd9b94b6d877cddf16e9b06b7" iid="a345426a151e45bb844b61bbe18f545c" creation-date="10/27/2024 19:14:32" order-index="9" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-to-fields="false" auto-path="" x1="641" y1="631" x2="641" y2="526" start-border-pos="0.125" end-border-pos="0.625" name-position="0,20">
+              <points>
+                <point x="641" y="631" />
+                <point x="641" y="526" />
+              </points>
+            </layout>
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" from-iid="e3607e29f6e54a71a6a897946a586346" to="769dbea98b66441a997374601edfadca" to-iid="d216bf8499c84faaa3600f3be4216b37" />
+          </item>
+          <item id="9fc7a54ecd344d16bde2061296a32a6b" iid="5290bc3f38fa4946b1785ce5788cf08a" creation-date="10/27/2024 19:14:34" order-index="10" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-to-fields="false" auto-path="" x1="711" y1="691" x2="874" y2="519" start-border-pos="0.30574407113178836" end-border-pos="0.7953435239833515" name-position="0,20">
+              <points>
+                <point x="711" y="691" />
+                <point x="874" y="519" />
+              </points>
+            </layout>
+            <relation from="8e9830d0f5cc4f14a3b591336ecd24f4" from-iid="e3607e29f6e54a71a6a897946a586346" to="b788ae57019a4b18b195c920434d3400" to-iid="2231e5b18b5c475dba95a3e0ad6b5b67" />
+          </item>
+          <item id="0e7c2f0f56024fbdb4c7f8647fc16774" iid="bdc2462df36f4cf19c800f3808b48c43" show-fields="true" creation-date="10/27/2024 19:15:12" order-index="11" type="entity">
+            <layout ax="973" ay="883" awidth="140" aheight="160" x="973" y="883" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>

@@ -40,6 +40,7 @@ namespace domain.entities
         public float mark { get; set; }
 
         public byte[] report { get; set; }
+        public string fileExtension { get; set; }
     }
 
     public class LabResponse

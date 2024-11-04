@@ -10,6 +10,7 @@ namespace LabsManager.Services
     {
         Task AddPassModel(AddPassModelDTO model);
         Task<List<PassModel>> getAllPassModels();
+        Task PutMarkToLaboratory(int pasLabId, int mark);
     }
 
     public class PassService : IPassService
@@ -31,7 +32,8 @@ namespace LabsManager.Services
                 isChecked = false,
                 isPassed = false,
                 mark = 0,
-                report = ConvertFileToBytes(model.report)
+                report = ConvertFileToBytes(model.report),
+                fileExtension = model.report.FileName
             };
 
             await _passRepository.AddPassModel(passModel);
@@ -49,6 +51,16 @@ namespace LabsManager.Services
             return model;
         }
 
+        public async Task PutMarkToLaboratory(int pasLabId, int mark)
+        {
+            var lab = await _passRepository.GetPassModelById(pasLabId);
+            
+            lab.isChecked = true;
+            lab.mark = mark;
+            lab.isPassed = mark >= 4;
+
+            await _passRepository.UpdatePassModel(lab);
+        }
 
         private byte[] ConvertFileToBytes(IFormFile file)
         {

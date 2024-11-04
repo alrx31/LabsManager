@@ -11,7 +11,13 @@ namespace LabsManager
         private bool isMine = false;
         private List<Lab> labs = new List<Lab>();
         private List<PassLabModel> labsPassModels = new List<PassLabModel>();
-        private bool isPassModelsInList = true;
+        private bool isPassModelsInList = false;
+        private int _pageNumber = 1;
+
+        // 1 - all labs
+        // 2 - labs to check
+        // 3 - labs with mark
+
         // 0 - unauthorized
         // 1 - student
         // 2 - teacher
@@ -166,17 +172,22 @@ namespace LabsManager
 
         private void panelButton2_Click(object sender, EventArgs e)
         {
+            _pageNumber = 1;
             isMine = false;
             profilePanel.Visible = false;
 
+            isPassModelsInList = false;
+
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
+
 
             panelIndicator.Location = new Point(0, 70);
         }
 
         private void panelButton1_Click(object sender, EventArgs e)
         {
+            _pageNumber = 0;
             profilePanel.Visible = true;
             SubjectsList.Visible = false;
             panelIndicator.Location = new Point(0, 20);
@@ -184,9 +195,12 @@ namespace LabsManager
 
         private void panelButton3_Click(object sender, EventArgs e)
         {
+            _pageNumber = 2;
             isMine = true;
             profilePanel.Visible = false;
             // need to redraw component
+            isPassModelsInList = true;
+
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
 
@@ -194,10 +208,15 @@ namespace LabsManager
         }
         private void panelButton4_Click(object sender, EventArgs e)
         {
+            _pageNumber = 3;
             isMine = true;
+            isPassModelsInList = true;
             profilePanel.Visible = false;
-            SubjectsList.Visible = false;
             // need Component
+
+
+            SubjectsList.Visible = false;
+            SubjectsList.Visible = true;
 
             panelIndicator.Location = new Point(0, 170);
         }
@@ -219,12 +238,11 @@ namespace LabsManager
         {
             if (SubjectsList.Visible)
             {
-                //FillSubjectsList(subjects);
                 if (!isPassModelsInList)
                 {
                     FillLabs(labs);
 
-                    if (ruleLevel >= 2 && !isMine)
+                    if (ruleLevel >= 2 && !isMine && _pageNumber == 1)
                     {
                         Createbutton1.Visible = true;
                     }
@@ -232,36 +250,64 @@ namespace LabsManager
                     {
                         Createbutton1.Visible = false;
                     }
-                    if (isMine)
-                    {
-                        if (ruleLevel == 1)
-                        {
-                            /*var subjectsF = _subjectsServ.getFollowsSubjectsList(_person.id);
-                            var list = new List<Subject>();
-                            foreach (var subject in subjectsF)
-                            {
-                                list.Add(subject.subject);
-                            }
-                            FillSubjectsList(list);*/
-                        }
-                        else if (ruleLevel >= 2)
-                        {
-                            //var subjects = _subjectsServ.getTeacherSubjects(_person.id);
-                            //FillSubjectsList(subjects);
-                        }
-                    }
                 }
                 else
                 {
+                    Createbutton1.Visible = false;
                     FillLabsPassModels(labsPassModels);
                 }
             }
 
         }
 
-        private void FillLabsPassModels(List<PassLabModel> labsPassModeles)
+        private List<PassLabModel> filterLabsThatPassed(List<PassLabModel> labs, int rule)
+            // 1 - checked 
+            // 2 - not checked
         {
+            GetLabs();
+            GetPassModels();
+            var res = new List<PassLabModel>();
+            foreach (var l in labs)
+            {
+                if(rule == 1)
+                {
+                    if (
+                        l.StudentId == _person.id && l.isPassed || 
+                        ruleLevel >= 2 && l.isPassed
+                    )
+                    {
+                        res.Add(l);
+                    }
+                }else if(rule == 2)
+                {
+                    if (
+                        l.StudentId == _person.id && !l.isPassed 
+                        || ruleLevel >= 2 && !l.isPassed
+                    )
+                    {
+                        res.Add(l);
+                    }
+                }
+            }
+            return res;
+        }
+
+        private void FillLabsPassModels(List<PassLabModel> _labsPassModels)
+        {
+            GetPassModels();
+            var labsPassModeles = _labsPassModels;
             flowLayoutPanelListSubjects.Controls.Clear();
+
+            if (_pageNumber == 3)
+            {
+                labsPassModeles = filterLabsThatPassed(labsPassModels,1);
+            }
+
+            if(_pageNumber == 2)
+            {
+                labsPassModeles = filterLabsThatPassed(labsPassModels, 2);
+            }
+
 
             if (labs.Count > 0)
             {
@@ -292,20 +338,23 @@ namespace LabsManager
 
                     panel.Click += (sender, e) =>
                     {
-                        var labForm = new PassLabShowForm(_person.id, lab);
+                        var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
                         labForm.ShowDialog();
+                        
                     };
 
                     label.Click += (sender, e) =>
                     {
-                        var labForm = new PassLabShowForm(_person.id, lab);
+                        var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
                         labForm.ShowDialog();
+                        
                     };
 
                     label1.Click += (sender, e) =>
                     {
-                        var labForm = new PassLabShowForm(_person.id, lab);
+                        var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
                         labForm.ShowDialog();
+                        
                     };
 
                     flowLayoutPanelListSubjects.Controls.Add(panel);
@@ -329,7 +378,7 @@ namespace LabsManager
         }
 
 
-        private void FillLabs(List<Lab> labs)
+        private void FillLabs(List<Lab> _labs)
         {
             flowLayoutPanelListSubjects.Controls.Clear();
 
@@ -398,7 +447,7 @@ namespace LabsManager
             }
         }
 
-
+        
 
         private void GetLabs()
         {
@@ -409,7 +458,10 @@ namespace LabsManager
             if (response.IsSuccessStatusCode)
             {
                 var content = response.Content.ReadAsStringAsync().Result;
-                labs = JsonSerializer.Deserialize<List<Lab>>(content);
+                labs = JsonSerializer.Deserialize<List<Lab>>(content, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
             }
             else
             {
@@ -425,7 +477,10 @@ namespace LabsManager
             if (response.IsSuccessStatusCode)
             {
                 var content = response.Content.ReadAsStringAsync().Result;
-                labsPassModels = JsonSerializer.Deserialize<List<PassLabModel>>(content);
+                labsPassModels = JsonSerializer.Deserialize<List<PassLabModel>>(content, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
             }
             else
             {

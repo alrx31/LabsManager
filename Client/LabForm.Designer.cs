@@ -35,6 +35,7 @@
             label2 = new Label();
             label5 = new Label();
             label3 = new Label();
+            button2 = new Button();
             button1 = new Button();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -50,6 +51,7 @@
             flowLayoutPanel1.Controls.Add(label5);
             flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
@@ -125,6 +127,18 @@
             label3.TabIndex = 2;
             label3.Text = "label3";
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 16F);
+            button2.Location = new Point(23, 411);
+            button2.Margin = new Padding(3, 3, 30, 30);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 50);
+            button2.TabIndex = 7;
+            button2.Text = "Добавить отчет";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 16F);
@@ -163,5 +177,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button button2;
     }
 }

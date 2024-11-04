@@ -23,7 +23,7 @@ namespace LabsManager
             label1.Text = laba.name;
             label2.Text = laba.description;
             label3.Text = laba.materials;
-            label6.Text = "Срок сдачи: "+laba.lastTimeToPass.ToString();
+            label6.Text = "Срок сдачи: " + laba.lastTimeToPass.ToString();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -48,6 +48,13 @@ namespace LabsManager
                     File.WriteAllBytes(saveFileDialog.FileName, fileData);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var AddReportForm = new AddReportForm(user_id, laba);
+            AddReportForm.ShowDialog();
+            this.Close();
         }
     }
 }
