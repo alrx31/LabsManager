@@ -56,6 +56,7 @@
             Profilelabel1 = new Label();
             SubjectsList = new Panel();
             ControlPanel = new Panel();
+            Statisticbutton1 = new Button();
             Createbutton1 = new Button();
             flowLayoutPanelListSubjects = new FlowLayoutPanel();
             panel1.SuspendLayout();
@@ -386,11 +387,25 @@
             // ControlPanel
             // 
             ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
+            ControlPanel.Controls.Add(Statisticbutton1);
             ControlPanel.Controls.Add(Createbutton1);
             ControlPanel.Location = new Point(0, 830);
             ControlPanel.Name = "ControlPanel";
             ControlPanel.Size = new Size(1300, 50);
             ControlPanel.TabIndex = 0;
+            // 
+            // Statisticbutton1
+            // 
+            Statisticbutton1.Cursor = Cursors.Hand;
+            Statisticbutton1.FlatStyle = FlatStyle.Flat;
+            Statisticbutton1.ForeColor = Color.White;
+            Statisticbutton1.Location = new Point(977, 9);
+            Statisticbutton1.Name = "Statisticbutton1";
+            Statisticbutton1.Size = new Size(173, 30);
+            Statisticbutton1.TabIndex = 4;
+            Statisticbutton1.Text = "Получить статистику";
+            Statisticbutton1.UseVisualStyleBackColor = true;
+            Statisticbutton1.Click += Statisticbutton1_Click;
             // 
             // Createbutton1
             // 
@@ -482,5 +497,6 @@
         private Panel panelButton4;
         private Label label3;
         private Button Createbutton1;
+        private Button Statisticbutton1;
     }
 }

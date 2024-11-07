@@ -79,7 +79,7 @@ namespace LabsManager
                     fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data");
                     content.Add(fileContent, "File", Path.GetFileName(filePath));
 
-                    HttpResponseMessage response = await client.PutAsync("http://localhost:5000/api/labs", content);
+                    HttpResponseMessage response = await client.PutAsync($"{ENV.BASEURL}/api/labs", content);
 
                     if (response.IsSuccessStatusCode)
                     {

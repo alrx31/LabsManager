@@ -92,12 +92,13 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(128, 128, 255);
             button1.Location = new Point(12, 232);
             button1.Name = "button1";
             button1.Size = new Size(222, 40);
             button1.TabIndex = 5;
             button1.Text = "Скачать отчет";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // numericUpDown1
@@ -119,18 +120,20 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(128, 128, 255);
             button2.Location = new Point(23, 408);
             button2.Name = "button2";
             button2.Size = new Size(222, 39);
             button2.TabIndex = 8;
             button2.Text = "Выставить оценку";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // PassLabShowForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 240, 255);
             ClientSize = new Size(784, 561);
             Controls.Add(button2);
             Controls.Add(label6);

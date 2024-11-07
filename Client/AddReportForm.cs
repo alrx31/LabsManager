@@ -22,8 +22,9 @@ namespace LabsManager
         {
             _Lab = Lab;
             _personId = personId;
-
             InitializeComponent();
+            label1.Text = "";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace LabsManager
 
             if (filePath == "")
             {
-                label2.Text = "Заполните все поля";
+                label2.Text = "Загрузите отчет";
                 label2.Visible = true;
                 return;
             }
@@ -70,7 +71,7 @@ namespace LabsManager
                     fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data");
                     content.Add(fileContent, "report", Path.GetFileName(filePath));
 
-                    HttpResponseMessage response = await client.PutAsync("http://localhost:5000/api/pass", content);
+                    HttpResponseMessage response = await client.PutAsync($"{ENV.BASEURL}/api/pass", content);
 
                     if (response.IsSuccessStatusCode)
                     {
