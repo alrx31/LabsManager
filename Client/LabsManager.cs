@@ -245,15 +245,18 @@ namespace LabsManager
                     if (ruleLevel >= 2 && !isMine && _pageNumber == 1)
                     {
                         Createbutton1.Visible = true;
+                        Statisticbutton1.Visible = true;
                     }
                     else
                     {
                         Createbutton1.Visible = false;
+                        Statisticbutton1.Visible = false;
                     }
                 }
                 else
                 {
                     Createbutton1.Visible = false;
+                    Statisticbutton1.Visible = false;
                     FillLabsPassModels();
                 }
             }
@@ -261,25 +264,26 @@ namespace LabsManager
         }
 
         private List<PassLabModel> filterLabsThatPassed(List<PassLabModel> labs, int rule)
-            // 1 - checked 
-            // 2 - not checked
+        // 1 - checked 
+        // 2 - not checked
         {
             var res = new List<PassLabModel>();
             foreach (var l in labs)
             {
-                if(rule == 1)
+                if (rule == 1)
                 {
                     if (
-                        l.StudentId == _person.id && l.isPassed || 
+                        l.StudentId == _person.id && l.isPassed ||
                         ruleLevel >= 2 && l.isPassed
                     )
                     {
                         res.Add(l);
                     }
-                }else if(rule == 2)
+                }
+                else if (rule == 2)
                 {
                     if (
-                        l.StudentId == _person.id && !l.isPassed 
+                        l.StudentId == _person.id && !l.isPassed
                         || ruleLevel >= 2 && !l.isPassed
                     )
                     {
@@ -299,10 +303,10 @@ namespace LabsManager
 
             if (_pageNumber == 3)
             {
-                labsPassModeles = filterLabsThatPassed(labsPassModels,1);
+                labsPassModeles = filterLabsThatPassed(labsPassModels, 1);
             }
 
-            if(_pageNumber == 2)
+            if (_pageNumber == 2)
             {
                 labsPassModeles = filterLabsThatPassed(labsPassModels, 2);
             }
@@ -432,7 +436,7 @@ namespace LabsManager
             }
         }
 
-        
+
 
         private void GetLabs()
         {
@@ -472,5 +476,64 @@ namespace LabsManager
                 return;
             }
         }
+
+        private async void Statisticbutton1_Click(object sender, EventArgs e)
+        {
+            string url = $"{ENV.BASEURL}/api/labs/stats";
+            try
+            {
+                var response =await GetApiResponseAsync(url);
+
+                SaveResponseToFile(response, $"{ENV.DATAFOLDER}/stats.txt");
+
+                MessageBox.Show("Данные успешно сохранены в файл!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка: {ex.Message}");
+            }
+        }
+
+        private async Task<ApiResponse> GetApiResponseAsync(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return JsonSerializer.Deserialize<ApiResponse>(responseBody);
+            }
+        }
+
+        private void SaveResponseToFile(ApiResponse response, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine("Количество лабораторных работ: " + response.labCounts);
+                writer.WriteLine("Количество попыток: " + response.tryPassCount);
+                writer.WriteLine("Не проверено: " + response.notChecked);
+                writer.WriteLine("Не сдано: " + response.notPassed);
+                writer.WriteLine("Сдано: " + response.passed);
+                writer.WriteLine("Средний балл сдавших: " + response.averagePassed);
+                writer.WriteLine("Средний балл со всеми: " + response.averageWithNotPassed);
+                writer.WriteLine("Процент сдавших: " + response.percentOfPassed + "%");
+                writer.WriteLine("Среднее количество лабораторных на одного студента: " + response.averageLabsInOneStudent);
+            }
+        }
+    
+    }
+
+    public class ApiResponse
+    {
+        public int labCounts { get; set; }
+        public int tryPassCount { get; set; }
+        public int notChecked { get; set; }
+        public int notPassed { get; set; }
+        public int passed { get; set; }
+        public double averagePassed { get; set; }
+        public double averageWithNotPassed { get; set; }
+        public int percentOfPassed { get; set; }
+        public double averageLabsInOneStudent { get; set; }
     }
 }
