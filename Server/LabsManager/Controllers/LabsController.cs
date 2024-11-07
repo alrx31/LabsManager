@@ -60,6 +60,39 @@ namespace LabsManager.Controllers
 
             return Ok(res);
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         [HttpDelete("{labId}")]
         public async Task<IActionResult> DeleteLab(int labId)
@@ -71,7 +104,7 @@ namespace LabsManager.Controllers
         [HttpGet("stats")]
         public async Task<IActionResult> GetStats()
         {
-            return Ok();
+            return Ok(await _labsService.GetStats());
         }
     }
 }

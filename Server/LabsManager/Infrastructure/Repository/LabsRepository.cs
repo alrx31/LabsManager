@@ -10,6 +10,7 @@ namespace LabsManager.Infrastructure.Repository
         Task AddLab(Laba lab);
         Task<Laba> GetLab(int id);
         Task DeleteLab(Laba lab);
+        Task<List<Student>> GetAllStudents();
     }
 
 
@@ -42,6 +43,11 @@ namespace LabsManager.Infrastructure.Repository
         {
             _context.Labs.Remove(lab);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Student>> GetAllStudents()
+        {
+            return await _context.Students.ToListAsync();
         }
     }
 }

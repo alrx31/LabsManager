@@ -11,15 +11,23 @@ namespace LabsManager.Services
         Task AddLab(AddLabDTO model);
         Task<Laba> GetLab(int id);
         Task DeleteLab(int labId);
+        Task<Stats> GetStats();
     }
 
     public class LabsService : ILabsService
     {
         private readonly ILabsRepository _labsRepository;
-
-        public LabsService(ILabsRepository labsRepository)
+        private readonly IPassRepository _PassLabsRepository;
+        private readonly IPersonRepository _personRepository;
+        public LabsService(
+            ILabsRepository labsRepository,
+            IPassRepository passRepository,
+            IPersonRepository personRepository
+            )
         {
             _labsRepository = labsRepository;
+            _PassLabsRepository = passRepository;
+            _personRepository = personRepository;
         }
 
         public async Task<List<Laba>> GetAllLabs()
@@ -73,6 +81,30 @@ namespace LabsManager.Services
             }
             
             await _labsRepository.DeleteLab(lab);
+        }
+
+        public async Task<Stats> GetStats()
+        {
+            var stat = new Stats();
+
+            var students =await  _labsRepository.GetAllStudents();
+            
+            var labs = await _labsRepository.GetAllLabs();
+            var passmodels = await _PassLabsRepository.getAllPassModels();
+            
+            stat.labCounts = labs.Count;
+            stat.tryPassCount = passmodels.Count;
+            
+            stat.passed = passmodels.Where(m=> m.isPassed).Count();
+            stat.notPassed = passmodels.Where(m => !m.isPassed).Count();
+            stat.notChecked = passmodels.Where(m => !m.isChecked).Count();
+            
+            stat.percentOfPassed = (int)((stat.passed / (float)stat.tryPassCount) * 100);
+            stat.averagePassed = passmodels.Where(m => m.isPassed).Average(m => m.mark);
+            stat.averageWithNotPassed = passmodels.Average(m => m.mark);
+            stat.averageLabsInOneStudent = passmodels.Count / (float)students.Count;
+            
+            return stat;
         }
     }
 }
