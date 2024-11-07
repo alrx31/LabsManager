@@ -9,6 +9,7 @@ namespace LabsManager.Infrastructure.Repository
         Task<List<Laba>> GetAllLabs();
         Task AddLab(Laba lab);
         Task<Laba> GetLab(int id);
+        Task DeleteLab(Laba lab);
     }
 
 
@@ -35,6 +36,12 @@ namespace LabsManager.Infrastructure.Repository
         public async Task<Laba> GetLab(int id)
         {
             return await _context.Labs.FirstOrDefaultAsync(l => l.id == id);
+        }
+
+        public async Task DeleteLab(Laba lab)
+        {
+            _context.Labs.Remove(lab);
+            await _context.SaveChangesAsync();
         }
     }
 }

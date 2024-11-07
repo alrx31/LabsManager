@@ -10,6 +10,7 @@ namespace LabsManager.Services
         Task<List<Laba>> GetAllLabs();
         Task AddLab(AddLabDTO model);
         Task<Laba> GetLab(int id);
+        Task DeleteLab(int labId);
     }
 
     public class LabsService : ILabsService
@@ -60,6 +61,18 @@ namespace LabsManager.Services
             }
 
             return laba;
+        }
+
+        public async Task DeleteLab(int labId)
+        {
+            var lab = await _labsRepository.GetLab(labId);
+
+            if (lab is null)
+            {
+                throw new Exception("lab not found");
+            }
+            
+            await _labsRepository.DeleteLab(lab);
         }
     }
 }
