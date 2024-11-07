@@ -117,9 +117,9 @@
             cbRole.AutoSize = true;
             cbRole.Location = new Point(225, 320);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(114, 25);
+            cbRole.Size = new Size(171, 25);
             cbRole.TabIndex = 8;
-            cbRole.Text = "Ты Препод?";
+            cbRole.Text = "Вы Преподователь?";
             cbRole.UseVisualStyleBackColor = true;
             // 
             // LoginForm

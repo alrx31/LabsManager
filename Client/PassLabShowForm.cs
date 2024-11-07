@@ -53,7 +53,7 @@ namespace LabsManager
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            var url = $"http://localhost:5000/api/pass/{_model.id}/{numericUpDown1.Value}";
+            var url = $"{ENV.BASEURL}/api/pass/{_model.id}/{numericUpDown1.Value}";
             var client = new HttpClient();
             var response = await client.SendAsync(new HttpRequestMessage(new HttpMethod("POST"), url));
 

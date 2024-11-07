@@ -254,7 +254,7 @@ namespace LabsManager
                 else
                 {
                     Createbutton1.Visible = false;
-                    FillLabsPassModels(labsPassModels);
+                    FillLabsPassModels();
                 }
             }
 
@@ -264,8 +264,6 @@ namespace LabsManager
             // 1 - checked 
             // 2 - not checked
         {
-            GetLabs();
-            GetPassModels();
             var res = new List<PassLabModel>();
             foreach (var l in labs)
             {
@@ -292,10 +290,11 @@ namespace LabsManager
             return res;
         }
 
-        private void FillLabsPassModels(List<PassLabModel> _labsPassModels)
+        private void FillLabsPassModels()
         {
+            GetLabs();
             GetPassModels();
-            var labsPassModeles = _labsPassModels;
+            var labsPassModeles = labsPassModels;
             flowLayoutPanelListSubjects.Controls.Clear();
 
             if (_pageNumber == 3)
@@ -309,7 +308,7 @@ namespace LabsManager
             }
 
 
-            if (labs.Count > 0)
+            if (labsPassModeles.Any())
             {
                 foreach (PassLabModel lab in labsPassModeles)
                 {
@@ -335,27 +334,19 @@ namespace LabsManager
                     panel.Controls.Add(label1);
 
 
-
-                    panel.Click += (sender, e) =>
+                    System.EventHandler function = (sender, e) =>
                     {
                         var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
                         labForm.ShowDialog();
-                        
+                        GetPassModels();
+                        FillLabsPassModels();
                     };
 
-                    label.Click += (sender, e) =>
-                    {
-                        var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
-                        labForm.ShowDialog();
-                        
-                    };
+                    panel.Click += function;
 
-                    label1.Click += (sender, e) =>
-                    {
-                        var labForm = new PassLabShowForm(_person.id, ruleLevel == 2, lab);
-                        labForm.ShowDialog();
-                        
-                    };
+                    label.Click += function;
+
+                    label1.Click += function;
 
                     flowLayoutPanelListSubjects.Controls.Add(panel);
                 }
@@ -363,7 +354,7 @@ namespace LabsManager
             else
             {
                 var panel = new Panel();
-                panel.Size = new Size(500, 30);
+                panel.Size = new Size(1200, 30);
                 panel.Location = new Point(20, 20);
                 panel.BackColor = Color.White;
                 panel.BorderStyle = BorderStyle.None;
@@ -408,24 +399,18 @@ namespace LabsManager
                     panel.Controls.Add(label1);
 
 
-
-                    panel.Click += (sender, e) =>
+                    System.EventHandler function = (sender, e) =>
                     {
-                        var labForm = new LabForm(_person.id, lab);
+                        var labForm = new LabForm(_person.id, lab, ruleLevel == 3);
                         labForm.ShowDialog();
+                        GetLabs();
+                        FillLabs(labs);
                     };
+                    panel.Click += function;
 
-                    label.Click += (sender, e) =>
-                    {
-                        var labForm = new LabForm(_person.id, lab);
-                        labForm.ShowDialog();
-                    };
+                    label.Click += function;
 
-                    label1.Click += (sender, e) =>
-                    {
-                        var labForm = new LabForm(_person.id, lab);
-                        labForm.ShowDialog();
-                    };
+                    label1.Click += function;
 
                     flowLayoutPanelListSubjects.Controls.Add(panel);
                 }
@@ -433,7 +418,7 @@ namespace LabsManager
             else
             {
                 var panel = new Panel();
-                panel.Size = new Size(500, 30);
+                panel.Size = new Size(1200, 30);
                 panel.Location = new Point(20, 20);
                 panel.BackColor = Color.White;
                 panel.BorderStyle = BorderStyle.None;
@@ -452,7 +437,7 @@ namespace LabsManager
         private void GetLabs()
         {
             // get all labs by get method
-            var url = "http://localhost:5000/api/labs";
+            var url = $"{ENV.BASEURL}/api/labs";
             var client = new HttpClient();
             var response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
@@ -471,7 +456,7 @@ namespace LabsManager
 
         private void GetPassModels()
         {
-            var url = "http://localhost:5000/api/pass";
+            var url = $"{ENV.BASEURL}/api/pass";
             var client = new HttpClient();
             var response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)

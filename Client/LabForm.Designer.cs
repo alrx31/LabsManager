@@ -35,8 +35,9 @@
             label2 = new Label();
             label5 = new Label();
             label3 = new Label();
-            button2 = new Button();
             button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,12 +53,13 @@
             flowLayoutPanel1.Controls.Add(label3);
             flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(20, 10, 20, 50);
-            flowLayoutPanel1.Size = new Size(800, 450);
+            flowLayoutPanel1.Size = new Size(800, 484);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -127,20 +129,9 @@
             label3.TabIndex = 2;
             label3.Text = "label3";
             // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 16F);
-            button2.Location = new Point(23, 411);
-            button2.Margin = new Padding(3, 3, 30, 30);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 50);
-            button2.TabIndex = 7;
-            button2.Text = "Добавить отчет";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(192, 192, 255);
             button1.Font = new Font("Segoe UI", 16F);
             button1.Location = new Point(23, 328);
             button1.Margin = new Padding(3, 3, 30, 30);
@@ -148,15 +139,41 @@
             button1.Size = new Size(200, 50);
             button1.TabIndex = 3;
             button1.Text = "Скачать";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(192, 192, 255);
+            button2.Font = new Font("Segoe UI", 16F);
+            button2.Location = new Point(23, 411);
+            button2.Margin = new Padding(3, 3, 30, 30);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 50);
+            button2.TabIndex = 7;
+            button2.Text = "Добавить отчет";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(192, 0, 0);
+            button3.Font = new Font("Segoe UI", 16F);
+            button3.Location = new Point(23, 494);
+            button3.Margin = new Padding(3, 3, 30, 30);
+            button3.Name = "button3";
+            button3.Size = new Size(200, 50);
+            button3.TabIndex = 8;
+            button3.Text = "Удалить";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // LabForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 240, 255);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 484);
             Controls.Add(flowLayoutPanel1);
             Name = "LabForm";
             Text = "LabForm";
@@ -178,5 +195,6 @@
         private Label label5;
         private Label label6;
         private Button button2;
+        private Button button3;
     }
 }

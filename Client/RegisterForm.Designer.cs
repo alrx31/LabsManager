@@ -126,9 +126,9 @@
             registerlabel5.Location = new Point(230, 294);
             registerlabel5.Margin = new Padding(4, 0, 4, 0);
             registerlabel5.Name = "registerlabel5";
-            registerlabel5.Size = new Size(59, 21);
+            registerlabel5.Size = new Size(61, 21);
             registerlabel5.TabIndex = 21;
-            registerlabel5.Text = "группа";
+            registerlabel5.Text = "Группа";
             // 
             // registertextBox5
             // 
@@ -145,9 +145,9 @@
             registerlabel6.Location = new Point(226, 294);
             registerlabel6.Margin = new Padding(4, 0, 4, 0);
             registerlabel6.Name = "registerlabel6";
-            registerlabel6.Size = new Size(71, 21);
+            registerlabel6.Size = new Size(72, 21);
             registerlabel6.TabIndex = 23;
-            registerlabel6.Text = "кафедра";
+            registerlabel6.Text = "Кафедра";
             registerlabel6.Visible = false;
             // 
             // registerbutton1

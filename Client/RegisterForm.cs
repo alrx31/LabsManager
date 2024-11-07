@@ -53,8 +53,8 @@ namespace LabsManager
         {
             string role = registercheckBox2.Checked ? "Teacher" : "Student";
             string registerUrl = role == "Student"
-                ? "http://localhost:5000/api/person/student-register"
-                : "http://localhost:5000/api/person/teacher-register";
+                ? $"{ENV.BASEURL}/api/person/student-register"
+                : $"{ENV.BASEURL}/api/person/teacher-register";
 
             var ST = new RegisterStudentDTO();
             var TE = new RegisterTeacherDTO();
@@ -91,12 +91,12 @@ namespace LabsManager
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Registration successful!");
+                    MessageBox.Show("Регистрация прошла успешно!");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Registration failed. Please check your details.");
+                    MessageBox.Show("Ошибка регистрации");
                 }
             }
         }

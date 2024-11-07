@@ -31,8 +31,8 @@ namespace LabsManager
         {
             string role = cbRole.Checked ? "Teacher" : "Student";
             string loginUrl = role == "Student"
-                ? "http://localhost:5000/api/person/student-login"
-                : "http://localhost:5000/api/person/teacher-login";
+                ? $"{ENV.BASEURL}/api/person/student-login"
+                : $"{ENV.BASEURL}/api/person/teacher-login";
 
             var loginDTO = new
             {
