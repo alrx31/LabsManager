@@ -147,6 +147,8 @@ namespace LabsManager
         private void profilePanel_VisibleChanged(object sender, EventArgs e)
         {
 
+            Profilelabel3.Visible = false;
+            ProfilelabelFaculty.Visible = false;
 
             if (profilePanel.Visible == true)
             {
@@ -182,7 +184,7 @@ namespace LabsManager
             SubjectsList.Visible = true;
 
 
-            panelIndicator.Location = new Point(0, 70);
+            panelIndicator.Location = new Point(0, 27+67);
         }
 
         private void panelButton1_Click(object sender, EventArgs e)
@@ -190,7 +192,7 @@ namespace LabsManager
             _pageNumber = 0;
             profilePanel.Visible = true;
             SubjectsList.Visible = false;
-            panelIndicator.Location = new Point(0, 20);
+            panelIndicator.Location = new Point(0, 27);
         }
 
         private void panelButton3_Click(object sender, EventArgs e)
@@ -204,7 +206,7 @@ namespace LabsManager
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
 
-            panelIndicator.Location = new Point(0, 120);
+            panelIndicator.Location = new Point(0, 27+67*2);
         }
         private void panelButton4_Click(object sender, EventArgs e)
         {
@@ -218,7 +220,7 @@ namespace LabsManager
             SubjectsList.Visible = false;
             SubjectsList.Visible = true;
 
-            panelIndicator.Location = new Point(0, 170);
+            panelIndicator.Location = new Point(0, 27+67*3);
         }
 
 
