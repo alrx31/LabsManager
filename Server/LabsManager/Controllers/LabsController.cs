@@ -60,39 +60,6 @@ namespace LabsManager.Controllers
 
             return Ok(res);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
         [HttpDelete("{labId}")]
         public async Task<IActionResult> DeleteLab(int labId)
