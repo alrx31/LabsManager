@@ -12,6 +12,8 @@ namespace LabsManager.Infrastructure.Repository
         Task<Student> getStudentById(int id);
         Task<Student?> GetStudentByLogin(string login);
         Task<Teacher?> GetTeacherByLogin(string login);
+        
+        Task<List<Student>> GetAllStudents();
     }
 
     public class PersonRepository
@@ -48,6 +50,11 @@ namespace LabsManager.Infrastructure.Repository
         public async Task<Student> getStudentById(int id)
         {
             return await _context.Students.FirstOrDefaultAsync(st => st.id == id);
+        }
+        
+        public async Task<List<Student>> GetAllStudents()
+        {
+            return await _context.Students.ToListAsync();
         }
     }
 }

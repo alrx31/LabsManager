@@ -87,7 +87,7 @@ namespace LabsManager.Services
         {
             var stat = new Stats();
 
-            var students =await  _labsRepository.GetAllStudents();
+            var students =await  _personRepository.GetAllStudents();
             
             var labs = await _labsRepository.GetAllLabs();
             var passmodels = await _PassLabsRepository.getAllPassModels();
