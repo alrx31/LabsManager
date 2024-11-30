@@ -205,9 +205,9 @@
             FormName.ForeColor = SystemColors.WindowFrame;
             FormName.Location = new Point(3, 0);
             FormName.Name = "FormName";
-            FormName.Size = new Size(144, 28);
+            FormName.Size = new Size(158, 28);
             FormName.TabIndex = 3;
-            FormName.Text = "Labs Manager";
+            FormName.Text = "Менеджер лаб";
             // 
             // maxformbutton
             // 
@@ -459,7 +459,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "LabsManager";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LabsManager";
+            Text = "Менеджер лаб";
             Load += LabsManager_Load;
             panel1.ResumeLayout(false);
             panelButton2.ResumeLayout(false);
