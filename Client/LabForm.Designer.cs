@@ -57,9 +57,10 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(20, 10, 20, 50);
-            flowLayoutPanel1.Size = new Size(800, 484);
+            flowLayoutPanel1.Padding = new Padding(23, 13, 23, 67);
+            flowLayoutPanel1.Size = new Size(914, 645);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -67,10 +68,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F);
-            label1.Location = new Point(23, 20);
-            label1.Margin = new Padding(3, 10, 3, 10);
+            label1.Location = new Point(26, 26);
+            label1.Margin = new Padding(3, 13, 3, 13);
             label1.Name = "label1";
-            label1.Size = new Size(105, 45);
+            label1.Size = new Size(130, 54);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
@@ -78,10 +79,10 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 16F);
-            label6.Location = new Point(23, 85);
-            label6.Margin = new Padding(3, 10, 3, 10);
+            label6.Location = new Point(26, 106);
+            label6.Margin = new Padding(3, 13, 3, 13);
             label6.Name = "label6";
-            label6.Size = new Size(115, 30);
+            label6.Size = new Size(141, 37);
             label6.TabIndex = 6;
             label6.Text = "Описание";
             // 
@@ -89,10 +90,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16F);
-            label4.Location = new Point(23, 135);
-            label4.Margin = new Padding(3, 10, 3, 10);
+            label4.Location = new Point(26, 169);
+            label4.Margin = new Padding(3, 13, 3, 13);
             label4.Name = "label4";
-            label4.Size = new Size(115, 30);
+            label4.Size = new Size(141, 37);
             label4.TabIndex = 4;
             label4.Text = "Описание";
             // 
@@ -100,10 +101,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F);
-            label2.Location = new Point(23, 185);
-            label2.Margin = new Padding(3, 10, 3, 10);
+            label2.Location = new Point(26, 232);
+            label2.Margin = new Padding(3, 13, 3, 13);
             label2.Name = "label2";
-            label2.Size = new Size(71, 30);
+            label2.Size = new Size(90, 37);
             label2.TabIndex = 1;
             label2.Text = "label2";
             // 
@@ -111,10 +112,10 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F);
-            label5.Location = new Point(23, 235);
-            label5.Margin = new Padding(3, 10, 3, 10);
+            label5.Location = new Point(26, 295);
+            label5.Margin = new Padding(3, 13, 3, 13);
             label5.Name = "label5";
-            label5.Size = new Size(130, 30);
+            label5.Size = new Size(159, 37);
             label5.TabIndex = 5;
             label5.Text = "Материалы";
             // 
@@ -122,10 +123,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16F);
-            label3.Location = new Point(23, 285);
-            label3.Margin = new Padding(3, 10, 3, 10);
+            label3.Location = new Point(26, 358);
+            label3.Margin = new Padding(3, 13, 3, 13);
             label3.Name = "label3";
-            label3.Size = new Size(71, 30);
+            label3.Size = new Size(90, 37);
             label3.TabIndex = 2;
             label3.Text = "label3";
             // 
@@ -133,10 +134,10 @@
             // 
             button1.BackColor = Color.FromArgb(192, 192, 255);
             button1.Font = new Font("Segoe UI", 16F);
-            button1.Location = new Point(23, 328);
-            button1.Margin = new Padding(3, 3, 30, 30);
+            button1.Location = new Point(26, 412);
+            button1.Margin = new Padding(3, 4, 34, 40);
             button1.Name = "button1";
-            button1.Size = new Size(200, 50);
+            button1.Size = new Size(229, 67);
             button1.TabIndex = 3;
             button1.Text = "Скачать";
             button1.UseVisualStyleBackColor = false;
@@ -146,10 +147,10 @@
             // 
             button2.BackColor = Color.FromArgb(192, 192, 255);
             button2.Font = new Font("Segoe UI", 16F);
-            button2.Location = new Point(23, 411);
-            button2.Margin = new Padding(3, 3, 30, 30);
+            button2.Location = new Point(26, 523);
+            button2.Margin = new Padding(3, 4, 34, 40);
             button2.Name = "button2";
-            button2.Size = new Size(200, 50);
+            button2.Size = new Size(229, 67);
             button2.TabIndex = 7;
             button2.Text = "Добавить отчет";
             button2.UseVisualStyleBackColor = false;
@@ -159,10 +160,11 @@
             // 
             button3.BackColor = Color.FromArgb(192, 0, 0);
             button3.Font = new Font("Segoe UI", 16F);
-            button3.Location = new Point(23, 494);
-            button3.Margin = new Padding(3, 3, 30, 30);
+            button3.ForeColor = Color.Cornsilk;
+            button3.Location = new Point(26, 634);
+            button3.Margin = new Padding(3, 4, 34, 40);
             button3.Name = "button3";
-            button3.Size = new Size(200, 50);
+            button3.Size = new Size(229, 67);
             button3.TabIndex = 8;
             button3.Text = "Удалить";
             button3.UseVisualStyleBackColor = false;
@@ -170,11 +172,12 @@
             // 
             // LabForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 240, 255);
-            ClientSize = new Size(800, 484);
+            ClientSize = new Size(914, 645);
             Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LabForm";
             Text = "LabForm";
             Load += LabForm_Load;

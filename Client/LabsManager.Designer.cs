@@ -79,17 +79,19 @@
             panel1.Controls.Add(panelButton3);
             panel1.Controls.Add(panelButton4);
             panel1.ForeColor = Color.FromArgb(240, 240, 255);
-            panel1.Location = new Point(0, 20);
+            panel1.Location = new Point(0, 27);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 833);
+            panel1.Size = new Size(229, 1111);
             panel1.TabIndex = 0;
             // 
             // panelIndicator
             // 
             panelIndicator.BackColor = Color.FromArgb(10, 10, 250);
-            panelIndicator.Location = new Point(41, 296);
+            panelIndicator.Location = new Point(47, 395);
+            panelIndicator.Margin = new Padding(3, 4, 3, 4);
             panelIndicator.Name = "panelIndicator";
-            panelIndicator.Size = new Size(5, 50);
+            panelIndicator.Size = new Size(6, 67);
             panelIndicator.TabIndex = 1;
             // 
             // panelButton2
@@ -98,9 +100,10 @@
             panelButton2.Controls.Add(label1);
             panelButton2.Cursor = Cursors.Hand;
             panelButton2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panelButton2.Location = new Point(0, 70);
+            panelButton2.Location = new Point(0, 93);
+            panelButton2.Margin = new Padding(3, 4, 3, 4);
             panelButton2.Name = "panelButton2";
-            panelButton2.Size = new Size(200, 50);
+            panelButton2.Size = new Size(229, 67);
             panelButton2.TabIndex = 3;
             panelButton2.Click += panelButton2_Click;
             panelButton2.MouseEnter += panel4_MouseEnter;
@@ -109,9 +112,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 16);
+            label1.Location = new Point(57, 21);
             label1.Name = "label1";
-            label1.Size = new Size(83, 21);
+            label1.Size = new Size(103, 28);
             label1.TabIndex = 0;
             label1.Text = "Все лабы";
             label1.Click += panelButton2_Click;
@@ -123,9 +126,10 @@
             panelButton1.Controls.Add(buttontext1);
             panelButton1.Cursor = Cursors.Hand;
             panelButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panelButton1.Location = new Point(0, 20);
+            panelButton1.Location = new Point(0, 27);
+            panelButton1.Margin = new Padding(3, 4, 3, 4);
             panelButton1.Name = "panelButton1";
-            panelButton1.Size = new Size(200, 50);
+            panelButton1.Size = new Size(229, 67);
             panelButton1.TabIndex = 2;
             panelButton1.Click += panelButton1_Click;
             panelButton1.MouseEnter += panelButton1_MouseHover;
@@ -134,9 +138,9 @@
             // buttontext1
             // 
             buttontext1.AutoSize = true;
-            buttontext1.Location = new Point(50, 16);
+            buttontext1.Location = new Point(57, 21);
             buttontext1.Name = "buttontext1";
-            buttontext1.Size = new Size(84, 21);
+            buttontext1.Size = new Size(103, 28);
             buttontext1.TabIndex = 0;
             buttontext1.Text = "Профиль";
             buttontext1.Click += panelButton1_Click;
@@ -148,9 +152,10 @@
             panelButton3.Controls.Add(label2);
             panelButton3.Cursor = Cursors.Hand;
             panelButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panelButton3.Location = new Point(0, 120);
+            panelButton3.Location = new Point(0, 160);
+            panelButton3.Margin = new Padding(3, 4, 3, 4);
             panelButton3.Name = "panelButton3";
-            panelButton3.Size = new Size(200, 50);
+            panelButton3.Size = new Size(229, 67);
             panelButton3.TabIndex = 4;
             panelButton3.Click += panelButton3_Click;
             panelButton3.MouseEnter += panelButton3_MouseEnter;
@@ -159,9 +164,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 15);
+            label2.Location = new Point(37, 20);
             label2.Name = "label2";
-            label2.Size = new Size(111, 21);
+            label2.Size = new Size(137, 28);
             label2.TabIndex = 0;
             label2.Text = "На проверке";
             label2.Click += panelButton3_Click;
@@ -173,9 +178,10 @@
             panelButton4.Controls.Add(label3);
             panelButton4.Cursor = Cursors.Hand;
             panelButton4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panelButton4.Location = new Point(0, 170);
+            panelButton4.Location = new Point(0, 227);
+            panelButton4.Margin = new Padding(3, 4, 3, 4);
             panelButton4.Name = "panelButton4";
-            panelButton4.Size = new Size(200, 50);
+            panelButton4.Size = new Size(229, 67);
             panelButton4.TabIndex = 5;
             panelButton4.Click += panelButton4_Click;
             panelButton4.MouseEnter += panelButton4_MouseEnter;
@@ -184,9 +190,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(41, 18);
+            label3.Location = new Point(47, 24);
             label3.Name = "label3";
-            label3.Size = new Size(102, 21);
+            label3.Size = new Size(125, 28);
             label3.TabIndex = 0;
             label3.Text = "Проверены";
             label3.Click += panelButton4_Click;
@@ -199,9 +205,9 @@
             FormName.ForeColor = SystemColors.WindowFrame;
             FormName.Location = new Point(3, 0);
             FormName.Name = "FormName";
-            FormName.Size = new Size(116, 21);
+            FormName.Size = new Size(158, 28);
             FormName.TabIndex = 3;
-            FormName.Text = "Labs Manager";
+            FormName.Text = "Менеджер лаб";
             // 
             // maxformbutton
             // 
@@ -209,9 +215,9 @@
             maxformbutton.Cursor = Cursors.Hand;
             maxformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             maxformbutton.ForeColor = SystemColors.WindowFrame;
-            maxformbutton.Location = new Point(1442, 0);
+            maxformbutton.Location = new Point(1648, 0);
             maxformbutton.Name = "maxformbutton";
-            maxformbutton.Size = new Size(27, 21);
+            maxformbutton.Size = new Size(33, 28);
             maxformbutton.TabIndex = 2;
             maxformbutton.Text = "▭";
             maxformbutton.Click += label3_Click;
@@ -223,9 +229,9 @@
             minformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             minformbutton.ForeColor = SystemColors.WindowFrame;
             minformbutton.ImageAlign = ContentAlignment.MiddleLeft;
-            minformbutton.Location = new Point(1411, -1);
+            minformbutton.Location = new Point(1613, -1);
             minformbutton.Name = "minformbutton";
-            minformbutton.Size = new Size(25, 21);
+            minformbutton.Size = new Size(30, 28);
             minformbutton.TabIndex = 1;
             minformbutton.Text = "◛";
             minformbutton.Click += label2_Click;
@@ -236,9 +242,9 @@
             closeformbutton.Cursor = Cursors.Hand;
             closeformbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             closeformbutton.ForeColor = SystemColors.WindowFrame;
-            closeformbutton.Location = new Point(1475, 0);
+            closeformbutton.Location = new Point(1686, 0);
             closeformbutton.Name = "closeformbutton";
-            closeformbutton.Size = new Size(22, 21);
+            closeformbutton.Size = new Size(27, 28);
             closeformbutton.TabIndex = 0;
             closeformbutton.Text = "Ⅹ";
             closeformbutton.Click += label1_Click;
@@ -252,8 +258,9 @@
             panel2.Controls.Add(closeformbutton);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1500, 20);
+            panel2.Size = new Size(1714, 27);
             panel2.TabIndex = 2;
             panel2.MouseDown += Form1_MouseDown;
             panel2.MouseMove += Form1_MouseMove;
@@ -272,30 +279,31 @@
             profilePanel.Controls.Add(Profilelabel2);
             profilePanel.Controls.Add(ProfileLabelName);
             profilePanel.Controls.Add(Profilelabel1);
-            profilePanel.Font = new Font("RomanD", 14F, FontStyle.Bold);
-            profilePanel.Location = new Point(200, 20);
+            profilePanel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold);
+            profilePanel.Location = new Point(229, 27);
+            profilePanel.Margin = new Padding(3, 4, 3, 4);
             profilePanel.Name = "profilePanel";
-            profilePanel.Size = new Size(1300, 880);
+            profilePanel.Size = new Size(1486, 1173);
             profilePanel.TabIndex = 3;
             profilePanel.VisibleChanged += profilePanel_VisibleChanged;
             // 
             // ProfilelabelLabsManager
             // 
             ProfilelabelLabsManager.AutoSize = true;
-            ProfilelabelLabsManager.Font = new Font("SansSerif", 24F, FontStyle.Bold);
+            ProfilelabelLabsManager.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold);
             ProfilelabelLabsManager.ForeColor = SystemColors.WindowFrame;
-            ProfilelabelLabsManager.Location = new Point(15, 829);
+            ProfilelabelLabsManager.Location = new Point(17, 1105);
             ProfilelabelLabsManager.Name = "ProfilelabelLabsManager";
-            ProfilelabelLabsManager.Size = new Size(226, 37);
+            ProfilelabelLabsManager.Size = new Size(273, 46);
             ProfilelabelLabsManager.TabIndex = 9;
             ProfilelabelLabsManager.Text = "LabsManager";
             // 
             // ProfilelabelAdmin
             // 
             ProfilelabelAdmin.AutoSize = true;
-            ProfilelabelAdmin.Location = new Point(425, 519);
+            ProfilelabelAdmin.Location = new Point(486, 692);
             ProfilelabelAdmin.Name = "ProfilelabelAdmin";
-            ProfilelabelAdmin.Size = new Size(163, 29);
+            ProfilelabelAdmin.Size = new Size(153, 29);
             ProfilelabelAdmin.TabIndex = 8;
             ProfilelabelAdmin.Text = "Вы - Админ";
             ProfilelabelAdmin.Visible = false;
@@ -303,72 +311,72 @@
             // ProfilelabelGroup
             // 
             ProfilelabelGroup.AutoSize = true;
-            ProfilelabelGroup.Location = new Point(40, 275);
+            ProfilelabelGroup.Location = new Point(46, 367);
             ProfilelabelGroup.Name = "ProfilelabelGroup";
-            ProfilelabelGroup.Size = new Size(82, 29);
+            ProfilelabelGroup.Size = new Size(85, 29);
             ProfilelabelGroup.TabIndex = 7;
             ProfilelabelGroup.Text = "label2";
             // 
             // Profilelabel4
             // 
             Profilelabel4.AutoSize = true;
-            Profilelabel4.Location = new Point(40, 246);
+            Profilelabel4.Location = new Point(46, 328);
             Profilelabel4.Name = "Profilelabel4";
-            Profilelabel4.Size = new Size(95, 29);
+            Profilelabel4.Size = new Size(101, 29);
             Profilelabel4.TabIndex = 6;
             Profilelabel4.Text = "Группа";
             // 
             // ProfilelabelFaculty
             // 
             ProfilelabelFaculty.AutoSize = true;
-            ProfilelabelFaculty.Location = new Point(40, 188);
+            ProfilelabelFaculty.Location = new Point(46, 251);
             ProfilelabelFaculty.Name = "ProfilelabelFaculty";
-            ProfilelabelFaculty.Size = new Size(82, 29);
+            ProfilelabelFaculty.Size = new Size(85, 29);
             ProfilelabelFaculty.TabIndex = 5;
             ProfilelabelFaculty.Text = "label2";
             // 
             // Profilelabel3
             // 
             Profilelabel3.AutoSize = true;
-            Profilelabel3.Location = new Point(40, 159);
+            Profilelabel3.Location = new Point(46, 212);
             Profilelabel3.Name = "Profilelabel3";
-            Profilelabel3.Size = new Size(156, 29);
+            Profilelabel3.Size = new Size(144, 29);
             Profilelabel3.TabIndex = 4;
             Profilelabel3.Text = "Факультет";
             // 
             // ProfilelabelLogin
             // 
             ProfilelabelLogin.AutoSize = true;
-            ProfilelabelLogin.Location = new Point(40, 111);
+            ProfilelabelLogin.Location = new Point(46, 148);
             ProfilelabelLogin.Name = "ProfilelabelLogin";
-            ProfilelabelLogin.Size = new Size(82, 29);
+            ProfilelabelLogin.Size = new Size(85, 29);
             ProfilelabelLogin.TabIndex = 3;
             ProfilelabelLogin.Text = "label2";
             // 
             // Profilelabel2
             // 
             Profilelabel2.AutoSize = true;
-            Profilelabel2.Location = new Point(39, 82);
+            Profilelabel2.Location = new Point(45, 109);
             Profilelabel2.Name = "Profilelabel2";
-            Profilelabel2.Size = new Size(83, 29);
+            Profilelabel2.Size = new Size(88, 29);
             Profilelabel2.TabIndex = 2;
             Profilelabel2.Text = "Логин";
             // 
             // ProfileLabelName
             // 
             ProfileLabelName.AutoSize = true;
-            ProfileLabelName.Location = new Point(39, 40);
+            ProfileLabelName.Location = new Point(45, 53);
             ProfileLabelName.Name = "ProfileLabelName";
-            ProfileLabelName.Size = new Size(55, 29);
+            ProfileLabelName.Size = new Size(54, 29);
             ProfileLabelName.TabIndex = 1;
             ProfileLabelName.Text = "text";
             // 
             // Profilelabel1
             // 
             Profilelabel1.AutoSize = true;
-            Profilelabel1.Location = new Point(40, 16);
+            Profilelabel1.Location = new Point(46, 21);
             Profilelabel1.Name = "Profilelabel1";
-            Profilelabel1.Size = new Size(57, 29);
+            Profilelabel1.Size = new Size(66, 29);
             Profilelabel1.TabIndex = 0;
             Profilelabel1.Text = "Имя";
             // 
@@ -377,9 +385,10 @@
             SubjectsList.BackColor = Color.FromArgb(240, 240, 255);
             SubjectsList.Controls.Add(ControlPanel);
             SubjectsList.Controls.Add(flowLayoutPanelListSubjects);
-            SubjectsList.Location = new Point(200, 20);
+            SubjectsList.Location = new Point(229, 27);
+            SubjectsList.Margin = new Padding(3, 4, 3, 4);
             SubjectsList.Name = "SubjectsList";
-            SubjectsList.Size = new Size(1300, 880);
+            SubjectsList.Size = new Size(1486, 1173);
             SubjectsList.TabIndex = 10;
             SubjectsList.Visible = false;
             SubjectsList.VisibleChanged += SubjectsList_VisibleChanged;
@@ -389,9 +398,10 @@
             ControlPanel.BackColor = Color.FromArgb(0, 100, 255);
             ControlPanel.Controls.Add(Statisticbutton1);
             ControlPanel.Controls.Add(Createbutton1);
-            ControlPanel.Location = new Point(0, 830);
+            ControlPanel.Location = new Point(0, 1107);
+            ControlPanel.Margin = new Padding(3, 4, 3, 4);
             ControlPanel.Name = "ControlPanel";
-            ControlPanel.Size = new Size(1300, 50);
+            ControlPanel.Size = new Size(1486, 67);
             ControlPanel.TabIndex = 0;
             // 
             // Statisticbutton1
@@ -399,9 +409,10 @@
             Statisticbutton1.Cursor = Cursors.Hand;
             Statisticbutton1.FlatStyle = FlatStyle.Flat;
             Statisticbutton1.ForeColor = Color.White;
-            Statisticbutton1.Location = new Point(977, 9);
+            Statisticbutton1.Location = new Point(1117, 12);
+            Statisticbutton1.Margin = new Padding(3, 4, 3, 4);
             Statisticbutton1.Name = "Statisticbutton1";
-            Statisticbutton1.Size = new Size(173, 30);
+            Statisticbutton1.Size = new Size(198, 40);
             Statisticbutton1.TabIndex = 4;
             Statisticbutton1.Text = "Получить статистику";
             Statisticbutton1.UseVisualStyleBackColor = true;
@@ -412,9 +423,10 @@
             Createbutton1.Cursor = Cursors.Hand;
             Createbutton1.FlatStyle = FlatStyle.Flat;
             Createbutton1.ForeColor = Color.White;
-            Createbutton1.Location = new Point(1169, 9);
+            Createbutton1.Location = new Point(1336, 12);
+            Createbutton1.Margin = new Padding(3, 4, 3, 4);
             Createbutton1.Name = "Createbutton1";
-            Createbutton1.Size = new Size(100, 30);
+            Createbutton1.Size = new Size(114, 40);
             Createbutton1.TabIndex = 3;
             Createbutton1.Text = "Создать лабу";
             Createbutton1.UseVisualStyleBackColor = true;
@@ -426,26 +438,28 @@
             flowLayoutPanelListSubjects.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanelListSubjects.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             flowLayoutPanelListSubjects.Location = new Point(0, 0);
+            flowLayoutPanelListSubjects.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanelListSubjects.Name = "flowLayoutPanelListSubjects";
-            flowLayoutPanelListSubjects.Padding = new Padding(20);
-            flowLayoutPanelListSubjects.Size = new Size(1300, 833);
+            flowLayoutPanelListSubjects.Padding = new Padding(23, 27, 23, 27);
+            flowLayoutPanelListSubjects.Size = new Size(1486, 1111);
             flowLayoutPanelListSubjects.TabIndex = 1;
             flowLayoutPanelListSubjects.WrapContents = false;
             // 
             // LabsManager
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(190, 190, 200);
-            ClientSize = new Size(1500, 900);
+            ClientSize = new Size(1714, 1200);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(SubjectsList);
             Controls.Add(profilePanel);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LabsManager";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LabsManager";
+            Text = "Менеджер лаб";
             Load += LabsManager_Load;
             panel1.ResumeLayout(false);
             panelButton2.ResumeLayout(false);

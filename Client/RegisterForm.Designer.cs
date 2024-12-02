@@ -49,7 +49,7 @@
             registerlabel2.Location = new Point(226, 96);
             registerlabel2.Margin = new Padding(4, 0, 4, 0);
             registerlabel2.Name = "registerlabel2";
-            registerlabel2.Size = new Size(63, 21);
+            registerlabel2.Size = new Size(81, 28);
             registerlabel2.TabIndex = 10;
             registerlabel2.Text = "Пароль";
             // 
@@ -59,7 +59,7 @@
             registerlabel1.Location = new Point(226, 24);
             registerlabel1.Margin = new Padding(4, 0, 4, 0);
             registerlabel1.Name = "registerlabel1";
-            registerlabel1.Size = new Size(54, 21);
+            registerlabel1.Size = new Size(69, 28);
             registerlabel1.TabIndex = 9;
             registerlabel1.Text = "Логин";
             // 
@@ -68,7 +68,7 @@
             registertextBox2.Location = new Point(226, 122);
             registertextBox2.Margin = new Padding(4);
             registertextBox2.Name = "registertextBox2";
-            registertextBox2.Size = new Size(384, 29);
+            registertextBox2.Size = new Size(384, 34);
             registertextBox2.TabIndex = 8;
             registertextBox2.UseSystemPasswordChar = true;
             // 
@@ -77,7 +77,7 @@
             registertextBox1.Location = new Point(226, 50);
             registertextBox1.Margin = new Padding(4);
             registertextBox1.Name = "registertextBox1";
-            registertextBox1.Size = new Size(384, 29);
+            registertextBox1.Size = new Size(384, 34);
             registertextBox1.TabIndex = 7;
             // 
             // registerlabel3
@@ -86,7 +86,7 @@
             registerlabel3.Location = new Point(226, 171);
             registerlabel3.Margin = new Padding(4, 0, 4, 0);
             registerlabel3.Name = "registerlabel3";
-            registerlabel3.Size = new Size(41, 21);
+            registerlabel3.Size = new Size(51, 28);
             registerlabel3.TabIndex = 14;
             registerlabel3.Text = "Имя";
             // 
@@ -95,9 +95,8 @@
             registertextBox3.Location = new Point(226, 196);
             registertextBox3.Margin = new Padding(4);
             registertextBox3.Name = "registertextBox3";
-            registertextBox3.Size = new Size(384, 29);
+            registertextBox3.Size = new Size(384, 34);
             registertextBox3.TabIndex = 13;
-            registertextBox3.UseSystemPasswordChar = true;
             // 
             // registercheckBox2
             // 
@@ -105,7 +104,7 @@
             registercheckBox2.Location = new Point(434, 255);
             registercheckBox2.Margin = new Padding(4);
             registercheckBox2.Name = "registercheckBox2";
-            registercheckBox2.Size = new Size(138, 25);
+            registercheckBox2.Size = new Size(175, 32);
             registercheckBox2.TabIndex = 19;
             registercheckBox2.Text = "преподователь";
             registercheckBox2.UseVisualStyleBackColor = true;
@@ -116,9 +115,8 @@
             registertextBox4.Location = new Point(226, 319);
             registertextBox4.Margin = new Padding(4);
             registertextBox4.Name = "registertextBox4";
-            registertextBox4.Size = new Size(368, 29);
+            registertextBox4.Size = new Size(368, 34);
             registertextBox4.TabIndex = 20;
-            registertextBox4.UseSystemPasswordChar = true;
             // 
             // registerlabel5
             // 
@@ -126,7 +124,7 @@
             registerlabel5.Location = new Point(230, 294);
             registerlabel5.Margin = new Padding(4, 0, 4, 0);
             registerlabel5.Name = "registerlabel5";
-            registerlabel5.Size = new Size(61, 21);
+            registerlabel5.Size = new Size(77, 28);
             registerlabel5.TabIndex = 21;
             registerlabel5.Text = "Группа";
             // 
@@ -135,7 +133,7 @@
             registertextBox5.Location = new Point(226, 319);
             registertextBox5.Margin = new Padding(4);
             registertextBox5.Name = "registertextBox5";
-            registertextBox5.Size = new Size(368, 29);
+            registertextBox5.Size = new Size(368, 34);
             registertextBox5.TabIndex = 22;
             registertextBox5.Visible = false;
             // 
@@ -145,7 +143,7 @@
             registerlabel6.Location = new Point(226, 294);
             registerlabel6.Margin = new Padding(4, 0, 4, 0);
             registerlabel6.Name = "registerlabel6";
-            registerlabel6.Size = new Size(72, 21);
+            registerlabel6.Size = new Size(91, 28);
             registerlabel6.TabIndex = 23;
             registerlabel6.Text = "Кафедра";
             registerlabel6.Visible = false;
@@ -167,14 +165,14 @@
             Loadlabel1.Font = new Font("Segoe UI", 15F);
             Loadlabel1.Location = new Point(542, 475);
             Loadlabel1.Name = "Loadlabel1";
-            Loadlabel1.Size = new Size(104, 28);
+            Loadlabel1.Size = new Size(130, 35);
             Loadlabel1.TabIndex = 25;
             Loadlabel1.Text = "Загрузка...";
             Loadlabel1.Visible = false;
             // 
             // RegisterForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 240, 255);
             ClientSize = new Size(784, 561);
@@ -194,7 +192,7 @@
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "RegisterForm";
-            Text = "RegisterForm";
+            Text = "Регистрация";
             ResumeLayout(false);
             PerformLayout();
         }

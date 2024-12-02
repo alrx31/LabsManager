@@ -44,7 +44,7 @@
             txtLogin.Location = new Point(209, 164);
             txtLogin.Margin = new Padding(4);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(385, 22);
+            txtLogin.Size = new Size(385, 27);
             txtLogin.TabIndex = 0;
             // 
             // txtPassword
@@ -52,7 +52,7 @@
             txtPassword.Location = new Point(209, 255);
             txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(385, 29);
+            txtPassword.Size = new Size(385, 34);
             txtPassword.TabIndex = 1;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -62,7 +62,7 @@
             loginlabel1.Location = new Point(209, 139);
             loginlabel1.Margin = new Padding(4, 0, 4, 0);
             loginlabel1.Name = "loginlabel1";
-            loginlabel1.Size = new Size(54, 21);
+            loginlabel1.Size = new Size(69, 28);
             loginlabel1.TabIndex = 2;
             loginlabel1.Text = "Логин";
             // 
@@ -72,7 +72,7 @@
             loginlabel2.Location = new Point(209, 230);
             loginlabel2.Margin = new Padding(4, 0, 4, 0);
             loginlabel2.Name = "loginlabel2";
-            loginlabel2.Size = new Size(63, 21);
+            loginlabel2.Size = new Size(81, 28);
             loginlabel2.TabIndex = 3;
             loginlabel2.Text = "Пароль";
             // 
@@ -95,7 +95,7 @@
             loginlinkLabel1.Location = new Point(440, 407);
             loginlinkLabel1.Margin = new Padding(4, 0, 4, 0);
             loginlinkLabel1.Name = "loginlinkLabel1";
-            loginlinkLabel1.Size = new Size(113, 21);
+            loginlinkLabel1.Size = new Size(141, 28);
             loginlinkLabel1.TabIndex = 6;
             loginlinkLabel1.TabStop = true;
             loginlinkLabel1.Text = "Нет Аккаунта?";
@@ -107,7 +107,7 @@
             Loadlabel.Font = new Font("Segoe UI", 22F);
             Loadlabel.Location = new Point(309, 51);
             Loadlabel.Name = "Loadlabel";
-            Loadlabel.Size = new Size(157, 41);
+            Loadlabel.Size = new Size(193, 50);
             Loadlabel.TabIndex = 7;
             Loadlabel.Text = "Загрузка...";
             Loadlabel.Visible = false;
@@ -117,14 +117,14 @@
             cbRole.AutoSize = true;
             cbRole.Location = new Point(225, 320);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(171, 25);
+            cbRole.Size = new Size(216, 32);
             cbRole.TabIndex = 8;
             cbRole.Text = "Вы Преподователь?";
             cbRole.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 240, 255);
             ClientSize = new Size(784, 561);
@@ -139,7 +139,7 @@
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "LoginForm";
-            Text = "Labs Manager";
+            Text = "Авторизация";
             ResumeLayout(false);
             PerformLayout();
         }
