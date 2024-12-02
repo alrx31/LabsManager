@@ -26,10 +26,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Unit\Services\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\LabsManager\LabsManager.csproj" />
     </ItemGroup>
 

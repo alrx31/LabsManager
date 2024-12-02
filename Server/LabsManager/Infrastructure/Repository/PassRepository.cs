@@ -23,7 +23,9 @@ namespace LabsManager.Infrastructure.Repository
 
         public async Task<List<PassModel>> getAllPassModels()
         {
-            return await _context.PassModels.ToListAsync();
+            return await _context.PassModels
+                .Include(u=>u.student)
+                .ToListAsync();
         }
 
         public async Task AddPassModel(PassModel passModel)

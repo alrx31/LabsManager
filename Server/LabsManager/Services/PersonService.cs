@@ -60,8 +60,11 @@ namespace LabsManager.Services
             }
 
             var models = (await _passRepository.getAllPassModels()).Where(m => m.studentId == student.id);
-            response.Student.passModels = models.ToList();
 
+            foreach (var p in response.Student.passModels)
+            {
+                p.student = null;
+            }
 
             return response;
         }

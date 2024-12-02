@@ -16,9 +16,12 @@ namespace LabsManager.Services
     public class PassService : IPassService
     {
         private readonly IPassRepository _passRepository;
+        private readonly ILabsRepository _labsRepository;
 
-        public PassService(IPassRepository passRepository) {
+        public PassService(IPassRepository passRepository, ILabsRepository labsRepository)
+        {
             _passRepository = passRepository;
+            _labsRepository = labsRepository;
         }
 
         public async Task AddPassModel(AddPassModelDTO model)
@@ -46,6 +49,14 @@ namespace LabsManager.Services
             if (model is null)
             {
                 throw new Exception("no pass models were found");
+            }
+            
+            foreach(var l in model)
+            {
+                l.student.passModels = null;
+                
+                l.lab = await _labsRepository.GetLab(l.labId);
+                l.lab.passLabs = null;
             }
 
             return model;
